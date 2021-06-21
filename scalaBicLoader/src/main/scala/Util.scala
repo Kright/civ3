@@ -15,3 +15,13 @@ extension (s: String)
     }
     return s.length
   }
+
+  def splitFirstWord: (String, String) = {
+    val t = s.trim
+    for ((c, i) <- t.zipWithIndex) {
+      if (c.isWhitespace) {
+        return (t.substring(0, i), t.substring(i).trim)
+      }
+    }
+    return (t, "")
+  }
