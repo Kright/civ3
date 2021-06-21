@@ -446,7 +446,7 @@ TOP PRTO SECTION (Units)
 			ICBM				.......1
 			naval missile transport		......1.
     4   long		available to (binary)
-    4   long		standard orders/special actions
+    4   long		standard orders/special actions (binary):
 							00000000
 			skip turn			.......1
 			wait				......1.
@@ -504,7 +504,7 @@ TOP PRTO SECTION (Units)
     4   long		class 0=land, 1=sea, 2=air
     4   long		other strategy for unit (-1 if first strategy/not multiplie strategies)
     4   long		HP bonus 
-    4   long		PTW standard orders (binary)
+    4   long		PTW standard orders (binary):
 							00000000
 			skip turn			.......1
 			wait				......1.
@@ -513,7 +513,7 @@ TOP PRTO SECTION (Units)
 			go to				...1....
 			explore				..1..... 
  			sentry				.1...... 
-    4   long		PTW special actions (binary)
+    4   long		PTW special actions (binary):
 							00000000 (first byte)
   			load				.......1 
   			unload				......1. 
@@ -527,7 +527,7 @@ TOP PRTO SECTION (Units)
  							00000000 (second byte)
   			upgrade unit			.......1 
   			capture				......1. 
-    4   long		PTW worker actions (binary)
+    4   long		PTW worker actions (binary):
 							00000000 (first byte)
   			build colony			.......1 
   			build city			......1. 
@@ -547,14 +547,14 @@ TOP PRTO SECTION (Units)
    			build airfield 			..1..... 
    			build radar tower 		.1...... 
    			build outpost 			1....... 
-    4   long		PTW air missions (binary)
+    4   long		PTW air missions (binary):
     							00000000 (first byte)
    			bombing				.......1
 			recon				......1.
 			intercept			.....1..
 			re-base				....1...
 			precision bombing		...1....
-    2   short		PTW "actions mix" (binary)
+    2   short		PTW "actions mix" (binary):
     			meaning			duped from	00000000 
     			sentry			std orders	.......1
  			bombard 		special actions	......1. 
@@ -875,7 +875,7 @@ TOP TILE SECTION
 
   For each tile:
     4	long		length of tile data 
-    1	byte		river connection info  (binary)
+    1	byte		river connection info  (binary):
 					00000000
 			river in north	.......1
 			river in west	......1.
@@ -908,7 +908,7 @@ TOP TILE SECTION
 			player start	....1...
 			snow-capped mts	...1....
 			pine forest	..1.....
-    1	byte		river crossing data (binarry):
+    1	byte		river crossing data (binary):
 					00000000
 			crossing N	.......1
 			crossing NE	......1.
@@ -1019,7 +1019,7 @@ TOP GAME SECTION
     4	long		number of playable civs (0=all playable)
     For each playable civ:
       4 long		id of playable civ
-    4	long		victory conditions and rules set (binarry):
+    4	long		victory conditions and rules set (binary):
 							00000000
 			domination victory enabled	.......1
 			space race victory enabled	......1.
