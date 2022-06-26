@@ -1,0 +1,2153 @@
+Starting text parser
+found key :LANDCONQUER
+    => value :Seules les unités [terrestres] peuvent attaquer des installations.
+found key :COMBATCONQUER
+    => value :Seules les unités de [combat] peuvent capturer une ville.
+found key :NOTAMPHIB
+    => value :Seules les unités de Marines peuvent attaquer depuis la mer.
+found key :NONCOMBATANT
+    => value :Les unités non-combattantes ne peuvent pas attaquer.
+found key :BLITZLIMIT
+    => value :Cette unité ne peut attaquer qu'une fois par tour.
+found key :BARBARIAN_ATTACK
+    => value :Un groupe de barbares $BARBARIAN0 nous a tendu une embuscade!
+found key :GLOBALWARMING_FOREST_JUNGLE
+found key :map_center 0
+    => value :Le réchauffement planétaire a détruit tous les terrains de $TERRAIN0!
+found key :GLOBALWARMING
+found key :map_center 0
+    => value :Le réchauffement planétaire a transformé les terrains de type $TERRAIN0 en $TERRAIN1!
+found key :GLOBALWARMING_RISING_COASTLINES
+    => value :Le niveau des mers monte! Selon les scientifiques, c'est le réchauffement planétaire qui est en cause...
+found key :CAPTURE_BARBARIAN
+    => value :Nous avons démantelé un campement de $BARBARIAN0 et récupéré 25 unités d'or!
+found key :STARVE
+    => value :Famine à $CITY0!
+found key :CITYPRODUCE
+    => value :$CITY0 construit le projet: $IMPROVEMENT_WONDER_OR_UNIT1.
+found key :WELOVEKING
+    => value :Célébration de la journée "Gloire à notre $TITLE0".
+found key :WELOVEKINGOVER
+    => value :La journée de célébration "Gloire à notre $TITLE0" est terminée.
+found key :HARVEST_FOREST
+    => value :Forêt défrichée. $CITY0 reçoit $NUM0 $<#0:bouclier:boucliers>.
+found key :CULTUREBORDER
+    => value :Notre influence culturelle s'étend!
+found key :DISBANDSHIELDS
+    => value :Notre unité de $UNIT0 a été convertie en $NUM0 $<#0:bouclier:boucliers>.
+found key :UNITPROMOTIONREG
+    => value :Notre unité de $UNIT0 de niveau Conscrit a atteint le niveau Standard.
+found key :UNITPROMOTIONVET
+    => value :Notre unité de $UNIT0 de niveau Standard est désormais de niveau Vétéran.
+found key :UNITPROMOTIONELITE
+    => value :Notre unité de $UNIT0 de niveau Vétéran a atteint le niveau Elite!
+found key :UNITCAPTURED
+    => value :Notre unité de $UNIT0 a été capturée!
+found key :UNITSCAPTURED
+    => value :Nos unités ont été capturées!
+found key :THEIRUNITCAPTURED
+    => value :Nous avons capturé une unité ennemie de $UNIT0!
+found key :THEIRUNITSCAPTURED
+    => value :Nous avons capturé des unités ennemies!
+found key :UNITDESTROYED
+    => value :Notre unité de $UNIT0 a été détruite!
+found key :UNITSDESTROYED
+    => value :Nos unités ont été détruites!
+found key :SHIPSUNK
+    => value :Notre unité de $UNIT0 a disparu dans des eaux traîtresses!
+found key :UNITJUNGLEDISEASE
+    => value :Notre unité de $UNIT0 est morte de maladie dans la jungle!
+found key :GOODY_MONEY
+    => value :Ce village de barbares $BARBARIAN0 nous a remis $NUM0 unités d'or.
+found key :GOODY_MAPS
+    => value :Les $BARBARIAN0, barbares très amicaux, nous ont donné des cartes de leur région.
+found key :GOODY_CITY
+    => value :Un village de barbares $BARBARIAN0 très développés s'est joint à nous!
+found key :GOODY_NOTHING
+    => value :Ce village de barbares $BARBARIAN0 est désert.
+found key :GOODY_SETTLERS
+    => value :Une unité de $UNIT1 des $BARBARIAN0 souhaite se joindre à notre $GOVERNMENT2.
+found key :GOODY_MERCENARIES
+    => value :Ce village de barbares $BARBARIAN0, nous a amicalement offert une unité de $UNIT1 très compétente.
+found key :GOODY_BARBARIANS
+    => value :Nous avons provoqué la colère d'une unité de $UNIT1 des $BARBARIAN0.
+found key :CIVIL_DISORDER
+    => value :Emeutes à $CITY0.
+found key :CIVIL_DISORDER_OVER
+    => value :Ordre rétabli à $CITY0.
+found key :CIVIL_DISORDER_INTENSIFIES
+    => value :Les émeutes s'intensifient à $CITYNAME0! La foule a détruit l'amélioration: $IMPROVEMENT1!
+found key :SETTLEMENT_FOUNDED
+    => value :$CITY0 fondée en $NUM0 $BC_AD1
+found key :SUMMARY_DISEASE
+    => value :La maladie frappe $CITY0.
+found key :POLLUTION
+    => value :$CITY0 est touchée par la pollution.
+found key :NEWLEADER
+    => value :Notre victoire a généré un héros: $GREAT_LEADER0!
+found key :RESISTANCEQUELLED
+    => value :Nos troupes ont maté $NUM0 $<#0:opposant:opposants>!
+found key :RESISTANCEENDS
+    => value :Toute trace d'opposition a disparu à $CITY0!
+found key :POPDESTROYED
+    => value :Certains citoyens de $CITY0 ont péri!
+found key :FACDESTROYED
+    => value :$CITY0 a perdu l'amélioration: $IMPROVEMENT1!
+found key :CUSTOMNAMES
+found key :xs 440
+found key :caption Personnalisez votre tribu
+found key :CUSTOMGENDER
+    => value :Quel est le sexe de $NAME0 ?
+found key :PREFS
+found key :caption Préférences
+found key :y 3
+found key :itemlist
+    => value :   Sauvegarde automatique
+    => value :   Afficher les unités au-dessus des villes
+    => value :   Afficher nourriture et boucliers sur la carte
+    => value :   Afficher le disque de couleur de l'équipe
+    => value :   Toujours attendre à la fin d'un tour
+    => value :   Animer les combats
+    => value :   Animer nos mouvements manuels
+    => value :   Afficher nos mouvements manuels
+    => value :   Animer nos mouvements automatiques
+    => value :   Afficher nos mouvements automatiques
+    => value :   Animer les mouvements amis
+    => value :   Afficher les mouvements amis
+    => value :   Animer les mouvements ennemis
+    => value :   Afficher les mouvements ennemis
+    => value :   Mode didacticiel
+    => value :   Annuler les ordres de l'unité de combat amie
+    => value :   Annuler les ordres de l'unité de combat ennemie
+    => value :   Demander les ordres de construction une fois l'unité terminée
+    => value :   Toujours recommencer la construction de l'unité précédemment construite
+    => value :   Afficher l'avertissement d'émeute
+    => value :   Afficher le pointeur de la Civilopédia
+    => value :   Gouverneur de la capitale par défaut pour les nouvelles villes
+    => value :   Affichage adapté aux daltoniens
+    => value :   Afficher l'ombrage du nombre de population de la ville
+    => value :   Afficher l'avertissement de construction d'une merveille
+    => value :   Désactiver l'avertissement de limite de population
+    => value :   Toujours renégocier les accords
+found key :REALLYQUIT
+found key :wave 43
+found key :caption Oh non!
+    => value :Voulez-vous vraiment quitter la partie?
+found key :itemlist
+    => value :Non, pas vraiment.
+    => value :Oui, sur-le-champ!
+found key :REALLYRETIRE
+found key :xs 320
+found key :caption Oh, allez.
+    => value :Etes-vous prêt(e) à abdiquer?
+    => value :Non. Pourquoi?
+    => value :Oui, que ce cauchemar prenne fin.
+found key :LOADGAME
+found key :xs 320
+found key :caption Partie sauvegardée
+    => value :^^Niveau de difficulté: $DIFF0
+    => value :^^$TITLE1 $LEADER2 des $CIVNOUN3
+    => value :^^$DATE4
+found key :GAMEOVERMAN
+found key :xs 440
+found key :caption Eh, c'est fini!
+    => value :Voilà, la partie est terminée. Aucun autre score ne sera marqué.
+    => value :Parfait! J'ai terminé!
+    => value :Non, laissez-moi encore jouer quelques tours...
+found key :END_GAME_WIN
+found key :caption Victoire!!
+found key :text
+    => value :^Vous avez obtenu $TYPE0
+found key :END_GAME_WIN2
+found key :caption félicitations!
+found key :text
+    => value :^La partie est terminée et vous êtes vainqueur!
+found key :END_GAME_LOSS
+found key :caption Honte à vous!
+    => value :^Vous avez subi $TYPE0
+found key :GMENU_MAIN
+found key :caption Menu principal
+found key :itemlist
+    => value :Carte
+    => value :Charger partie [(Ctrl-L)]
+    => value :Nouvelle partie [(Ctrl-Shift-Q)]
+    => value :Préférences [(Ctrl-P)]
+    => value :Préférences audio [(Shift-S)]
+    => value :Abdiquer [(Ctrl-Q)]
+    => value :Sauvegarder partie [(Ctrl-S)]
+    => value :Quitter partie [(Echap)]
+found key :COMMENT canned 09/16 - JS
+found key :GMENU_INFO
+found key :caption Ecrans d'information
+found key :itemlist
+    => value :Ecran des graphiques [(F8)]
+    => value :Ecran du palais [(F9)]
+    => value :Ecran du vaisseau [(F10)]
+    => value :Ecran de démographie [(F11)]
+found key :GOTO_CITY
+found key :caption Rejoindre la ville
+found key :itemlist
+found key :GMENU_MAP
+found key :caption Carte
+found key :itemlist
+    => value :Commandes de la grille [(Ctrl-G)]
+    => value :Centrer l'écran [(C)]
+    => value :Nettoyer la carte [(Ctrl-Shift-M)]
+    => value :Localiser une ville [(Shift-L)]
+    => value :$ZOOM0 [(Z)]
+found key :GMENU_MISC
+found key :caption Divers
+found key :itemlist
+    => value :A propos de Civilization III
+found key :ABOUT_CIV3
+found key :caption A propos de Civilization III
+    => value :Civ 3 est passé par là...
+    => value :^Ecrivez-moi.
+found key :DAWN_OF_MAN
+found key :caption L'aube de la civilisation
+found key :xs 400
+found key :y 10
+    => value :^Nous sommes en 4 000 av. J.-C. Vos ancêtres étaient nomades. Mais au fil des générations, votre peuple a appris les
+    => value :secrets de l'[agriculture], de la [construction de route] et de l'[irrigation] et peut désormais se sédentariser.
+    => value :^
+    => value :^{$PLAYER0}, votre tribu est {$STRENGTHS4} et a récemment maîtrisé de nouveaux savoirs: $TECHS3.
+    => value :^
+    => value :^Le peuple vous a investi du [pouvoir absolu] car il estime que vous seul(e) pouvez fonder une civilisation capable de résister à l'épreuve du temps!
+found key :DAWN_OF_MAN_NO_BONUS
+found key :caption L'aube de la civilisation
+found key :xs 400
+found key :y 10
+    => value :^Nous sommes en 4 000 av. J.-C. Vos ancêtres étaient nomades. Mais au fil des générations, votre peuple a appris les
+    => value :secrets de l'[agriculture], de la [construction de route] et de l'[irrigation] et peut désormais se sédentariser.
+    => value :^
+    => value :^{$PLAYER0}, votre tribu a récemment maîtrisé les savoirs suivants: $TECHS3. Si vous exploitez ces connaissances avec discernement,
+    => value :vous pourrez bâtir une civilisation capable de résister à l'épreuve du temps.
+found key :DAWN_OF_MAN_NO_TECHS
+found key :caption L'aube de la civilisation
+found key :xs 400
+found key :x -5
+found key :y -5
+    => value :{$PLAYER0}, votre tribu est {$STRENGTHS4} et connaît les secrets de l'[agriculture, de la construction de route
+    => value :et de l'irrigation] qui lui ont permis des réalisations grandioses et promettent des lendemains glorieux.
+    => value :Si vous exploitez ces connaissances avec discernement, $PLAYER0, vous pourrez bâtir une civilisation
+    => value :capable de résister à l'épreuve du temps.
+found key :DAWN_OF_MAN_BARE
+found key :caption L'aube de la civilisation
+found key :xs 400
+found key :x -5
+found key :y -5
+    => value :{$PLAYER0}, votre tribu connaît les secrets de l'[agriculture, de la construction de route
+    => value :et de l'irrigation] qui lui ont permis des réalisations grandioses et promettent des lendemains glorieux.
+    => value :Si vous exploitez ce savoir avec discernement, $PLAYER0, vous pourrez bâtir une civilisation capable de résister à l'épreuve du temps.
+found key :RETIREWARNING
+found key :xs 440
+found key :caption Fin de la partie
+    => value :^^
+    => value :^^FIN DE MANDAT OBLIGATOIRE!
+    => value :^^
+    => value :^^LA PARTIE S'ACHEVERA EN $YEAR0
+    => value :^^
+found key :TIMELIMIT
+found key :xs 440
+found key :caption Fin de la partie
+    => value :^^
+    => value :^^FIN DE MANDAT OBLIGATOIRE!
+    => value :^^
+    => value :^^$YEAR0
+    => value :^^
+    => value :^^FIN DE LA PARTIE
+    => value :^^
+    => value :^^VAINQUEUR AUX POINTS: $CIVNAME1
+    => value :^^
+found key :DIPLOVICTORYVOTEOPTION
+found key :caption Vote des Nations-Unies
+    => value :Voulez-vous organiser l'élection du Secrétaire-général de l'ONU?
+found key :itemlist
+    => value :Oui.
+    => value :Non.
+found key :DIPLOVICTORYVOTE
+found key :xs 400
+found key :caption Election du Secrétaire-général de l'ONU...
+found key :DIPLOVICTORYVOTERESULTS
+found key :xs 400
+found key :caption Résultats du vote...
+found key :NODIPLOVICTORY
+found key :caption Résultats du vote...
+    => value :Ballottage: aucune majorité ne s'est dégagée.
+found key :REVOLUTIONNOTAVAILABLE
+found key :advisor Intérieur Triste
+    => value :Nous ne pourrons déclencher une révolution que lorsque nous connaîtrons d'autres régimes politiques.
+found key :REVOLUTION
+found key :advisor Intérieur Etonné
+    => value :Le peuple a renversé notre $GOVERNMENT0. Notre civilisation sombre dans l'anarchie!
+found key :ALREADYREVOLTING
+found key :advisor Intérieur En colère
+    => value :Mais enfin! Nous sommes déjà en pleine révolution!
+    => value :^
+    => value :^Auriez-vous oublié de prendre votre traitement?
+found key :HURRY_CIVIL_DISORDER
+found key :advisor Intérieur En colère
+    => value :Impossible de lancer des travaux urgents tant qu'il y a des opposants dans la ville.
+found key :HURRY_RESISTANCE
+found key :advisor Intérieur En colère
+    => value :Nous ne pouvons accélérer la production dans une ville en pleine émeute.
+found key :HURRY_CANNOT
+found key :advisor Intérieur Triste
+    => value :Impossible d'accélérer le projet $IMPROVEMENT_WONDER_OR_UNIT0.
+found key :HURRY_UNAVAILABLE
+found key :advisor Intérieur En colère
+    => value :Notre régime actuel ne nous autorise pas les $LINK<travaux d'urgence=GCON_Hurry>.
+found key :HURRY_NOT_ENOUGH_PEOPLE
+found key :advisor Intérieur Triste
+    => value :Accélérer ce projet entraînerait la perte de trop de citoyens.
+found key :GOVERNMENT_CANNOT_HURRY
+found key :advisor Intérieur En colère
+    => value :Nous sommes en pleine révolution: impossible d'accélérer la production.
+found key :HURRY_NOT_NECESSARY
+found key :advisor Intérieur Heureux
+    => value :Il est inutile d'accélérer cette production.
+found key :SUMMARY_LOW_TREASURY
+found key :advisor Intérieur Triste
+    => value :Le niveau du trésor est dangereusement bas!
+found key :SUMMARY_GOLDEN_AGE
+found key :advisor Intérieur Heureux
+    => value :Notre glorieuse civilisation vient d'entrer dans un Age d'or!
+found key :SUMMARY_END_GOLDEN_AGE
+found key :advisor Intérieur Triste
+    => value :L'Age d'or de notre civilisation vient de s'achever. C'est du moins ce qu'affirment les experts...
+found key :SUMMARY_NEW_SMALL_WONDER
+found key :advisor Intérieur Heureux
+    => value :Notre population veut construire la petite merveille appelée $SMALL_WONDER0! C'est peut-être une bonne idée...
+found key :WONDERCHANGE
+found key :map_center 0
+found key :advisor Intérieur
+    => value :$CITY0 ne pouvant plus travailler sur le projet $LINK0, cette ville s'est lancée dans le projet $LINK1.
+found key :itemlist
+    => value :Zoom sur la ville.
+    => value :Cela semble parfait.
+found key :WONDERPRODUCE
+found key :map_center 0
+found key :advisor Intérieur
+    => value :$CITY0, ville de nos rivaux $CIVADJ1, vient d'achever le grand projet $LINK0.
+found key :SETTLEMENTTOONEAR
+found key :xs 320
+found key :wave 3
+found key :advisor Intérieur Triste
+    => value :Nous ne pouvons construire de villes aussi proches l'une de l'autre.
+found key :MIMIMI
+found key :xs 320
+found key :advisor Intérieur Triste
+    => value :^Cette opération remplacera un aménagement de terrain antérieur ($MINE_OR_IRRIGATION0).
+    => value :Souhaitez-vous continuer?
+    => value :Annuler l'action.
+    => value :Continuer.
+found key :DISBAND_NONCOM
+found key :advisor Intérieur 
+found key :xs 320
+    => value :Dissoudre l'unité de $UNIT0?
+    => value :Pardonnez-moi, mais ils sont avec NOUS. Voulez-vous vraiment dissoudre cette unité?
+found key :itemlist
+    => value :Oui, il le faut!
+    => value :Non. Vous devez avoir raison.
+found key :MELTDOWN
+found key :map_center 0
+found key :advisor Intérieur Triste
+found key :xs 440
+found key :text
+    => value :A $CITY0, la centrale nucléaire a causé une catastrophe:
+    => value :on compte des milliers de morts et la pollution a fortement réduit la production!
+found key :itemlist
+    => value :Zoom sur la ville.
+    => value :Oh, je m'attendais à pire!
+found key :ABANDONBASE
+found key :map_center 0
+found key :xs 320
+found key :advisor Intérieur En colère
+    => value :Pas de croissance à $CITY0, or cette ville ne pourra construire une unité de $UNIT1 que si sa population augmente.
+    => value :Que devons-nous faire?
+found key :itemlist
+    => value :Retarder la production.
+    => value :Zoom sur $CITY0.
+    => value :Laisser tomber $CITY0.
+found key :CONFIRM_ABANDON_CITY
+found key :advisor Intérieur En colère
+    => value :Etes-vous sûr de vouloir abandonner $CITY0?
+found key :itemlist
+    => value :Oui, cette ville n'a plus d'intérêt.
+    => value :Non. Autant pour moi.
+found key :active 1
+found key :MAINTSHORT
+found key :map_center 1
+found key :xs 400
+found key :wave 24
+found key :advisor Intérieur En colère
+found key :text
+    => value :Il n'est plus possible d'entretenir l'amélioration $IMPROVEMENT0 à $CITY1. Nous devons faire plus attention au trésor!
+found key :itemlist
+    => value :Entendu
+    => value :Quelle est la vue d'ensemble?
+found key :NEW_GOVERNMENT_AVAILABLE
+found key :advisor Intérieur Etonné
+found key :text
+    => value :$RULER_TITLE0, la population réclame l'adoption du régime appelé
+    => value :^^$LINK0.
+    => value :^Devons-nous encourager une révolution?
+found key :itemlist
+    => value :Dites-m'en plus sur les régimes.
+    => value :Oui, que la révolution commence!
+    => value :Non. Conservons le régime actuel.
+found key :active 2
+found key :IMPROVEMENT_COMPLETE
+found key :map_center 1
+found key :advisor Intérieur Heureux
+found key :text
+    => value :$RULER_TITLE0, $CITY1 a produit l'amélioration
+    => value :^^$LINK0.
+    => value :^Cette ville doit-elle commencer le projet
+    => value :^^$DROPLINK0?
+found key :itemlist
+    => value :Zoom sur [$CITY1].
+    => value :OK.
+found key :active 1
+found key :WONDERSPLASH
+    => value :$RULER_TITLE0, $CITY1 a achevé la construction de l'amélioration $LINK0.
+found key :IMPROVEMENT_SCRAP
+found key :advisor Intérieur Triste
+found key :text
+    => value :Voulez-vous vraiment vendre cette amélioration pour $NUM0 unités d'or et $NUM1 $<#1:bouclier:boucliers>?
+found key :itemlist
+    => value :Oui, vraiment.
+    => value :Après mûre réflexion, non...
+found key :VERBOSE_DISEASE_UNKNOWN
+found key :map_center 0
+found key :advisor Intérieur Triste
+found key :text
+    => value :$RULER_TITLE1, la $LINK<maladie=GCON_Disease> a frappé $CITY0 et décime la population. Nos $WISEMEN2 sont dépassés
+    => value :et ne parviennent pas à déterminer l'origine de ce fléau...
+found key :itemlist
+    => value :Continuer.
+    => value :Zoom sur la ville.
+found key :VERBOSE_DISEASE_TERRAIN
+found key :map_center 0
+found key :advisor Intérieur Triste
+found key :text
+    => value :$RULER_TITLE1, à $CITY0, les citoyens meurent de $LINK<maladie=GCON_Disease>. Selon nos $WISEMEN2, l'insalubrité du
+    => value :terrain environnant ([$TERRAIN3]) en est la cause.
+found key :itemlist
+    => value :Zoom sur la ville.
+    => value :Continuer.
+found key :active 1
+found key :POPULATION_LIMIT
+found key :map_center 1
+found key :advisor Intérieur Heureux
+found key :text
+    => value :$RULER_TITLE0, $CITY1 ne possède pas les infrastructures lui permettant d'accueillir une plus vaste population. Il lui faut
+    => value :un [$IMPROVEMENT2]. Le projet actuel de $CITY1 est: [$IMPROVEMENT_WONDER_OR_UNIT3] ; faut-il le remplacer par un [$IMPROVEMENT2]?
+found key :itemlist
+    => value :Oui, changer immédiatement.
+    => value :Laissons $CITY1 terminer son projet actuel avant d'y construire un [$IMPROVEMENT2].
+    => value :$CITY1 se débrouille très bien. N'intervenons pas.
+    => value :Non, et qu'on ne me le demande plus !
+found key :active 2
+found key :CONFIRMREVOLUTION
+found key :advisor Intérieur
+    => value :Souhaitez-vous réellement déclencher une révolution?
+found key :itemlist
+    => value :Oui. Tout se passera bien.
+    => value :Non. C'est hors de question.
+found key :CONFIRMSWITCH
+found key :advisor Intérieur Heureux
+    => value :Vous avez bien conscience que l'abandon du projet $IMPROVEMENT_WONDER_OR_UNIT0 entraînera la perte de $NUM0 $<#0:bouclier:boucliers>.
+found key :itemlist
+    => value :C'est dommage, mais il le faut.
+    => value :Tant que ça? Dans ce cas, non...
+found key :HURRY_PEOPLE
+found key :advisor Intérieur Triste
+found key :text
+    => value :L'accélération du projet $IMPROVEMENT_WONDER_OR_UNIT0 risque de coûter la vie à $NUM0 citoyens.
+found key :itemlist
+    => value :Je tiens à ce projet. Faites donner le fouet!
+    => value :Oh, vraiment? Oublions ce projet, alors.
+found key :HURRY_NOT_ENOUGH_GOLD
+found key :advisor Intérieur En colère
+    => value :Mmh... il nous faudrait $NUM0 unités d'or pour ça.
+found key :HURRY_GOLD
+found key :advisor Intérieur Etonné
+found key :text
+    => value :Vous y tenez vraiment? Accélérer le projet $IMPROVEMENT_WONDER_OR_UNIT0 va nous coûter $NUM0 unités d'or...
+found key :itemlist
+    => value :Cessez de discuter. Commencez à compter!
+    => value :C'est effectivement un peu cher. Laissons tomber.
+found key :CONFIRMCANCELTERRAFORM
+found key :advisor Intérieur
+    => value :Cette unité de travailleurs aura achevé dans $NUM0 tours l'ordre actuel ($ORDERS0).
+    => value :^Voulez-vous lui ordonner de s'arrêter?
+found key :itemlist
+    => value :Oui. Il y a des tâches plus importantes.
+    => value :Non. Qu'ils continuent.
+found key :CANCELGOVCITIZENS
+found key :advisor Intérieur
+    => value :Voulez-vous vraiment que le gouverneur de cette ville cesse de gérer ses citoyens?
+found key :itemlist
+    => value :Oui.
+    => value :Non.
+found key :active 1
+found key :DISORDER_REPORT_ENTERTAINERS
+found key :map_center 1
+found key :advisor Intérieur En colère
+found key :wave 1
+found key :text
+    => value :[$CITY1 ne produit plus rien car la population passe son temps à manifester!]
+    => value :^Les gens réclament des distractions, des produits de luxe et des améliorations urbaines...
+    => value :^Qu'allons-nous faire?
+found key :itemlist
+    => value :Je m'occuperai des "gens" de cette ville plus tard.
+    => value :Donnez-leur des distractions.
+    => value :Zoom sur $CITY1.
+found key :active 1
+found key :DISORDER_REPORT
+found key :map_center 1
+found key :advisor Intérieur En colère
+found key :wave 1
+found key :text
+    => value :Barricades à $CITY1.
+    => value :^C'est l'émeute générale!
+    => value :^Qu'allons-nous faire?
+found key :itemlist
+    => value :Pas d'inquiétude. Je m'occuperai de cette ville plus tard.
+found key :itemindex 2
+    => value :Zoom sur $CITY1.
+found key :active 0
+found key :DISORDER_REPORT_ENTERTAINERS_WAR
+found key :map_center 1
+found key :advisor Intérieur En colère
+found key :wave 1
+found key :text
+    => value :[$CITY1 a cessé toute production!]
+    => value :^Les gens manifestent contre la guerre.
+    => value :^Que devons-nous faire?
+found key :itemlist
+    => value :Laissez-les faire. Ils vont se lasser.
+    => value :Donnez-leur des distractions.
+    => value :Zoom sur $CITY1.
+found key :active 1
+found key :DISORDER_REPORT_WAR
+found key :map_center 1
+found key :advisor Intérieur Triste
+found key :wave 1
+found key :text
+    => value :Je suis au regret d'annoncer [l'arrêt de toute production à $CITY1.]
+    => value :^Les gens manifestent contre la guerre.
+    => value :^Que devons-nous faire?
+found key :itemlist
+    => value :Qu'ils manifestent tant qu'il leur plaît!
+found key :itemindex 2
+    => value :Zoom sur $CITY1.
+found key :active 0
+found key :NOSUPPORT
+found key :xs 320
+found key :wave 24
+found key :advisor Militaire En colère
+    => value :Nous manquons d'or pour continuer à entretenir toutes nos unités.
+    => value :^Une unité de $UNIT1 va être dissoute (et quelqu'un ferait bien de garder un oeil sur le trésor...).
+found key :WHICHICON
+found key :caption Action?
+    => value :Que souhaitez-vous faire?
+found key :SUMMARY_BARBARIAN_EXPLOSION_CITY
+found key :advisor Militaire Etonné
+    => value :$CITY0 fait état de nombreux raids barbares dans son voisinage!
+found key :BARBARIAN_CAPTURE_CITY_PRODUCTION
+found key :map_center 0
+found key :advisor Militaire En colère
+found key :wave 0
+    => value :Des $BARBARIAN1 ont $LINK<pillé=GCON_Barbarians> $CITY0!
+    => value :Nos travaux sur le projet $IMPROVEMENT_WONDER_OR_UNIT2 ont été anéantis!
+found key :BARBARIAN_CAPTURE_CITY_POPULATION
+found key :map_center 0
+found key :advisor Militaire En colère
+found key :wave 0
+    => value :Des $BARBARIAN1 ont $LINK<pillé=GCON_Barbarians> $CITY0!
+    => value :Une partie des habitants a péri!
+found key :BARBARIAN_CAPTURE_CITY_GOLD
+found key :map_center 0
+found key :advisor Militaire En colère
+found key :wave 0
+    => value :Des $BARBARIAN1 ont $LINK<mis à sac=GCON_Barbarians> $CITY0!
+    => value :Ils ont emporté $NUM0 unités d'or! Nous [devons renforcer] notre potentiel militaire!
+found key :BARBARIAN_DESTROY_WALLS
+found key :map_center 1
+found key :advisor Militaire En colère
+found key :wave 0
+    => value :Les $BARBARIAN2 ont attaqué $CITY1! Ils ont détruit les murailles de la ville !
+    => value :Il faut absolument renforcer nos troupes. Je vous en prie!
+found key :COLONY_BARBS
+found key :advisor Militaire En colère
+    => value :Notre colonie exploitant la ressource $RESOURCE0 a été envahie par des $BARBARIAN1. Nous devrions mieux protéger nos colonies!
+found key :COLONY_CIV
+found key :advisor Militaire En colère
+    => value :$CITY2 signale que les odieux $CIVNOUN1 ont envahi notre colonie exploitant la ressource $RESOURCE0. Nous devrions défendre nos colonies!
+found key :WE_CONVERT_CITY
+found key :map_center 1
+found key :advisor Militaire Heureux
+    => value :$RULER_TITLE0, à $CITY1, des citoyens loyaux ont $LINK<renversé=GCON_Conversion> leurs oppresseurs et pris contact avec nous!
+    => value :Ils souhaitent se joindre à notre empire.
+found key :itemlist
+    => value :Excellent! Qu'on installe un nouveau gouverneur dans cette ville.
+    => value :$CITY1 n'a aucun intérêt. Oublions ces rebelles.
+found key :WE_CONVERT_CITY_WITH_WONDER
+found key :map_center 1
+found key :advisor Militaire Heureux
+    => value :$RULER_TITLE0, à $CITY1, les citoyens ont $LINK<renversé=GCON_Conversion> leurs oppresseurs et souhaitent nous rejoindre!
+    => value :^N'oubliez pas que cette ville abrite la merveille $WONDER3!
+found key :itemlist
+    => value :Waouh! Dépêchez-y vite un nouveau gouverneur!
+    => value :Merveille ou pas, $CITY1 ne m'intéresse pas.
+found key :THEY_REFUSED_TO_CONVERT_CITY
+found key :map_center 1
+found key :advisor Militaire Heureux
+    => value :$RULER_TITLE0, à $CITY1, le peuple s'est soulevé
+    => value :et $LINK<demande à rejoindre=GCON_Conversion> les $CIVNOUN3!
+    => value :^Cependant, les responsables $CIVADJ2 ont rejeté cette requête!
+    => value :^$CITY1 est donc de nouveau sous notre contrôle!
+found key :THEY_CONVERT_CITY
+found key :map_center 1
+found key :advisor Militaire En colère
+found key :wave 2
+    => value :Une nouvelle affligeante, $RULER_TITLE0!
+    => value :^A $CITY1, la population a $LINK<déposé=GCON_Conversion> notre gouverneur et demandé à rejoindre les rangs de ces misérables $CIVNOUN2!
+    => value :^$CITY1 semble "admirer" la prétendue "culture" des $CIVNOUN2... C'est incompréhensible.
+found key :THEY_CONVERT_CITY_WITH_WONDER
+found key :map_center 1
+found key :advisor Militaire En colère
+found key :wave 2
+    => value :Une nouvelle catastrophique, $RULER_TITLE0!
+    => value :^A $CITY1, la population a $LINK<déposé=GCON_Conversion> notre gouverneur et demandé à rejoindre les rangs de ces misérables $CIVNOUN2!
+    => value :^Cette trahison, $RULER_TITLE0, nous vaut la perte de la merveille $WONDER3!
+found key :WE_DESTROY_CITY_GOLD
+found key :map_center 1
+found key :advisor Militaire Heureux
+    => value :$RULER_TITLE0, une fois de plus, nos glorieuses armées sont [victorieuses!]
+    => value :^Nous avons détruit $CITY1 et "libéré" $NUM0 unités d'or.
+found key :THEY_DESTROY_CITY_GOLD
+found key :map_center 1
+found key :advisor Militaire En colère
+    => value :Une nouvelle catastrophique, $RULER_TITLE0!
+    => value :^Les odieux $CIVNOUN2 ont dérobé [$NUM0 unités d'or] à $CITY1 et réduit la ville en cendres!
+    => value :^Nous devrions leur faire payer cher ces atrocités!
+found key :WE_CAPTURE_CITY_GOLD
+found key :map_center 1
+found key :advisor Militaire Heureux
+    => value :$RULER_TITLE0, une fois de plus, nos glorieuses armées sont [victorieuses!]
+    => value :^Nous avons capturé $CITY1 et "libéré" $NUM0 unités d'or.
+found key :itemlist
+    => value :Excellent! Qu'on installe un nouveau gouverneur dans cette ville.
+    => value :Je ne veux pas de cette ville. Rasez-la!
+found key :SEIZE_CITY_WITH_WONDER
+found key :map_center 1
+found key :advisor Militaire Heureux
+    => value :$RULER_TITLE0, nos glorieuses armées ont encore remporté la victoire!
+    => value :^Nous avons pris $CITY1 et y avons "libéré" $NUM0 unités d'or.
+    => value :^Grâce à cette conquête nous contrôlons désormais la merveille $WONDER3!
+found key :itemlist
+    => value :Excellent! Qu'on installe un nouveau gouverneur dans cette ville.
+    => value :Je ne veux pas de cette ville. Rasez-la!
+found key :THEY_RAZE_CITY_GOLD
+found key :map_center 1
+found key :advisor Militaire En colère
+found key :wave 2
+    => value :Une nouvelle accablante, $RULER_TITLE0!
+    => value :^Les odieux $CIVNOUN2 ont dérobé [$NUM0 unités d'or] à $CITY1 et réduit la ville en cendres!
+    => value :^Nous devrions leur faire payer cher ces atrocités!
+found key :CITY_RAZED_WITH_WONDER
+found key :map_center 1
+found key :advisor Militaire En colère
+    => value :Catastrophe, $RULER_TITLE0!
+    => value :^$CITY1 a été réduite en cendres par les [odieux $CIVNOUN2!]
+    => value :^Ils y ont volé [$NUM0 unités d'or] et [détruit la merveille $WONDER3!]
+    => value :^Ce sont des monstres! Traitons-les comme ils le méritent.
+found key :THEY_CAPTURE_CITY_GOLD
+found key :map_center 1
+found key :advisor Militaire En colère
+found key :wave 2
+    => value :Une nouvelle tragique, $RULER_TITLE0!
+    => value :^Les [odieux $CIVNOUN2] ont capturé $CITY1!
+    => value :^Ils ont vidé les coffres et emporté [$NUM0 unités d'or].
+found key :CITY_LOST_WITH_WONDER
+found key :map_center 1
+found key :advisor Militaire En colère
+    => value :Une tragédie est arrivée, $RULER_TITLE0!
+    => value :^Les [odieux $CIVNOUN2] ont pris $CITY1 et avec cette ville, la merveille $WONDER3!
+    => value :^Ils y ont également volé [$NUM0 unités d'or].
+    => value :^Nous devons leur faire payer ça!
+found key :RESISTERS
+found key :map_center 2
+found key :advisor Militaire En colère
+    => value :$RULER_TITLE0, $CITY1 compte $NUM0 $<#0:opposant:opposants>.
+    => value :^Nous devrions placer en garnison de puissantes unités à $CITY1 afin de mater cette opposition.
+found key :CIV_DESTROYED_BY_PLAYER
+found key :advisor Militaire Heureux
+found key :text
+    => value :$RULER_TITLE2, nous avons détruit les $CIVNOUN0, dont le niveau de culture est $CULTURAL_LEVEL3.
+found key :itemlist
+    => value :Quelle est la vue d'ensemble?
+    => value :Bien! Ils le méritaient. Continuons ainsi...
+found key :active 1
+found key :DISBAND
+found key :xs 320
+found key :advisor Militaire Etonné
+    => value :Dissoudre cette unité de $UNIT0?
+    => value :^Sauf votre respect, l'attaque [est] la meilleure défense.
+    => value :^Y tenez-vous vraiment?
+found key :itemlist
+    => value :Oui, il le faut!
+    => value :Non. Vous devez avoir raison.
+found key :UPGRADE
+found key :xs 320
+found key :advisor Militaire Heureux
+    => value :Mettre à niveau ces $UNIT0 en $UNIT1 pour $NUM0 unités d'or?
+found key :itemlist
+    => value :Oui.
+    => value :Non.
+found key :NO_UNITS_TO_UPGRADE_ALL
+found key :advisor Militaire Triste
+    => value :Nous ne possédons aucune unité de $UNIT0 susceptible d'être mise à niveau!
+found key :NO_GOLD_TO_UPGRADE_ALL
+found key :advisor Militaire Triste
+    => value :Il nous faudrait $NUM0 unités d'or pour réaliser toutes les mises à niveau!
+found key :UPGRADE_ALL
+found key :advisor Militaire Heureux
+    => value :Mettre à niveau toutes les unités de $UNIT0 ($NUM0 au total) pour $NUM1 unités d'or?
+found key :itemlist
+    => value :Oui.
+    => value :Non.
+found key :CONFIRMWAR
+found key :advisor Militaire En colère
+    => value :Détruisons-les!
+found key :itemlist
+    => value :Vous avez raison! Ce [sont] des misérables!
+    => value :Non. Nous devons respecter nos voisins.
+found key :active 1
+found key :OURNUKEFAILED
+found key :advisor Militaire En colère
+    => value :Notre [coûteux] missile nucléaire a été intercepté par leur +#@%! @+!#% d'[IDS]!
+found key :THEIRNUKEFAILEDBYUS
+found key :advisor Militaire Heureux
+    => value :L'un des missiles nucléaires $CIVADJ0 a été détruit par notre [magistrale IDS]!
+found key :THEIRNUKEFAILEDBYOTHERS
+found key :advisor Militaire Triste
+    => value :Le missile nucléaire des combattants $CIVADJ0 a été abattu par l'IDS des soldats $CIVADJ1!
+found key :MUTUALPROTECTIONOURWAR
+found key :advisor Diplomatique En colère
+    => value :La civilisation "$CIVNAME0" a attaqué nos "frères" de la civilisation "$CIVNAME1". Notre $LINK<pacte de protection mutuelle=GCON_Agreements> exige
+    => value :que nous déclarions la guerre à la civilisation "$CIVNAME0".
+found key :MUTUALPROTECTIONWARONUS
+found key :advisor Diplomatique En colère
+    => value :A cause de notre juste croisade contre cette civilisation geignarde appelée $CIVNAME0, les idiots qui composent la civilisation "$CIVNAME1" se sont bêtement senti obligés de nous déclarer la guerre!
+    => value :^Ils avaient conclu un $LINK<pacte de protection mutuelle=GCON_Agreements>!
+found key :MILITARYALLIANCEOURWAR
+found key :advisor Diplomatique Heureux
+    => value :Un accord avec la civilisation "$CIVNAME0" nous oblige à punir la civilisation "$CIVNAME1". Nous déclarons donc la guerre à la civilisation "$CIVNAME1". 
+found key :MILITARYALLIANCEWARONUS
+found key :advisor Diplomatique En colère
+    => value :Les misérables citoyens de la civilisation "$CIVNAME0" et ceux de l'odieuse civilisation "$CIVNAME1" nous ont déclaré la guerre! Ils ont conclu une alliance militaire pour nous détruire!
+found key :MAKEPEACE
+found key :advisor Diplomatique Heureux
+    => value :$CIVNAME0 et $CIVNAME1 ont signé un traité de paix.
+found key :MUTUALPROTECTIONPACT
+found key :advisor Diplomatique
+    => value :$CIVNAME0 et $CIVNAME1 ont signé un pacte de protection mutuelle.
+found key :MILITARYALLIANCEAGAINSTUS
+found key :advisor Diplomatique
+    => value :$CIVNAME0 et $CIVNAME1 ont conclu une alliance militaire contre nous.
+found key :MILITARYALLIANCE
+found key :advisor Diplomatique
+    => value :$CIVNAME0 et $CIVNAME1 ont conclu une alliance militaire contre la civilisation "$CIVNAME2".
+found key :TRADEEMBARGO
+found key :advisor Diplomatique En colère
+    => value :$CIVNAME0 et $CIVNAME1 ont signé un embargo commercial contre nous.
+    => value :^Ne vous avais-je pas dit qu'ils n'étaient que des misérables?
+found key :TRADEEMBARGOENDS
+found key :advisor Diplomatique Heureux
+    => value :L'embargo commercial conclu entre $CIVNAME0 et $CIVNAME1 contre nous a pris fin.
+found key :SUMMARY_CIV_DESTROYED_BY_CIV
+found key :advisor Diplomatique Triste
+    => value :Les redoutables combattants $CIVADJ1 ont détruit les $CIVNOUN0.
+found key :SUMMARY_CIV_DESTROYED
+found key :advisor Diplomatique Heureux
+    => value :Les $CIVNOUN0 ont été détruits.
+found key :SUMMARY_THEY_DECLARE_WAR_ON_US
+found key :advisor Diplomatique En colère
+    => value :Les $CIVNOUN0 nous ont déclaré la guerre!
+found key :SUMMARY_DECLARE_WAR
+found key :advisor Diplomatique Etonné
+    => value :La civilisation "$CIVNAME0" a déclaré la guerre aux $CIVNOUN1.
+found key :TECH_MUST_SELECT_FOR_STEALING
+found key :map_center 1
+found key :advisor Diplomatique Heureux
+    => value :Notre agent à $CITY1 veut savoir quel domaine de recherche vous intéresse, $RULER_TITLE0.
+found key :TECH_THEFT_CONFIRMATION
+found key :advisor Diplomatique Heureux
+    => value :$RULER_TITLE0, voulez-vous que nous volions ceci: $LINK0?
+found key :TECH_HAS_NOT_LEARNED
+found key :advisor Diplomatique Heureux
+    => value :$RULER_TITLE0, leur $TITLE1 $LEADER2 ne comprend pas ces secrets.
+found key :TECH_ALREADY_LEARNED_STEALING
+found key :advisor Diplomatique Heureux
+    => value :$RULER_TITLE0, nous connaissons déjà ces secrets.
+found key :NODIPLOMACY
+found key :advisor Diplomatique En colère
+    => value :Les $CIVNOUN0 ont repoussé notre émissaire!
+found key :FA_NO_KNOWLEDGE
+    => value :Hélas, nous ignorons tout des moyens militaires $CIVADJ0.
+found key :FA_BEST_UNIT
+    => value :La meilleure unité des $CIVNOUN0 est [-- à notre connaissance --] celle des $UNIT1.
+found key :FA_CULTURAL
+    => value :Les citoyens $CIVADJ0 sont [$CULTURAL_OPINION1] notre culture.
+found key :FA_NO_CAN_TRADE
+    => value :Impossible de commercer avec les citoyens $CIVADJ0. Il nous faudrait une $LINK<route commerciale viable=GCON_Trade>.
+found key :FA_IMPORT_GOOD
+    => value :Si vous le souhaitez, nous pouvons commercer avec les $CIVNOUN0. Leurs ressources en $RESOURCES1 ne manquent pas d'intérêt.
+found key :FA_NO_SURPLUS
+    => value :Malheureusement, les $CIVNOUN0 ne possèdent pas de surplus de ressources à échanger.
+found key :FA_WE_NO_SURPLUS
+    => value :Nous n'avons aucun surplus de marchandises a échanger avec les $CIVNOUN0.
+found key :FA_EXPORT_GOOD
+    => value :Les $CIVNOUN0 pourraient être intéressés par nos ressources en $RESOURCES1.
+found key :FA_HAPPINESS_1
+    => value :Les $CIVNOUN0 sont $MOOD1 envers nous.
+found key :FA_HAPPINESS_2
+    => value :Les $CIVNOUN0 sont $MOOD1 à notre égard.
+found key :CONFIRMDIPLOMACY 
+found key :advisor Diplomatique Heureux
+    => value :Les $CIVNOUN0 ont demandé audience. Les recevrez-vous?
+found key :itemlist
+    => value :Bien sûr, écoutons-les.
+    => value :Non, plus tard!
+found key :CONFIRMRENEGOTIATEPEACE
+found key :advisor Diplomatique Etonné
+    => value :Pensez-vous qu'il soit vraiment opportun de renégocier la paix?
+found key :itemlist
+    => value :Oui. Absolument.
+    => value :Non, peut-être pas.
+found key :active 1
+found key :DECLARE_WAR
+found key :advisor Diplomatique Triste
+found key :text
+    => value :$RULER_TITLE1, ceci entraînera la guerre avec les citoyens $CIVADJ0.
+    => value :^Est-ce vraiment ce que vous voulez?
+found key :itemlist
+    => value :Faites comme [J'AI DIT!]
+    => value :Non, vous avez raison, cela mérite réflexion.
+found key :active 1
+found key :VERBOSE_CIV_DESTROYED
+found key :advisor Diplomatique Triste
+found key :text
+    => value :$RULER_TITLE2, nous venons d'apprendre la disparition des $CIVNOUN0, de niveau culturel $CULTURAL_LEVEL3.
+found key :itemlist
+    => value :Quelle est la vue d'ensemble?
+    => value :Dommage pour eux...
+found key :active 1
+found key :VERBOSE_CIV_DESTROYED_BY_CIV
+found key :advisor Diplomatique Triste
+found key :text
+    => value :$RULER_TITLE2, les $CIVNOUN0, de niveau culturel $CULTURAL_LEVEL3, ont été détruits par les combattants $CIVADJ1.
+found key :itemlist
+    => value :Quelle est la vue d'ensemble?
+    => value :Eh bien, cela ne devrait pas nous gêner, n'est-ce pas?
+found key :active 1
+found key :TECH_FREE
+found key :advisor Scientifique Heureux
+    => value :$RULER_TITLE0, nos $WISEMEN1 ont découvert un nouveau secret: ils l'appellent $LINK0.
+found key :GOODY_TECH
+found key :advisor Scientifique Heureux
+    => value :Les barbares $BARBARIAN0 nous ont enseigné un secret. Il a pour nom
+    => value :^^$LINK0.
+found key :TECH_MUST_SELECT_FOR_RESEARCH
+found key :advisor Scientifique Triste
+    => value :$RULER_TITLE0, nos $WISEMEN1 veulent avoir des directives. Que faut-il rechercher?
+found key :TECH_ALREADY_LEARNED
+found key :advisor Scientifique Heureux
+    => value :$RULER_TITLE0, nous connaissons ces secrets.
+found key :TECH_CIVILOPEDIA_LINKS
+found key :advisor Scientifique
+    => value :Voir l'article de la Civilopédia correspondant à:
+found key :TECH_NEW_ERA1
+    => value :$TITLE0, d'après nos historiens, nous sommes entrés dans une nouvelle époque de notre développement!
+found key :TECH_NEW_ERA2
+    => value :Les découvertes de nos $WISEMEN1 ont entraîné une nouvelle ère de prospérité pour notre peuple, $RULER_TITLE0!
+found key :LOSTSPACESHIP
+found key :advisor Scientifique En colère
+    => value :Les $CIVNOUN0 ont détruit notre vaisseau spatial!
+found key :DESTROYEDSPACESHIP
+found key :advisor Scientifique Heureux
+    => value :Nous avons détruit le vaisseau spatial de nos rivaux $CIVADJ0!
+found key :SUMMARY_THEIR_SPACESHIP_PART
+found key :advisor Scientifique Etonné
+    => value :Le vaisseau spatial des $CIVNOUN0 compte un nouvel élément: $SPACESHIP_PART1.
+found key :SUMMARY_WONDER_OBSOLETE
+found key :advisor Scientifique Triste
+    => value :La découverte du secret appelé $TECH0 a rendu la merveille $WONDER1 obsolète.
+found key :TECH_ADVANCED
+found key :advisor Scientifique
+found key :text
+    => value :^$RULER_TITLE0, nos $WISEMEN1 ont fait une découverte. Ils l'appellent
+    => value :^^$LINK0.
+    => value :^Que doivent-ils rechercher maintenant?
+    => value :^^$DROPLINK0.
+found key :itemlist
+    => value :OK. Ca me paraît bien.
+    => value :Quelle est la vue d'ensemble?
+found key :TECH_ACQUIRED_ONE_SOURCE
+found key :advisor Scientifique
+found key :text
+    => value :$RULER_TITLE0, nous avons acquis auprès des $CIVNOUN_OR_BARBARIAN2 un nouveau savoir, appelé $TECH3.
+    => value :Que doivent maintenant rechercher nos $WISEMEN1?
+    => value :^^$DROPLINK0
+found key :itemlist
+    => value :OK.
+    => value :Quelle est la vue d'ensemble? 
+found key :TECH_ACQUIRED_TWO_SOURCES
+found key :advisor Scientifique
+found key :text
+    => value :$RULER_TITLE0, nous avons acquis auprès des $CIVNOUN_OR_BARBARIAN2 et des $CIVNOUN_OR_BARBARIAN3 le savoir appelé $TECH4.
+    => value :Que doivent désormais rechercher nos $WISEMEN1?
+    => value :^^$DROPLINK0
+found key :itemlist
+    => value :OK.
+    => value :Quelle est la vue d'ensemble?
+found key :TECH_FIRST
+found key :advisor Scientifique
+found key :text
+    => value :$RULER_TITLE0, nos $WISEMEN1 demandent votre avis.
+    => value :^Devons-nous acquérir le savoir suivant:
+    => value :^^$DROPLINK0?
+found key :itemlist
+    => value :OK
+    => value :Quelle est la vue d'ensemble?
+found key :LOSTGOOD
+found key :advisor Commerce Etonné
+    => value :Nous avons perdu notre ressource en $RESOURCES0!
+found key :GOODDISAPPEARED
+found key :advisor Commerce Etonné
+    => value :Cette ressource ($RESOURCES0) est épuisée!
+found key :GOODAPPEARED
+found key :advisor Commerce Heureux
+    => value :Nous avons découvert une nouvelle ressource en $RESOURCES0!
+found key :CULTUREBORDERVERBOSE
+found key :map_center 1
+found key :advisor Culturel Heureux
+    => value :$RULER_TITLE0, $CITY1 voit ses frontières s'étendre en raison de son imposante $LINK<culture=GCON_Culture>!
+found key :CULTUREBORDEROVER
+found key :advisor Culturel Triste
+    => value :Le déclin de notre culture a réduit nos frontières.
+found key :SUMMARY_TRAVELERS_REPORT
+found key :advisor Culturel
+    => value :Les $CIVNOUN0 sont en train de construire la merveille $WONDER1.
+found key :VERBOSE_TRAVELERS_REPORT
+found key :advisor Culturel
+found key :text
+    => value :Les $CIVNOUN0 ont entrepris le grand projet:
+    => value :^^$LINK0.
+found key :itemlist
+    => value :Vous m'en direz tant...
+    => value :Quelle est la vue d'ensemble?
+found key :UNIT_PRODUCED_LEADER
+found key :advisor Militaire Heureux
+found key :x 10
+found key :y 40
+found key :xs 320
+found key :caption Renommer cette unité victorieuse ?
+    => value :Nom :
+found key :NOTENOUGHGOLD
+    => value :Pas assez d'or.
+found key :TOOMANYCITIES
+    => value :Trop de villes.
+found key :NEWCITY
+found key :advisor Culturel Heureux
+found key :x 10
+found key :y 40
+found key :xs 320
+found key :caption Cette ville a pour nom?
+    => value :Nom:
+found key :BADCITYNAME
+found key :advisor Culturel Triste
+found key :text
+    => value :Une autre ville porte déjà ce nom. 
+    => value :^Choisissez un nom [unique].
+found key :RENAME_CITY
+found key :advisor Culturel Etonné
+found key :caption Renommer $CITY0?
+found key :x 10
+found key :y 40
+found key :xs 320
+    => value :Nom:
+found key :ENEMY_UNIT_DOUBLECLICK
+found key :caption $CIVADJ0 $UNIT1
+found key :text
+    => value :Qu'y a-t-il?
+found key :itemlist
+    => value :Conduisez-moi à votre chef.
+    => value :Rien. Excusez-moi!
+found key :DISEMBARK
+    => value :Débarquer?
+found key :itemlist
+    => value :Ne rien faire.
+    => value :Tout débarquer.
+found key :active 1
+found key :SELECT_TRANSPORT
+found key :caption Quel transport?
+    => value :Choisissez sur quel transport embarquer:
+found key :CHANGEMOBILIZATION
+found key :xs 400
+    => value :Régler le niveau de mobilisation sur...
+found key :itemlist
+    => value :Normalité
+    => value :Temps de guerre
+found key :PICKWHOM
+found key :xs 400
+found key :caption Choisissez la civilisation...
+found key :CHANGE_GOVERNMENT
+found key :caption Régimes politiques
+found key :text
+    => value :Sélectionnez un nouveau régime. 
+found key :UNHAPPY_REASON_NONE
+    => value :"Aucune vraie raison à mon mécontentement. Ce doit être un défaut de programmation..."
+found key :UNHAPPY_REASON_POP_LIMIT
+    => value :"Il y a vraiment trop de monde, ici."
+found key :UNHAPPY_REASON_AT_WAR
+    => value :"Nous voulons que vous donniez une chance à la paix!"
+found key :UNHAPPY_REASON_NATIONALITY
+    => value :"Mettez fin à votre agression contre notre pays d'origine!"
+found key :UNHAPPY_REASON_PROPAGANDA
+    => value :"Toute la propagande entourant votre régime nous fait douter."
+found key :UNHAPPY_REASON_DRAFT
+    => value :"Stop. Plus de conscription! Nous n'irons pas, un point c'est tout!"
+found key :UNHAPPY_REASON_SACRIFICE
+    => value :"Impossible pour nous d'oublier votre cruelle oppression."
+found key :UNHAPPY_REASON_BUILDING_THIS_CITY
+    => value :"Certaines améliorations de cette ville nous déplaisent"
+found key :UNHAPPY_REASON_BUILDING_OTHER_CITY
+    => value :"Certaines améliorations d'une autre ville nous déplaisent"
+found key :ESPIONAGE_DIPLOMATIC_MISSION_UNAVAILABLE
+found key :caption Ministère des Affaires Etrangères
+    => value :Nous ne pouvons mener de missions diplomatiques car nous ne connaissons pas d'autres civilisations.
+found key :ESPIONAGE_DIPLOMATIC_MISSION_CURRENTLY_UNAVAILABLE
+found key :caption Ministère des Affaires Etrangères 
+    => value :Les missions diplomatiques ne sont pas disponibles actuellement.
+found key :ESPIONAGE_SPY_MISSION_UNAVAILABLE
+found key :caption Ministère des Affaires Etrangères 
+    => value :Nous ne pouvons mener de missions d'espionnage car nous ne connaissons pas d'autres civilisations.
+found key :ESPIONAGE_SPY_MISSION_CURRENTLY_UNAVAILABLE
+found key :caption Ministère des Affaires Etrangères 
+    => value :Les missions d'espionnage ne sont pas disponibles actuellement.
+found key :ESPIONAGE_DIPLOMATIC_MISSION_SELECT2
+found key :caption Ministère des Affaires Etrangères 
+    => value :Que devons-nous faire, $RULER_TITLE0?
+found key :ESPIONAGE_DIPLOMATIC_MISSION_SELECT
+found key :caption Espionnage à $CITY0
+    => value :Qu'allons-nous faire, $RULER_TITLE1?
+found key :ESPIONAGE_SPY_MISSION_SELECT
+found key :caption Espionnage à $CITY0
+    => value :Sélectionnez la mission d'espionnage à mener.
+found key :ESPIONAGE_SAFETY_LEVEL
+found key :advisor Diplomatique Heureux
+found key :text
+    => value :Méthode d'exécution de cette mission:
+found key :itemlist
+    => value :[Immédiate] ($NUM0 unités d'or - faible probabilité de succès)
+    => value :[Prudente]  ($NUM1 unités d'or - probabilité de succès modérée)
+    => value :[Sûre]      ($NUM2 unités d'or - probabilité de succès élevée)
+found key :itemindex -1
+    => value :[Minute!] Tout ça est trop risqué. Réévaluons la situation.
+found key :ESPIONAGE_START_MISSION_ESTABLISH_EMBASSY
+found key :caption Ministère des Affaires Etrangères 
+    => value :Etablir une ambassade auprès de qui?
+found key :ESPIONAGE_NO_EMBASSIES_AT_THIS_TIME
+found key :caption Ministère des Affaires Etrangères 
+    => value :Nous ne pouvons établir de nouvelles ambassades pour l'instant. 
+found key :ESPIONAGE_MISSION_ESTABLISH_EMBASSY_SUCCESS
+found key :map_center 3
+found key :advisor Diplomatique Heureux
+    => value :$TITLE0, nous avons établi une ambassade auprès des citoyens
+    => value :$CIVADJ1, à $CITY3 ($CITYSIZE2).
+found key :ESPIONAGE_FOREIGN_EMBASSY_ESTABLISHED
+found key :advisor Diplomatique Heureux
+    => value :$TITLE0, $LEADER1, qui dirige les $CIVNOUN2, a établi une ambassade dans notre capitale.
+found key :ESPIONAGE_START_MISSION_INVESTIGATE_CITY
+found key :caption Espionnage à $CITY0
+    => value :Choisissez une ville sur laquelle enquêter.
+found key :ESPIONAGE_MISSION_INVESTIGATE_CITY_IMMUNE
+found key :caption Espionnage à $CITY0
+    => value :Les citoyens $CIVADJ1 sont immunisés contre les enquêtes sur les villes.
+found key :ESPIONAGE_MISSION_INVESTIGATE_CITY_SUCCESS
+found key :caption Espionnage à $CITY0
+    => value :Nous avons enquêté sur la ville suivante: $CITY1.
+found key :ESPIONAGE_NO_CIVS_WITHOUT_MOLES
+found key :caption Ministère des Affaires Etrangères 
+    => value :Nous disposons d'espions dans toutes les civilisations que nous connaissons.
+found key :ESPIONAGE_START_MISSION_PLANT_MOLE
+found key :caption Ministère des Affaires Etrangères 
+    => value :Où voulez-vous placer un espion?
+found key :ESPIONAGE_MISSION_PLANT_MOLE_SUCCESS
+found key :caption Ministère des Affaires Etrangères 
+    => value :Nous avons désormais un agent à $CITY0.
+found key :ESPIONAGE_MISSION_PLANT_MOLE_FAILURE
+found key :caption Ministère des Affaires Etrangères 
+    => value :Notre agent à $CITY0 a été pris et exécuté. $LEADER2, leur $TITLE1, exprime son mécontentement.
+found key :ESPIONAGE_CAUGHT_MOLE
+found key :advisor Diplomatique en colère
+    => value :Nous avons pris $LEADER1, $TITLE0 des $CIVNOUN2, en train d'essayer d'implanter un espion dans notre capitale.
+found key :ESPIONAGE_START_MISSION_EXPOSE_MOLE
+found key :caption Ministère des Affaires Etrangères 
+    => value :Choisissez la civilisation dont il faut démasquer l'espion.
+found key :ESPIONAGE_MISSION_EXPOSE_MOLE_IMMUNE
+found key :caption Espionnage à $CITY0
+    => value :Les citoyens $CIVADJ1 sont immunisés contre le démasquage d'espion.
+found key :ESPIONAGE_MISSION_EXPOSE_MOLE_SUCCESS
+found key :map_center 0
+found key :advisor Diplomatique Heureux
+    => value :Une fois encore, nos investissements en matière d'espionnage ont payé.
+    => value :^Nous avons démasqué et neutralisé l'espion mis en place à $CITY0 par le dirigeant suivant: $TITLE1 $LEADER2.
+found key :ESPIONAGE_MISSION_EXPOSE_MOLE_SUCCESS_EXPOSED
+found key :advisor Diplomatique
+    => value :Notre agent à $CITY0 (nom de code: Guido) est parvenu à démasquer l'espion mis en place par le dirigeant suivant:$TITLE1$ LEADER2.
+    => value :^La menace a disparu, mais la couverture de notre agent aussi. 
+found key :ESPIONAGE_MISSION_EXPOSE_MOLE_FAILURE
+found key :map_center 0
+found key :advisor Diplomatique En colère
+    => value :Notre opération contre l'agent mis en place à $CITY0 par le dirigeant suivant: $TITLE1 $LEADER2 a échoué et notre espion a perdu sa couverture.
+    => value :Ce dirigeant nous menace de représailles.
+found key :ESPIONAGE_CAUGHT_EXPOSING_MOLE_SUCCESS
+found key :map_center 3
+found key :advisor Diplomatique Triste
+    => value :Notre agent à $CITY3 a été capturé! Nous avons également pris un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2.
+found key :ESPIONAGE_CAUGHT_EXPOSING_MOLE
+found key :advisor Diplomatique
+    => value :Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été pris alors qu'il tentait de démasquer notre espion.
+found key :ESPIONAGE_MISSED_EXPOSING_MOLE
+found key :map_center 0
+found key :advisor Diplomatique
+    => value :Notre agent à $CITY0 a été capturé!
+found key :ESPIONAGE_START_MISSION_INITIATE_PROPAGANDA
+found key :caption Espionnage à $CITY0
+    => value :Sélectionnez une cité à corrompre.
+found key :ESPIONAGE_MISSION_INITIATE_PROPAGANDA_IMMUNE
+found key :caption Espionnage à $CITY0
+    => value :Les citoyens $CIVADJ1 sont insensibles à la propagande.
+found key :ESPIONAGE_MISSION_INITIATE_PROPAGANDA_SUCCESS
+found key :map_center 0
+found key :caption Espionnage à $CITY1
+    => value :A $CITY0, les citoyens ont renversé leur gouverneur et rejoint notre cause!
+found key :ESPIONAGE_MISSION_INITIATE_PROPAGANDA_FAILURE
+found key :map_center 0
+found key :caption Espionnage à $CITY1
+    => value :Nous n'avons pas rallié assez de citoyens à notre cause à $CITY0. La campagne de propagande est un échec.
+found key :ESPIONAGE_MISSED_PROPAGANDA_LOST_CITY
+found key :map_center 0
+found key :advisor Diplomatique
+    => value :Nous avons perdu $CITY0 à cause d'une campagne de propagande!
+found key :ESPIONAGE_MISSED_PROPAGANDA
+found key :map_center 0
+found key :advisor Diplomatique
+    => value :A $CITY0, une campagne de propagande a entraîné le soulèvement des citoyens.
+found key :ESPIONAGE_START_MISSION_SABOTAGE_PRODUCTION
+found key :caption Espionnage à $CITY0
+    => value :Où faut-il tenter la mission de sabotage?
+found key :ESPIONAGE_MISSION_SABOTAGE_PRODUCTION_IMMUNE
+found key :caption Espionnage à $CITY0
+    => value :Les citoyens $CIVADJ1 sont insensibles au sabotage.
+found key :ESPIONAGE_MISSION_SABOTAGE_PRODUCTION_SUCCESS
+found key :map_center 0
+found key :caption Espionnage à $CITY4
+    => value :Notre agent à $CITY0 y a saboté la production. La ville va devoir reprendre à zéro le projet $ITEM1.
+found key :ESPIONAGE_MISSION_SABOTAGE_PRODUCTION_SUCCESS_EXPOSED
+found key :map_center 0
+found key :advisor Diplomatique
+    => value :Nous avons saboté la production de l'amélioration $IMPROVEMENT1 à $CITY0.
+    => value :^Malheureusement, notre agent (nom de code: Gweeto) a été [pris sur le fait] et suppprimé.
+    => value :^$LEADER3, leur $TITLE2, exprime son mécontentement.
+found key :ESPIONAGE_MISSION_SABOTAGE_PRODUCTION_FAILURE
+found key :map_center 0
+found key :advisor Diplomatique
+    => value :Notre tentative de sabotage contre $CITY0 a échoué et notre agent a été capturé.
+    => value :^$LEADER3, leur $TITLE2, fulmine...
+found key :ESPIONAGE_CAUGHT_SABOTAGING_SUCCESS
+found key :map_center 3
+found key :advisor Diplomatique
+    => value :La production a été sabotée à $CITY3! Un espion implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été capturé.
+found key :ESPIONAGE_CAUGHT_SABOTAGING
+found key :map_center 3
+found key :advisor Diplomatique
+    => value :Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été capturé à $CITY3 alors qu'il y effectuait une tentative de sabotage.
+found key :ESPIONAGE_MISSED_SABOTAGING
+found key :map_center 0
+found key :advisor Diplomatique
+    => value :La production a été sabotée à $CITY0!
+found key :ESPIONAGE_MISSION_STEAL_PLANS_IMMUNE
+found key :caption Espionnage à $CITY0
+    => value :Les citoyens $CIVADJ1 sont immunisés contre le vol de plans.
+found key :ESPIONAGE_MISSION_STEAL_PLANS_SUCCESS
+found key :caption Ministère des Affaires Etrangères
+    => value :Notre agent à $CITY0 a pu s'emparer de plans cruciaux décrivant les mouvements de troupes du dirigeant suivant :$TITLE1 $LEADER2.
+    => value :Nous connaissons maintenant l'emplacement de toutes ses troupes.
+found key :ESPIONAGE_MISSION_STEAL_PLANS_SUCCESS_EXPOSED
+found key :map_center 0
+found key :caption Ministère des Affaires Etrangères
+    => value :Notre agent à $CITY0 a pu s'emparer de plans cruciaux décrivant les mouvements de troupes du dirigeant suivant :$TITLE1 $LEADER2.
+    => value :Nous connaissons maintenant l'emplacement de toutes ses troupes. En revanche, notre agent a été 
+    => value :capturé et exécuté. $LEADER2, leur $TITLE1, exprime son mécontentement.
+found key :ESPIONAGE_MISSION_STEAL_PLANS_FAILURE
+found key :map_center 0
+found key :caption Ministère des Affaires Etrangères
+    => value :Notre agent à $CITY0 a été pris alors qu'il tentait de voler des plans cruciaux. Il a été exécuté.
+    => value :$LEADER2, leur $TITLE1, exprime son mécontentement.
+found key :ESPIONAGE_CAUGHT_STEALING_PLANS_SUCCESS
+found key :advisor Diplomatique
+    => value :Nos plans de déploiement militaire ont été volés! Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été capturé.
+found key :ESPIONAGE_CAUGHT_STEALING_PLANS
+found key :advisor Diplomatique
+    => value :Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été pris alors qu'il tentait de dérober nos plans de mouvements de troupes.
+found key :ESPIONAGE_MISSED_STEALING_PLANS
+found key :advisor Diplomatique
+    => value :Nos plans de déploiement de troupes ont été volés!
+found key :ESPIONAGE_MISSION_STEAL_TECH_IMMUNE
+found key :caption Espionnage à $CITY0
+    => value :Les citoyens $CIVADJ1 sont immunisés contre le vol de technologie.
+found key :ESPIONAGE_MISSION_STEAL_TECH_UNABLE
+found key :caption Espionnage à $CITY0
+    => value :$RULER_TITLE2, nous avons découvert que les $CIVNOUN1 n'étaient pas plus technologiquement avancés que nous.
+    => value :Il nous a donc été impossible de leur dérober une technologie.
+found key :ESPIONAGE_MISSION_STEAL_TECH_SUCCESS
+found key :caption Espionnage à $CITY0
+    => value :Nous avons pu dérober une technologie aux $CIVNOUN1.
+found key :ESPIONAGE_MISSION_STEAL_TECH_FAILURE
+found key :map_center 2
+found key :caption Espionnage à $CITY0
+    => value :Notre agent à $CITY1 n'est pas parvenu à dérober de technologie. Il a cependant pu s'échapper sans trop attirer l'attention.
+found key :ESPIONAGE_MISSION_STEAL_TECH_FAILURE_CAUGHT
+found key :map_center 2
+found key :caption Espionnage à $CITY0
+    => value :Notre agent à $CITY1 a été capturé alors qu'il tentait d'y dérober une technologie. $LEADER3, leur $TITLE2, exprime son mécontentement.
+found key :ESPIONAGE_CAUGHT_STEALING_TECH
+found key :advisor Diplomatique
+    => value :Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été capturé alors qu'il tentait de voler une technologie.
+found key :ESPIONAGE_MISSION_STEAL_WORLD_MAP_IMMUNE
+found key :caption Espionnage à $CITY0
+    => value :Les citoyens $CIVADJ1 sont immunisés contre le vol de carte du monde.
+found key :ESPIONAGE_MISSION_STEAL_WORLD_MAP_SUCCESS
+found key :caption Espionnage à $CITY0
+    => value :Nous sommes parvenus à dérober aux $CIVNOUN1 leur carte du monde.
+found key :ESPIONAGE_MISSION_STEAL_WORLD_MAP_FAILURE
+found key :map_center 2
+found key :caption Espionnage à $CITY0
+    => value :Notre espion féminin à $CITY1 n'a pas réussi à voler la carte du monde. Elle a cependant pu s'échapper sans trop attirer l'attention.
+found key :ESPIONAGE_MISSION_STEAL_WORLD_MAP_FAILURE_CAUGHT
+found key :map_center 2
+found key :caption Espionnage à $CITY0
+    => value :Nous avons perdu notre agent féminin à $CITY1. Elle a été capturée alors qu'elle tentait de s'emparer de leur carte du monde.
+    => value :$LEADER3, leur $TITLE2, exprime son mécontentement.
+found key :ESPIONAGE_CAUGHT_STEALING_MAP
+found key :advisor Diplomatique
+    => value :Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été capturé alors qu'il tentait de voler notre carte du monde.
+found key :BOMBARDFAILED
+    => value :Echec du bombardement d'artillerie.
+found key :BOMBARDSUCCEEDED
+    => value :Bombardement d'artillerie efficace! Améliorations détruites.
+found key :UNITBOMBARDSUCEEDED
+    => value :Bombardement d'artillerie efficace! Unités ennemies touchées.
+found key :UNITBOMBSUCEEDED
+    => value :Bombardement aérien efficace! Unités ennemies touchées.
+found key :AIRINTERCEPTED
+    => value :Nous avons été abattus par un intercepteur ennemi!
+found key :AIRINTERCEPTORDESTROYED
+    => value :Nous avons abattu un intercepteur ennemi!
+found key :AIRINTERCEPTSUCCESS
+    => value :Nous avons intercepté une unité ennemie!
+found key :AIRINTERCEPTFAILURE
+    => value :Notre unité d'intercepteurs a été abattue!
+found key :AIRSAMINTERCEPTED
+    => value :Nous avons été abattus par des SAM ennemis!
+found key :BOMBFAILED
+    => value :Notre bombardement aérien a échoué.
+found key :BOMBSUCCEEDED
+    => value :Bombardement aérien efficace: améliorations détruites.
+found key :NEEDEMPTYSQUARE
+found key :xs 320
+    => value :Cette action ne peut être menée sur une case contenant déjà un établissement.
+found key :NEEDGOOD
+found key :xs 320
+    => value :Cette action ne peut être menée sur une case contenant une $LINK<ressource pouvant être échangée=GCON_NResources>.
+found key :HAVEDESTROYED
+found key :map_center 1
+    => value :Les $CIVNOUN0 ont détruit des aménagements près de la ville suivante: $CITY1!
+found key :HAVEARTYDESTROYED
+found key :map_center 1
+    => value :Les moyens d'artillerie $CIVADJ2 ont détruit des aménagements près de la ville suivante: $CITY1!
+found key :PAUSED
+found key :xs 300
+    => value :$NAME0 a mis la partie en pause.
+found key :UNPAUSED
+found key :xs 300
+    => value :$NAME0 a relancé la partie.
+found key :CHANGINGSERVERS
+found key :xs 300
+    => value :Patientez pendant qu'un joueur est éliminé de la partie...
+found key :AIRDROPFAILED
+    => value :Echec du parachutage!
+found key :MADEAIRDROP
+    => value :Des parachutistes $CIVADJ0 ont atterri!
+found key :ALREADYMOVED
+    => value :Cette unité s'est déjà déplacée.
+found key :DEBUGGOODS
+found key :xs 500
+found key :DIPLOADVICEMILITARY_MORETHANUS
+found key :advisor Diplomatique Triste
+    => value :Les combattants $CIVADJ0 sont plus nombreux que nous! Ce n'est pas bon...
+found key :DIPLOADVICEMILITARY_EQUALWITHUS
+found key :advisor Diplomatique Heureux
+    => value :Les moyens militaires $CIVADJ0 sont à peu près aussi importants que les nôtres.
+found key :DIPLOADVICEMILITARY_LESSTHANUS
+found key :advisor Diplomatique Heureux
+    => value :Nos forces sont plus nombreuses que celles des $CIVNOUN0. C'est une bonne chose...
+found key :DIPLOADVICESCIENCE_MORETHANUS
+found key :advisor Diplomatique Triste
+    => value :Nos rivaux $CIVADJ0 sont technologiquement avancés!
+found key :DIPLOADVICESCIENCE_EQUALWITHUS
+found key :advisor Diplomatique Heureux
+    => value :Les accomplissements scientifiques $CIVADJ0 sont comparables aux nôtres.
+found key :DIPLOADVICESCIENCE_LESSTHANUS
+found key :advisor Diplomatique Heureux
+    => value :Les savants $CIVADJ0 ne sont pas très efficaces.
+found key :DIPLOADVICETHEIRSCIENCE_MORETHANUS
+found key :advisor Diplomatique Heureux
+    => value :Les citoyens $CIVADJ0 nous trouvent technologiquement avancés!
+found key :DIPLOADVICETHEIRSCIENCE_EQUALWITHUS
+found key :advisor Diplomatique Heureux
+    => value :Les citoyens $CIVADJ0 pensent que nous sommes au même niveau qu'eux sur le plan scientifique.
+found key :DIPLOADVICETHEIRSCIENCE_LESSTHANUS
+found key :advisor Diplomatique Triste
+    => value :Pour les citoyens $CIVADJ0, notre technologie est primitive.
+found key :DIPLOADVICEFEAR
+found key :advisor Diplomatique Heureux
+    => value :Les soldats $CIVADJ0 craignent nos $UNIT1.
+found key :DIPLOADVICETHEIRCULTURAL
+    => value :Les citoyens $CIVADJ1 sont [$CULTURAL_OPINION0] notre culture.
+found key :DIPLOADVICECULTURAL
+    => value :Nos citoyens sont [$CULTURAL_OPINION0] les progrès culturels $CIVADJ1.
+found key :DIPLOADVICEBESTUNIT
+found key :advisor Diplomatique Triste
+    => value :Les militaires $CIVADJ0 possèdent des [$UNIT1.]
+found key :DIPLOADVICEACTOFAGGRESSION
+found key :advisor Diplomatique En colère
+    => value :N'oubliez pas que les militaires $CIVADJ0 nous ont déjà attaqués. Je ne sais pas si l'on peut leur faire confiance.
+found key :DIPLOADVICEFOREIGN_HAVE_NOT_MET
+found key :advisor Diplomatique Heureux
+    => value :Il s'agit de la première rencontre. [Prudence...]
+found key :DIPLOADVICEFOREIGN_LIAR
+found key :advisor Diplomatique En colère
+    => value :$LEADER0 a la réputation de [manquer à sa parole]. Méfiez-vous...
+found key :DIPLOADVICEFOREIGN_BETRAYAL
+found key :advisor Diplomatique En colère
+    => value :$LEADER0 a [déjà trahi nos amis] les $CIVNOUN1.
+found key :DIPLOADVICETRADE_LAND_ROUTE
+found key :advisor Diplomatique Triste
+    => value :Impossible d'échanger des produits de luxe ou des ressources stratégiques sans voie commerciale. Une route reliant nos capitales suffirait.
+found key :DIPLOADVICETRADE_SEA_ROUTE
+found key :advisor Diplomatique Triste
+    => value :Impossible d'échanger des produits de luxe ou des ress. stratégiques avec les $CIVNOUN0 sans voie commerciale. Construire un port suffirait.
+found key :DIPLOADVICETRADE_OUREMBARGO
+found key :advisor Diplomatique Triste
+    => value :Nous avons accepté de ne pas commercer avec les $CIVNOUN0 - nous avons un embargo commercial contre eux.
+found key :DIPLOADVICETRADE_THEIREMBARGO
+found key :advisor Diplomatique En colère
+    => value :Impossible d'échanger des produits de luxe ou des ress. stratégiques avec les $CIVNOUN0 - embargo commercial contre nous.
+found key :DIPLOADVICETRADE_LAND
+found key :advisor Diplomatique Triste
+    => value :Négociation d'accords commerciaux (prod. de luxe ou ress. stratégiques) avec les $CIVNOUN0 impossible. Pas de route vers leur capitale.
+found key :DIPLOADVICETRADE_WATER
+found key :advisor Diplomatique Triste
+    => value :Négociation d'accords commerciaux (prod. de luxe ou ress. stratégiques) avec les $CIVNOUN0 impossible. Pas de route maritime. 
+found key :DIPLOADVICE_TRADE_HAS_ROUTE
+found key :advisor Diplomatique Heureux
+    => value :Nous disposons d'une voie commerciale avec les $CIVNOUN0... Nous devrions peut-être leur proposer notre surplus en $RESOURCE_OR_LUXURY1.
+found key :DIPLOADVICE_TRADE_HAS_ROUTE_THEM
+found key :advisor Diplomatique Heureux
+    => value :Les $CIVNOUN0 seraient peut-être prêts à nous fournir leurs surplus en $RESOURCE_OR_LUXURY1 dans le cadre d'échanges commerciaux.
+found key :DIPLOADVICE_TRADE_HAS_ROUTE_SURPLUS
+found key :advisor Diplomatique Heureux
+    => value :Nous avons $NUM0 unités de surplus en $RESOURCE1, les $CIVNoun0 seraient ravis d'en profiter. Voyons ce qu'ils peuvent offrir en échange...
+found key :DIPLOADVICETRADE_DEAL_ACCEPT
+found key :advisor Diplomatique Heureux
+    => value :Cet accord sera probablement acceptable.
+found key :DIPLOADVICETRADE_DEAL_WEAKREJECT
+found key :advisor Diplomatique Heureux
+    => value :Nous nous rapprochons d'un accord.
+found key :DIPLOADVICETRADE_DEAL_NEUTRALREJECT
+found key :advisor Diplomatique Triste
+    => value :Cela m'étonnerait qu'ils acceptent cette proposition.
+found key :DIPLOADVICETRADE_DEAL_STRONGREJECT
+found key :advisor Diplomatique en colère
+    => value :Ils vont probablement considérer cette offre comme une insulte.
+found key :DIPLOADVICETRADE_DEAL_TOTALREJECT
+found key :advisor Diplomatique en colère
+    => value :Ils n'accepteront jamais un tel accord.
+found key :DOMESTICADVICERANK
+    => value :Construisez davantage de villes!
+found key :DOMESTICADVICECITYSIZE
+    => value :$CITY0 $DOES1, $TITLE2$PUNCT3  $OPTIONALSTRING4
+found key :DOMESTICADVICEHAPPINESS
+    => value :$RULER_TITLE0, les citoyens sont $HAPPY2 à $CITY1.
+found key :DOMESTICADVICEANARCHY
+found key :advisor Intérieur Etonné
+    => value :Nous connaissons une période d'anarchie. Ce n'est que provisoire... Nous devrions avoir repris le contrôle d'ici $NUM0 tours environ.
+found key :TRADEADVICERANK
+found key :advisor Commerce Etonné
+    => value :Concluez plus d'accords! 
+found key :TRADEADVICEACQUIREMORE
+found key :advisor Commerce Triste
+    => value :Nous devrions nous procurer davantage de ressources et de produits de luxe.
+found key :TRADEADVICEMORE
+found key :advisor Commerce Triste
+    => value :Nous ne possédons qu'une seule source d'approvisionnement en $RESOURCE0. Trouvons-en d'autres afin de faire des échanges.
+found key :TRADEADVICEROUTE
+found key :advisor Commerce Heureux
+    => value :Nous devrions essayer d'établir une voie commerciale nous reliant aux $CIVNOUN0.
+found key :TRADEADVICEEMBARGO
+found key :advisor Commerce Heureux
+    => value :Si nous concluons un embargo avec les $CIVNOUN0, cela pourrait nous aider dans le cadre de notre guerre avec notre ennemi $CIVNAME1.
+found key :TRADEADVICEWEHAVENOTHING
+found key :advisor Commerce Triste
+    => value :Nous n'avons aucune ressource à échanger. Nous devrions nous en procurer au plus vite avant qu'elles ne soient monopolisées par d'autres.
+found key :MILITARYADVICERANK_WEAK
+found key :advisor Militaire En colère
+    => value :Comparé à celui de cette nation, notre potentiel militaire est ridicule!
+found key :MILITARYADVICERANK_AVERAGE
+found key :advisor Militaire Triste
+    => value :Nos forces armées sont à peu près égales aux leurs.
+found key :MILITARYADVICERANK_STRONG
+found key :advisor Militaire Heureux
+    => value :Nos forces armées sont largement supérieures aux leurs!
+found key :MILITARYADVICESUPPORT_TOO_COSTLY
+found key :advisor Militaire Triste
+    => value :Impossible de soutenir un plus grand nombre de nos glorieuses unités tant que nous n'aurons pas plus d'or.
+found key :MILITARYADVICESUPPORT_NOTENOUGHUNITS
+found key :advisor Militaire Heureux
+    => value :Nous pourrions soutenir davantage d'unités militaires.
+found key :MILITARYADVICESUPPORT_NOTENOUGHUNITS_BESTUNIT
+found key :advisor Militaire Heureux
+    => value :Nous pouvons soutenir davantage de troupes. Construisons des $UNIT0.
+found key :MILITARYADVICEBARBARIANS
+found key :advisor Militaire En colère
+    => value :$CITY1 signale la présence de tribus barbares, des $BARBARIAN0, aux alentours!
+found key :MILITARYADVICEMOLE
+found key :advisor Militaire En colère
+    => value :Implantons des espions pour en savoir plus sur nos ennemis (et nos alliés)!
+found key :FOREIGNADVICERANK
+    => value :Faisons-nous plus d'amis!
+found key :CULTURALADVICERANK
+found key :advisor Culturel Heureux
+    => value :La construction d'améliorations culturelles dans nos villes étendra notre empire! C'est une bonne chose.
+found key :CULTURALADVICEOPINION
+    => value :Les citoyens ($CIVNAME0) sont $CULTURAL_OPINION1 notre culture...
+found key :CULTURALADVICELIBRARIES
+found key :advisor Culturel Heureux
+    => value :En procurant à notre population [des livres, de la musique] et [d'autres formes d'art], nous étendrons notre influence sur le monde.
+    => value :Construisons des [bibliothèques] et des [colisées].
+found key :CULTURALADVICEARTS
+found key :advisor Culturel Heureux
+    => value :Si nous étudions les arts, nous pourrons réaliser de grandes merveilles intellectuelles et étendre notre influence et notre culture.
+found key :CULTURALADVICEWONDER
+found key :advisor Culturel Etonné
+    => value :Nous devrions construire la merveille [$WONDER0]! Le monde entier nous envierait.
+found key :CULTURALADVICEIMPROVEMENT
+    => value :Nous devrions construire l'amélioration [$IMPROVEMENT0] dans toutes nos villes. Les gens se battraient pour nous rejoindre.
+found key :SCIENCEADVICERANK_WEAK
+found key :advisor Scientifique Triste
+    => value :Nous sommes en retard. Cela [ne peut pas] continuer ainsi!
+found key :SCIENCEADVICERANK_WEAK_FUNDING
+found key :advisor Scientifique Triste
+    => value :Nous manquons de fonds pour la recherche. Veuillez augmenter le financement scientifique.
+found key :SCIENCEADVICERANK_AVERAGE
+found key :advisor Scientifique Heureux
+    => value :Nous sommes modérément avancés.
+found key :SCIENCEADVICERANK_AVERAGE_FUNDING
+found key :advisor Scientifique Heureux
+    => value :Notre recherche scientifique est à peine suffisante. Veuillez augmenter le financement scientifique.
+found key :SCIENCEADVICERANK_STRONG
+found key :advisor Scientifique Heureux
+    => value :Nous sommes technologiquement avancés!
+found key :SCIENCEADVICERANK_STRONG_FUNDING
+found key :advisor Scientifique Heureux
+    => value :Grâce à vos généreuses subventions, notre recherche scientifique progresse à un bon rythme!
+found key :SCIENCEADVICETECHRECOMMEND
+found key :advisor Scientifique Heureux
+    => value :Je vous recommande de rechercher la technologie suivante: $TECH0.
+found key :SCIENCEADVICETECH0
+    => value :Ah, oui, le {travail du bronze}. Cela nous permettrait de fabriquer des pointes de lance en bronze et de colossales statues.
+found key :SCIENCEADVICETECH1
+    => value :La {maçonnerie} nous permettra de construire des murailles et de grands monuments.
+found key :SCIENCEADVICETECH2
+    => value :Si nous possédions un {alphabet}, nous pourrions apprendre à écrire, à archiver notre histoire et nos récits. Ce serait une bonne chose.
+found key :SCIENCEADVICETECH3
+    => value :Si nous connaissions la {poterie}, nous pourrions stocker de la nourriture pour l'avenir et les longs voyages.
+found key :SCIENCEADVICETECH4
+    => value :Si nous connaissions la {roue}, les choses tourneraient bien. Nous pourrions atteler des chevaux et nous faire transporter dans des chars.
+found key :SCIENCEADVICETECH5
+    => value :Développer le {code du guerrier} permettrait de constituer de meilleures unités militaires, comme les archers.
+found key :SCIENCEADVICETECH6
+    => value :Nous devrions songer au {rite funéraire}. Qui sait ce qui se passe après la mort... Le peuple a besoin de stabilité et de dieux à adorer.
+found key :SCIENCEADVICETECH7
+    => value :Nos forgerons tentent de maîtriser le {travail du fer}. S'ils y parviennent, ils pourront fabriquer des armes plus résistantes. Mais nous avons besoin de {minerai de fer}.
+found key :SCIENCEADVICETECH8
+    => value :L'{écriture} offre de nombreuses possibilités. Nous pourrions établir des ambassades et signer des accords écrits avantageux pour nous...
+found key :SCIENCEADVICETECH9
+    => value :Nos pratiques rituelles ont ouvert la porte au {mysticisme}. Nombre de nos shamans pensent pouvoir construire un puissant "Oracle".
+found key :SCIENCEADVICETECH10
+    => value :Nos sages pensent pouvoir exploiter l'alphabet afin de développer les {mathématiques}, qui sont une nouvelle manière de décrire notre monde.
+found key :SCIENCEADVICETECH11
+    => value :Certains de nos penseurs et écrivains tentent d'expliquer l'existence du cosmos et souhaitent développer une {"philosophie"}.
+found key :SCIENCEADVICETECH12
+    => value :D'autres auteurs aimeraient créer un {code juridique} afin de mieux gouverner la population... L'idée semble bonne.
+found key :SCIENCEADVICETECH13
+    => value :Nos citoyens créent une {littérature}. Nous devrions la stocker dans les bibliothèques comme témoignage de notre civilisation... Qu'en dites-vous?
+found key :SCIENCEADVICETECH14
+    => value :Nous pouvons désormais stocker de la nourriture et écrire, découvrons le monde et traçons des cartes. La {cartographie} nous apprendra la navigation maritime.
+found key :SCIENCEADVICETECH15
+    => value :Nous pourrions peut-être [monter] ces chevaux! L'{équitation} nous fournirait un avantage - Nous pourrions former des troupes de cavaliers...
+found key :SCIENCEADVICETECH16
+    => value :Nos mystiques estiment qu'il peut exister un grand nombre de dieux et veulent explorer les voies du {polythéisme}... Après tout, qui sait?
+found key :SCIENCEADVICETECH17
+    => value :Nos mathématiciens proposent de développer la {monnaie} afin de faciliter le commerce. 
+found key :SCIENCEADVICETECH18
+    => value :Nos philosophes et juristes commencent à décrire un nouveau régime politique, la {république}, qui repose sur des représentants "du peuple".
+found key :SCIENCEADVICETECH19
+    => value :Nos guerriers et nos prêtres mystiques envisagent un régime dirigé par vos soins, avec la bénédiction des dieux. Il s'agit d'une {monarchie}.
+found key :SCIENCEADVICETECH20
+    => value :Nos connaissances en maçonnerie, travail du fer et mathématiques nous permettent d'envisager des {constructions} encore plus imposantes: aqueducs, fortifications et colisées.
+found key :SCIENCEADVICETECH21
+    => value :Selon nos prêtres, il peut exister un seul dieu tout-puissant. Ce {monothéisme} pourrait constituer une idée majeure menant à d'importantes réalisations culturelles.
+found key :SCIENCEADVICETECH22
+    => value :La {féodalité} nous apporterait des piquiers en armure, mais il nous faudra du fer pour constituer de telles unités.
+found key :SCIENCEADVICETECH23
+    => value :Certains de nos experts en construction étudient l'{ingénierie}, permettant de fabriquer des ponts enjambant les rivières et de planter des forêts.
+found key :SCIENCEADVICETECH24
+    => value :Notre clergé est conscient des multiples facettes de Dieu et cherche la vérité sur sa nature et sa puissance. Ils appellent cette discipline {"théologie"}.
+found key :SCIENCEADVICETECH25
+    => value :Certains de nos combattants en armure transforment la guerre en art, en style de vie. La {chevalerie} n'est sans doute pas une fin en soi, mais elle nous fournira des chevaliers...
+found key :SCIENCEADVICETECH26
+    => value :Nos ingénieurs découvrent des moyens d'utiliser matériaux et techniques afin de résoudre divers problèmes. L'{invention} engendrera une culture de créativité scientifique.
+found key :SCIENCEADVICETECH27
+    => value :Il nous faut un moyen de communiquer en peu de temps des idées à un grand nombre de gens. L'{imprimerie} devrait permettre de répandre rapidement de nouveaux concepts.
+found key :SCIENCEADVICETECH28
+    => value :Nos musiciens écrivent désormais leurs créations et pourraient développer le {solfège}. Ce système de composition musicale permettrait de créer des oeuvres d'une grande beauté...
+found key :SCIENCEADVICETECH29
+    => value :Nos théologiens avisés veulent créer des universités afin d'enseigner à la population notre mode de vie. L'{éducation} ouvrira de nombreuses voies à notre civilisation...
+found key :SCIENCEADVICETECH30
+    => value :Nos inventeurs tentent de maîtriser la puissance du feu pour améliorer notre armement. Grâce à la {poudre à canon}, nos soldats seront plus forts! Mais il nous faudra du salpêtre...
+found key :SCIENCEADVICETECH31
+    => value :Nos enseignants insistent sur l'intérêt que présentent l'épargne, le prêt et l'investissement. Pour eux, la {banque} est une idée qui rapportera...
+found key :SCIENCEADVICETECH32
+    => value :Nos sages commencent à tracer des schémas reliant les étoiles et à expliquer leurs relations avec nous. Cette nouvelle science, l'{astronomie}, semble prometteuse, notamment pour la navigation maritime.
+found key :SCIENCEADVICETECH33
+    => value :Le succès remporté par la poudre à canon amène nos savants à s'intéresser à d'autres composés. Ils veulent étudier la {chimie} de manière approfondie... Cela peut se révéler utile...
+found key :SCIENCEADVICETECH34
+    => value :L'imprimerie contribue à répandre quelques idées très bizarres. Parmi elles, on trouve un concept baptisé {"démocratie"} selon lequel "le peuple" se dirige lui-même. On aura tout vu...
+found key :SCIENCEADVICETECH35
+    => value :Maintenant que nous disposons d'un système bancaire, il est important que nos érudits étudient le fonctionnement de l'{économie}.
+found key :SCIENCEADVICETECH36
+    => value :Nos astronomes aimeraient formaliser un système de {navigation} sur l'océan. C'est une bonne idée, cela nous permettrait d'explorer le monde!
+found key :SCIENCEADVICETECH37
+    => value :Nos mathématiciens, chimistes et astronomes travaillent de concert afin de découvrir les lois qui régissent le monde matériel. La {physique} ouvrira la porte à de nouveaux champs de recherche.
+found key :SCIENCEADVICETECH38
+    => value :Nos forgerons pourraient développer leurs activités en combinant mieux les minerais pour créer de nouveaux alliages. La {métallurgie} peut avoir d'importants avantages en matière d'armes lourdes et de fortifications.
+found key :SCIENCEADVICETECH39
+    => value :Nos artistes devraient s'exprimer librement et créer ainsi des oeuvres que le monde entier nous envierait. Notre société est assez mûre pour favoriser les {beaux arts}.
+found key :SCIENCEADVICETECH40
+    => value :Nos physiciens tâchent d'expliquer le mouvement naturel. Ils appellent cela la {théorie de la gravitation}. Sa portée pourrait être énorme!
+found key :SCIENCEADVICETECH41
+    => value :Une force mystérieuse, le {magnétisme}, est à l'étude par nos physiciens. Elle pourrait donner naissance à des instruments de navigation qui nous assureraient la maîtrise des mers!
+found key :SCIENCEADVICETECH42
+    => value :Nos généraux réclament une {tradition militaire}. Ils assurent qu'elle permettrait de former de meilleurs soldats et officiers.
+found key :SCIENCEADVICETECH43
+    => value :Le sentiment selon lequel nous formons "une grande nation" croît dans nos villes. Ce {nationalisme} pourrait augmenter notre force et notre unité et développer la fierté et la notion d'intérêt général.
+found key :SCIENCEADVICETECH44
+    => value :Certains inventeurs tentent de développer une nouvelle forme d'énergie grâce à la {machine à vapeur}. Ceci nous permettrait de construire des véhicules automoteurs, tels les navires et les trains.
+found key :SCIENCEADVICETECH45
+    => value :Nous pourrions découvrir les causes des maladies et leurs remèdes. La {médecine} permettra de grandes choses.
+found key :SCIENCEADVICETECH46
+    => value :Certains fustigent le sort des ouvriers dans notre société. Un nouveau régime politique appelé {communisme} vise à mieux répartir les richesses.
+found key :SCIENCEADVICETECH47
+    => value :La machine à vapeur et d'autres appareils mécaniques modifient considérablement notre société. Nos scientifiques et nos entrepreneurs veulent développer l'{industrialisation} afin d'accroître notre production. 
+found key :SCIENCEADVICETECH48
+    => value :Ecoutez, c'est passionnant: nos savants et inventeurs pensent qu'il est possible de maîtriser l'énergie de la foudre! Ils pensent pouvoir produire de l'{électricité} à l'aide de machines à vapeur et d'aimants!
+found key :SCIENCEADVICETECH49
+    => value :Nous proposons d'instaurer une approche systématique de la découverte du savoir. La {méthode scientifique} fait appel à l'hypothèse et à l'expérience. C'est une excellent idée, croyez-moi.
+found key :SCIENCEADVICETECH50
+    => value :Le cloaque dans lequel nous vivons nous rend (littéralement) malades. Il est temps de développer des méthodes d'{assainissement}. Ceci permettra à nos villes de continuer à grandir.
+found key :SCIENCEADVICETECH51
+    => value :Il est plus important que jamais de garder un oeil sur nos rivaux. Nous avons été trop souvent trahis. Mettons sur pied un service d'{espionnage} afin de protéger notre mode de vie.
+found key :SCIENCEADVICETECH52
+    => value :Les affaires prennent chaque jour plus d'importance. La {société anonyme} protégera nos entrepreneurs de la responsabilité personnelle et favorisera la croissance de notre économie.
+found key :SCIENCEADVICETECH53
+    => value :Certaines de nos sociétés apprennent le {raffinage} des matières premières sur une grande échelle. Ceci leur permet de les transformer en produits utiles. 
+found key :SCIENCEADVICETECH54
+    => value :Nous pourrions développer une nouvel alliage métallique très résistant - appelons-le {acier} - qui modifierait à jamais les méthodes de construction.
+found key :SCIENCEADVICETECH55
+    => value :Grâce à la méthode scientifique, nous sommes sur le point de définir la {théorie atomique} qui explique l'essence même de la matière. Ca, c'est quelque chose!
+found key :SCIENCEADVICETECH56
+    => value :Nos astucieux inventeurs travaillent sur un moteur à {combustion interne} capable de maîtriser la puissance du feu. Ceci permettrait de déplacer rapidement de grands engins.
+found key :SCIENCEADVICETECH57
+    => value :Voilà une bonne idée: construisons nos machines et engins à l'aide de {pièces détachées} standardisées. Cela évitera d'avoir à jeter le tout si seule une petite partie est hors d'usage!
+found key :SCIENCEADVICETECH58
+    => value :Nos inventeurs pensent qu'il est possible de construire des machines volantes. Le {vol} pourrait bien changer à jamais la face du monde...
+found key :SCIENCEADVICETECH59
+    => value :Nos généraux songent à une nouvelle forme de guerre dans laquelle nos troupes attaqueraient depuis la mer! Les {opérations amphibies} vont rendre nos ennemis nerveux!
+found key :SCIENCEADVICETECH60
+    => value :Grâce aux pièces détachées, nous sommes à même de développer un système de {production de masse} capable d'accélérer le rythme de fabrications des machines.
+found key :SCIENCEADVICETECH61
+    => value :Grâce à notre compréhension de l'atome, nous pouvons développer l'{électronique}. Ceci accélérerait considérablement la production dans nos usines.
+found key :SCIENCEADVICETECH62
+    => value :Nos ingénieurs peuvent développer l'{automobile} qui permet de construire de petits engins motorisés.
+found key :SCIENCEADVICETECH63
+    => value :Découvrir l'{aéronautique} est impératif. Imaginez un peu: des engins volants suspendus dans l'air, nos soldats attaquant du ciel... Pas mal, non?
+found key :SCIENCEADVICETECH64
+    => value :La {radio} autorisera des communications instantanées sur de grandes distances. Que rêver de mieux?
+found key :SCIENCEADVICETECH65
+    => value :Le {moteur-fusée} nous permettrait d'expédier des objets dans l'espace... mais aussi de produire des missiles et de développer l'avion à réaction...
+found key :SCIENCEADVICETECH66
+    => value :Nos physiciens explorent l'atome en détail et pensent qu'il peut receler une énergie inouïe. La {fission} pourrait servir en temps de guerre comme en temps de paix.
+found key :SCIENCEADVICETECH67
+    => value :Nous pourrions développer des ordinateurs permettant de traiter l'information à la vitesse de la lumière. Cela nous procurerait des armes plus "intelligentes" et accélérerait le rythme de la recherche...
+found key :SCIENCEADVICETECH68
+    => value :Nous devons prendre soin de notre environnement. Le {recyclage} de nos déchets est une voie à suivre.
+found key :SCIENCEADVICETECH69
+    => value :Nos scientifiques pensent que grâce à l'{astronautique}, nous pourrions aller, pourquoi pas, jusqu'à Alpha Centauri...
+found key :SCIENCEADVICETECH70
+    => value :Les avantages de la fission ont été cruciaux. Nos scientifiques pensent maîtriser l'{énergie nucléaire}. Grâce à elle, ils pourront produire de l'électricité ou fabriquer des armes de destruction massive.
+found key :SCIENCEADVICETECH71
+    => value :Nous pourrions développer le {supraconducteur} pour continuer nos recherches sur les particules de matière. Ceci facilitera aussi nos travaux dans le domaine spatial.
+found key :SCIENCEADVICETECH72
+    => value :Grâce aux nouveaux matériaux et aux ordinateurs, nous pourrions développer la {miniaturisation} capable à l'avenir de générer des avancées presque magiques.
+found key :SCIENCEADVICETECH73
+    => value :Une approche intelligente de l'{écologie} nous aidera à gérer la pollution et nous procurera d'autres avantages au niveau national.
+found key :SCIENCEADVICETECH74
+    => value :Nos travaux sur le recyclage nous ont apporté des {fibres synthétiques} dotées de propriétés encore inimaginables il y a quelques années. Nous devrions continuer à explorer cette voie.
+found key :SCIENCEADVICETECH75
+    => value :Notre programme spatial continue à porter ses fruits. Nous pourrions développer les {satellites} afin de mieux connaître notre planète et d'améliorer les communications.
+found key :SCIENCEADVICETECH76
+    => value :Nous pourrions développer une nouvelle technologie, le {laser}. Il emploie une lumière fortement concentrée et ses usages semblent illimités.
+found key :SCIENCEADVICETECH77
+    => value :Nos médecins étudient l'essence même de la vie. Mieux comprendre la {génétique} nous permettrait d'éradiquer de nombreuses maladies et de prolonger l'existence.
+found key :SCIENCEADVICETECH78
+    => value :En combinant nos connaissances en physique aux fibres synthétiques, nous pouvons développer la {furtivité} qui rendra nos avions quasiment invisibles.
+found key :SCIENCEADVICETECH79
+    => value :A l'aide du guidage laser, des ordinateurs miniaturisés et des satellites, nous pouvons construire des {armes intelligentes} capables de mener des frappes de précision. Qu'en dites-vous?
+found key :SCIENCEADVICETECH80
+    => value :Grâce à notre savoir en matière de laser, d'ordinateurs et de miniaturisation, nous pourrions développer des {robots} capables d'effectuer plus rapidement et plus efficacement des tâches dangereuses.
+found key :SCIENCEADVICETECH81
+    => value :Nous sommes désormais capables de construire une défense intégrée globale de type {IDS}. Pourquoi ne pas tenter de construire un bouclier contre les missiles ennemis?
+found key :PALACE_VIEW_UPGRADE
+found key :caption Le peuple vous aime
+    => value :Le peuple admire tellement vos réalisations qu'il propose d'embellir votre palais.
+found key :SSVIEW_SWITCH_PROD
+found key :map_center 0
+found key :advisor Scientifique Triste
+    => value :$CITY0 doit construire ceci: $PART5.
+    => value :^$CITY0 construit actuellement le projet $ITEM1, et $NUM0 $TEXT3 se trouvent dans la file
+found key :itemlist
+    => value :Zoom sur la ville.
+    => value :Modifier et produire: $PART4.
+    => value :Terminer le projet $ITEM2, puis construire: $PART4.
+    => value :Placer dans la file le projet $PART4.
+found key :active 3
+found key :WRITING
+found key :advisor Diplomatique Heureux
+    => value :Maintenant que nous savons $LINK<écrire=TECH_Writing>, nous pouvons établir des $LINK<ambassades=GCON_Embassies> auprès de nos voisins. 
+    => value :Qu'en dites-vous?
+found key :itemlist
+    => value :Entendu, allons-y.
+    => value :Non, pas pour l'instant.
+found key :IRONWORKING
+found key :advisor Militaire Heureux
+found key :text
+    => value :Nos sages nous ont enseigné le $LINK<travail du fer=TECH_Iron_Working> permettant de forger de meilleures armes.
+    => value :Mais nous devons pour cela $LINK<relier=GCON_Trade> des gisements de $LINK<minerai de fer=GOOD_Iron> à nos villes.
+    => value :Recherchez des gisements de fer afin de tirer profit du travail du fer.
+found key :CONSTRUCTION
+found key :advisor Militaire Heureux
+found key :text
+    => value :Maintenant que nous connaissons la $LINK<construction=TECH_Construction>, $RULER_TITLE0, nos travailleurs peuvent bâtir des 
+    => value :$LINK<forteresses=GCON_Fortresses> pour protéger nos populations. Appuyez sur [Ctrl-F] pour faire construire une forteresse par une unité de travailleurs.
+found key :MAPMAKING
+found key :advisor Commerce Heureux
+found key :text
+    => value :Notre population trace des cartes de notre univers et nous pouvons échanger nos $LINK<cartes du monde=GCON_Maps>
+    => value :avec d'autres civilisations afin d'accroître nos connaissances.
+found key :ASTRONOMY
+found key :advisor Scientifique Heureux
+found key :text
+    => value :Nos sages ont développé $LINK<l'astronomie=TECH_Astronomy> qui facilite la navigation de nos marins.
+    => value :Nos navires peuvent désormais franchir sans danger les cases de $LINK<mer=TERR_Sea>.
+found key :NAVIGATION
+found key :advisor Scientifique Heureux
+found key :text
+    => value :Grâce à la découverte de la $LINK<navigation=TECH_Navigation> et aux nouveaux instruments associés, nos navires peuvent désormais
+    => value :franchir en toute sécurité les $LINK<océans=TERR_OCEAN>.
+found key :GUNPOWDER
+found key :advisor Scientifique Heureux
+found key :text
+    => value :Nos chercheurs ont progressé dans l'étude de la $LINK<poudre à canon=TECH_Gunpowder> et nous pouvons désormais construire des $UNIT0.
+    => value :Néanmoins, il nous faut relier nos villes à des sources de $LINK<salpêtre=GOOD_Saltpeter> pour constituer des unités dotées d'arquebuses.
+    => value :Recherchez le salpêtre sur la carte.
+found key :ENGINEERING
+found key :advisor Scientifique Heureux
+found key :text
+    => value :Grâce à notre maîtrise de $LINK<l'ingénierie=TECH_Engineering>, nos populations construisent des ponts enjambant tous les fleuves de
+    => value :l'empire et nos travailleurs peuvent repeupler nos forêts en $LINK<reboisant=GCON_Worker_Jobs>.
+    => value :Appuyez sur [N] pour qu'une unité de travailleurs reboise une forêt.
+found key :NATIONALISM
+found key :advisor Diplomatique Heureux
+found key :text
+    => value :Notre population a désormais un fort sentiment d'identité: le $LINK<nationalisme=TECH_Nationalism>. Nous pouvons faire appel à la 
+    => value :$LINK<mobilisation=GCON_Mobilization> pour modifier l'objectif de notre économie (consultez le conseiller à l'intérieur).
+    => value :Nous pouvons également signer des $LINK<pactes de protection mutuelle et des embargos commerciaux=GCON_Agreements> avec les nations alliées.
+found key :STEAM_POWER
+found key :advisor Scientifique Heureux
+found key :text
+    => value :Notre compréhension de la $LINK<machine à vapeur=TECH_Steam_Power> révolutionne notre société. Nos travailleurs 
+    => value :peuvent transformer les routes en voies ferrées, ce qui accélérera le transport des $LINK<marchandises=GCON_Commerce> et des personnes.
+    => value :Mais, pour alimenter les trains et nos industries, nous devrons $LINK<relier=GCON_Trade> 
+    => value :nos villes à des sources de $LINK<charbon=GOOD_Coal>. Recherchez sur la carte les gisements de charbon
+    => value :et reliez-les à nos villes!
+found key :ELECTRICITY
+found key :advisor Scientifique Heureux
+found key :text
+    => value :La découverte de $LINK<l'électricité=TECH_Electricity> améliore considérablement l'existence, $RULER_TITLE0.
+    => value :Nous pouvons apporter l'eau douce sur de longues distances et n'avons donc plus besoin d'une source proche pour irriguer.
+found key :REPLACEABLE_PARTS
+found key :advisor Commerce Heureux
+    => value :La découverte des pièces détachées nous a révélé l'existence du $LINK<caoutchouc=GOOD_Rubber>. Cette matière première possède de nombreux usages. Dénichons-en et faisons-en profiter notre empire.
+found key :REFINING
+found key :advisor Scientifique heureux
+found key :text
+    => value :Avec le $LINK<raffinage=TECH_Refining>, il apparaît que nous avons besoin d'un meilleur carburant pour nos machines.
+    => value :Nous devons $LINK<relier=GCON_Trade> nos villes à des gisements pétroliers.
+    => value :Recherchez du $LINK<pétrole=GOOD_Oil> pour alimenter nos unités motorisées et nos usines.
+found key :ROCKETRY
+found key :advisor Scientifique Heureux
+found key :text
+    => value :Pour mettre à profit nos récentes expériences sur le $LINK<moteur-fusée=TECH_Rocketry>, il nous faut des alliages plus légers et plus flexibles.
+    => value :Nous devrions rechercher des sources $LINK<d'aluminium=GOOD_Aluminum> qui nous permettront de construire de meilleurs avions,
+    => value :des fusées et des missiles.
+found key :FISSION
+found key :advisor Scientifique Heureux
+found key :text
+    => value :La $LINK<fission=TECH_Fission> nous permettra de produire plus efficacement de l'énergie pour nos usines.
+    => value :Mais nous allons devoir $LINK<relier=GCON_Trade> nos villes à des sources $LINK<d'uranium=GOOD_Uranium>.
+found key :SMART_WEAPONS
+found key :advisor Scientifique Heureux
+    => value :$RULER_TITLE, maintenant que nous possédons des $LINK<armes intelligentes>, nos $LINK<avions furtifs=PRTO_Stealth_Fighter> peuvent mener des $LINK<frappes de précision Strikes=GCON_Air_Missions> 
+    => value :contre les villes ennemies.
+found key :HAVE_RESOURCE
+found key :map_center 1
+found key :advisor Commerce Heureux
+    => value :Nos travailleurs ont construit une route permettant d'acheminer à $CITY1 la ressource $RESOURCE0. Ceci nous permettra de construire des $UNIT2. Beau travail!
+found key :HAVE_RESOURCE_NO_UNIT
+found key :map_center 1
+found key :advisor Commerce Heureux
+    => value :Nos travailleurs ont construit une route permettant d'acheminer à $CITY1 la ressource $RESOURCE0. Ceci nous permettra de construire de nouvelles unités ou améliorations. Beau travail!
+found key :HAVE_LUXURY
+found key :map_center 1
+found key :advisor Commerce Heureux
+    => value :Nos travailleurs ont construit une route permettant d'acheminer à $CITY1 le produit de luxe suivant $LUX0. Ceci rendra les citoyens $LINK<heureux=GCON_Moods>. Bien joué!
+found key :DIALOGUEMESS
+found key :x 300
+found key :y 280
+found key :xs 320
+found key :caption Saisissez votre message
+    => value :Message:
+found key :DIALOGUE
+found key :caption Sélection du dirigeant
+found key :text
+    => value :A qui voulez-vous envoyer le message?
+found key :INITIATETRADE
+found key :caption Sélection du dirigeant
+found key :text
+    => value :Avec qui voulez-vous commercer?
+found key :TRADECONFIRM
+found key :caption Requête commerciale
+found key :text
+    => value :$LEADER0 voudrait commercer avec vous. Acceptez-vous?
+found key :TRADEBUSY
+found key :caption Requête commerciale
+found key :text
+    => value :$LEADER0 est occupé.
+found key :TRADEREJECT
+found key :caption Commerce repoussé
+found key :text
+    => value :$LEADER0 a rejeté votre requête commerciale.
+found key :TRADECANCEL
+found key :caption Commerce annulé
+found key :text
+    => value :$LEADER0 a rompu les négociations commerciales avec vous.
+found key :WAITINGFORSESSION
+found key :caption CIVILIZATION III
+found key :text
+    => value :Attente du début de session...
+found key :ASKGOLD
+found key :xs 150
+    => value :{Saisissez le montant...}
+    => value :Or:
+found key :PICKUNIT
+found key :xs 400
+found key :caption Sélection de l'unité à activer
+found key :SERVERONLY
+found key :xs 440
+found key :caption Désolés!
+    => value :Seul l'hôte peut modifier ces paramètres.
+found key :BADTECHKEY
+found key :xs 440
+found key :caption Analyseur de règles
+    => value :^^Une mauvaise clé {technologique} a été découverte dans le fichier suivant:
+    => value :^^
+    => value :^^$FILENAME0
+    => value :^^
+    => value :^^La clé indéchiffrable est:
+    => value :^^
+    => value :^^$KEY1
+    => value :^^
+    => value :^^L'erreur s'est produite à la ligne suivante:
+    => value :^^
+    => value :^^$LINE2
+    => value :^^
+    => value :^^Ceci est probablement dû à une tentative de modification du fichier.
+    => value :^^Le fichier original peut être restauré en réinstallant Civilization III
+    => value :^^à partir du CD-ROM d'origine.
+found key :DUPLICATETECH
+found key :xs 440
+found key :caption Analyseur de règles
+    => value :^^Une clé {technologique en double} a été découverte dans le fichier suivant:
+    => value :^^
+    => value :^^$FILENAME1
+    => value :^^
+    => value :^^La clé en double est:
+    => value :^^
+    => value :^^$KEY0
+    => value :^^
+    => value :^^Sa deuxième occurrence se trouve à la ligne suivante:
+    => value :^^
+    => value :^^$LINE2
+    => value :^^
+    => value :^^Les deux technologies sont #$NUM0 et #$NUM1.
+    => value :^^
+    => value :^^Ceci est probablement dû à une tentative de modification du fichier.
+    => value :^^Le fichier original peut être restauré en réinstallant Civilization III
+    => value :^^à partir du CD-ROM d'origine.
+found key :SENDPTWSCORES
+found key :advisor Militaire
+    => value :Voulez-vous vous connecter et consulter vos scores?
+found key :itemlist
+    => value :Non
+    => value :Oui
+found key :PLAYERFILE
+found key :xs 440
+found key :caption Analyseur de nation
+    => value :^^Impossible de trouver la mention suivante dans un fichier de nation:
+    => value :^^
+    => value :^^NATION
+    => value :^^
+    => value :^^Le fichier de nation est:
+    => value :^^
+    => value :^^$FACTIONFILE1
+    => value :^^
+    => value :^^Cette mention est obligatoire dans les fichiers de nation.
+found key :EDITVEHWHO
+found key :xs 400
+found key :caption Sélection du propriétaire d'unité
+found key :MPRECEIVEFILE
+found key :xs 400
+    => value :Réception du fichier de scénario manquant $FILENAME0 à partir du serveur.
+    => value :$NUM0 fichier(s) restant(s).
+    => value :Appuyez sur [Echap] pour quitter le scénario.
+found key :SAVEFAILED
+found key :xs 400
+found key :caption Erreur de sauvegarde
+    => value :^^
+    => value :^^ECHEC DE LA SAUVEGARDE DE PARTIE
+    => value :^^
+    => value :^^$FILENAME0
+    => value :^^
+found key :VERSIONCONTROL
+found key :xs 440
+    => value :^^
+    => value :^^SID MEIER'S CIVILIZATION III
+    => value :^^
+    => value :^^VERSION: $VERSION0
+    => value :^^DATE: $VERSIONDATE1
+    => value :^^
+found key :SYNCHINGGAME2
+found key :xs 400
+    => value :Synchronisation de partie... Var. globales   ($NUM0/$NUM1)
+found key :SYNCHINGWORLD2
+found key :xs 400
+    => value :Synchronisation de partie... Carte du monde ($NUM0/$NUM1)
+found key :SYNCHINGPLAYERS2
+found key :xs 400
+    => value :Synchronisation de partie... Dirigeants   ($NUM2: $NUM0/$NUM1)
+found key :SYNCHINGVEHICLES2
+found key :xs 400
+    => value :Synchronisation de partie... Véhicules ($NUM0/$NUM1)
+found key :SYNCHINGBASES2
+found key :xs 400
+    => value :Synchronisation de partie... Bases ($NUM0/$NUM1)
+found key :NOTALLREADY
+found key :xs 400
+found key :caption Certains joueurs ne sont pas prêts
+    => value :Voulez-vous quand même commencer la partie?
+    => value :Oui
+    => value :Non
+found key :SYNCHINGWORLD3
+found key :xs 400
+    => value :Synchronisation de partie... Carte du monde $NUM2 ($NUM0/$NUM1)
+found key :SERVERLOSTINSETUP
+found key :xs 300
+found key :wave 12
+    => value :PERTE DU SERVEUR DURANT LA PREPARATION! Partie annulée.
+found key :PASSWORDSNOTVALIDATED
+found key :xs 440
+found key :caption Certains mots de passe n'ont pas été validés
+    => value :La partie ne pourra être lancée que lorsque tous les
+    => value :mots de passe non vierges auront été validés.
+found key :PASSWORDOK
+found key :xs 340
+found key :caption Pas de mot de passe requis
+    => value :Votre faction pour cette partie a déjà été débloquée.
+found key :ENTERPASSWORDFACTION
+found key :xs 440
+found key :caption Mot de passe
+    => value :Tapez le mot de passe de la faction $FACTION0
+    => value :Mot de passe:
+found key :ENTERPASSWORDNEW
+found key :xs 440
+found key :caption Mot de passe
+    => value :Tapez le nouveau mot de passe (ou laissez le champ vierge). Ceci
+    => value :constituera votre mot de passe de faction pour la nouvelle partie.
+    => value :Mot de passe:
+found key :VERIFYPASSWORD
+found key :xs 440
+found key :caption Mot de passe
+    => value :Vérifiez le nouveau mot de passe
+    => value :Mot de passe:
+found key :DIFFERENTPASSWORDS
+found key :xs 440
+found key :caption Mot de passe non vérifié
+    => value :Le mot de passe n'a pas été vérifié. Réessayez.
+found key :BADPASSWORD
+found key :xs 440
+found key :caption Mot de passe
+    => value :Mot de passe incorrect.
+found key :LOADCLIENTNOFILE
+found key :xs 440
+found key :wave 12
+found key :caption Erreur de chargement
+    => value :^^
+    => value :^^ECHEC D'OUVERTURE DE FICHIER SUR ORDINATEUR CLIENT
+    => value :^^
+found key :LOADCLIENTBADID
+found key :xs 440
+found key :wave 12
+found key :caption Erreur de chargement
+    => value :^^
+    => value :^^ID DE SAUVEGARDE INCORRECT SUR ORDINATEUR CLIENT
+    => value :^^
+found key :LOADNONE
+found key :xs 440
+found key :wave 12
+found key :caption Erreur de chargement
+    => value :^^
+    => value :^^OUVERTURE DE FICHIER IMPOSSIBLE
+    => value :^^
+    => value :^^"$FILE0"
+    => value :^^
+found key :LOADNOT
+found key :xs 440
+found key :wave 12
+found key :caption Erreur de chargement
+    => value :^^
+    => value :^^FICHIER DE SAUVEGARDE INCORRECT
+    => value :^^
+    => value :^^"$FILE0"
+    => value :^^
+found key :LOADOLD
+found key :xs 440
+found key :wave 12
+found key :caption Erreur de chargement
+    => value :^^
+    => value :^^FICHIER DE SAUVEGARDE OBSOLETE
+    => value :^^
+    => value :^^"$FILE0"
+    => value :^^
+found key :LOADERROR
+found key :xs 440
+found key :wave 12 
+found key :caption Erreur de chargement
+    => value :^^
+    => value :^^ERREUR DE LECTURE DU FICHIER
+    => value :^^
+    => value :^^"$FILE0"
+    => value :^^
+found key :PEDIAICONS_MISSING_ENTRY
+found key :xs 440
+found key :wave 12
+found key :caption Erreur de chargement
+    => value :^^
+    => value :^^ERROR DE LECTURE DU FICHIER
+    => value :^^
+    => value :^^Elément manquant dans "$FILE0" : $KEY1
+    => value :^^
+found key :LOADSECURITY
+found key :xs 440
+found key :wave 12
+found key :caption Erreur de chargement
+    => value :^^
+    => value :^^IMPOSSIBLE DE CHARGER UNE PARTIE MULTIJOUEURS
+    => value :^^A MOT DE PASSE EN MODE UN JOUEUR
+    => value :^^
+    => value :^^"$FILE0"
+    => value :^^
+found key :START_LOC_ERROR
+found key :xs 440
+found key :wave 12
+found key :caption ERREUR
+    => value :^^
+    => value :^^IMPOSSIBLE DE GENERER SUFFISAMMENT DE POINTS
+    => value :^^DE DEPART POUR LANCER UNE PARTIE
+    => value :^^
+found key :ADDED
+found key :xs 300
+    => value :Joueur "$NAME0" ajouté.
+found key :DROPPED
+found key :xs 300
+    => value :Joueur "$NAME0" supprimé.
+found key :SERVERLOST
+found key :xs 300
+found key :wave 12
+    => value :PERTE DU SERVEUR! Le contrôle est transféré à un autre joueur.
+found key :REPLAY_WIN
+found key :xs 135
+    => value :$String0.
+found key :EDITORUNIT
+found key :xs 440
+found key :caption Sélection du type d'unité à créer
+found key :listbox
+found key :button Tous
+found key :button Joueur
+found key :button Moral
+found key :LOAD_SCENARIO
+found key :popup_center
+found key :LOAD_SCENARIO_MODIFIED
+found key :popup_center
+found key :text
+    => value :^[***Les règles du jeu ont été modifiées dans ce scénario.]
+found key :LOAD_SCENARIO_CUSTOMIZE_WORLD
+found key :popup_center
+found key :text
+    => value :^^
+    => value :^{Voulez-vous personnaliser la carte du monde?}
+found key :itemlist
+    => value :Oui. Présentez-moi l'écran de personnalisation du monde.
+    => value :Non. Que la partie commence!
+found key :active 1
+found key :LOAD_SCENARIO_CUSTOMIZE_WORLD_MODIFIED
+found key :popup_center
+found key :text
+    => value :^^
+    => value :^[***Les règles du jeu ont été modifiées dans ce scénario.]
+    => value :^
+    => value :^{Voulez-vous personnaliser la carte du monde?}
+found key :itemlist
+    => value :Oui. Présentez-moi l'écran de personnalisation du monde.
+    => value :Non. Que la partie commence!
+found key :active 1
+found key :LOAD_SCENARIO_ERROR
+found key :caption Scénario incorrect!
+found key :text
+    => value :^^
+    => value :^Ouverture du fichier de scénario impossible. Le fichier est peut-être corrompu!
+found key :LOAD_SCENARIO_ERROR_VERSION
+found key :caption Version de scénario incorrecte!
+found key :text
+    => value :^^
+    => value :^Version de scénario incorrecte!
+    => value :^Les fichiers BIC de la version $VERSION0 sont incompatibles avec cette version de Civilization III.
+found key :LOAD_SCENARIO_ERROR_NO_DEFAULT_RULES
+found key :caption Règles incorrectes!
+found key :text
+    => value :^^
+    => value :^Impossible de localiser le jeu de règles par défaut. Veuillez réinstaller Civilization III.
+found key :LOAD_SCENARIO_ERROR_TUTORIAL_MODIFIED_RULES
+found key :caption Règles modifiées détectées
+found key :text
+    => value :^^
+    => value :^Le didacticiel ne peut pas être utilisé avec des règles modifiées.
+found key :BIC_ERROR_DIFF
+found key :caption Scénario incorrect !
+found key :text
+    => value :^^
+    => value :^^Erreur dans les données BIC !
+    => value :^^
+    => value :^^Un scénario doit contenir exactement $NUM0 degrés de difficulté.
+    => value :^^
+found key :BIC_ERROR_ERAS
+found key :caption Scénario incorrect !
+found key :text
+    => value :^^
+    => value :^^Erreur dans les données BIC !
+    => value :^^
+    => value :^^Un scénario doit contenir exactement $NUM0 époques.
+    => value :^^
+found key :BIC_ERROR_ESPN
+found key :caption Scénario incorrect !
+found key :text
+    => value :^^
+    => value :^^Erreur dans les données BIC !
+    => value :^^
+    => value :^^Un scénario doit contenir exactement $NUM0 missions d'espionnage.
+    => value :^^
+found key :BIC_ERROR_EXPR
+found key :caption Scénario incorrect !
+found key :text
+    => value :^^
+    => value :^^Erreur dans les données BIC !
+    => value :^^
+    => value :^^Un scénario doit contenir exactement $NUM0 degrés d'expérience.
+    => value :^^
+found key :BIC_ERROR_TFRM
+found key :caption Scénario incorrect !
+found key :text
+    => value :^^
+    => value :^^Erreur dans les données BIC !
+    => value :^^
+    => value :^^Un scénario doit contenir exactement $NUM0 tâches de travailleurs.
+    => value :^^
+found key :BIC_ERROR_TERR
+found key :caption Scénario incorrect !
+found key :text
+    => value :^^
+    => value :^^Erreur dans les données BIC !
+    => value :^^
+    => value :^^Un scénario doit contenir exactement $NUM0 types de terrain.
+    => value :^^
+found key :BIC_ERROR_WSIZ
+found key :caption Scénario incorrect !
+found key :text
+    => value :^^
+    => value :^^Erreur dans les données BIC !
+    => value :^^
+    => value :^^Un scénario doit contenir exactement $NUM0 tailles de monde.
+    => value :^^
+found key :PALACE_INSTRUCTIONS
+found key :caption Instructions d'embellissement
+found key :text
+    => value :^^
+    => value :^Déplacez la souris pour mettre en surbrillance les parties du palais que vous pouvez embellir. Cliquez sur une partie pour lancer les travaux.

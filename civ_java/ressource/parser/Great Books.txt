@@ -1,0 +1,51 @@
+#COMMENT
+This Popup should appear once every thousand years in the Ancient and Middle Ages then every 500 years thereafter.
+
+
+#GREAT_HISTORY_BOOK	
+#ADVISOR Culturel Heureux
+#CAPTION Histoire du Monde
+#Text
+^{$HISTORIAN0 a terminé sa Grande Histoire du Monde
+^^["Les $BOOKTITLE1 nations du monde".]}
+^1) Les $HISTORY_RANK2
+^2) Les $HISTORY_RANK3
+^3) Les $HISTORY_RANK4
+^4) Les $HISTORY_RANK5
+^5) Les $HISTORY_RANK6
+^6) Les $HISTORY_RANK7
+^7) Les $HISTORY_RANK8
+^8) Les $HISTORY_RANK9
+
+#HISTORIAN
+Hérodote
+Thucydide
+Pline l'Ancien
+Saint Augustin
+Gibbon
+Toynbee
+Lord McCauley
+Tite-Live
+Tacite
+Bède le Vénérable
+Machiavel
+
+#BOOK_TITLE
+plus riches
+plus puissantes
+plus avancées
+plus heureuses
+plus grandes
+
+#HISTORY_RANK
+glorieux
+grands
+honorables
+médiocres
+pitoyables
+pathétiques
+ineptes
+ridicules
+
+
+

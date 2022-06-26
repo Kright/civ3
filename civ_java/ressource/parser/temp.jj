@@ -1,0 +1,182 @@
+
+options {
+ JAVA_UNICODE_ESCAPE = false;
+ UNICODE_INPUT = true;
+ USER_CHAR_STREAM = false;
+}
+
+
+PARSER_BEGIN(TxtParser)
+
+
+//package ressource.txt_parser;
+
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Iterator;
+import java.util.HashMap;
+
+public class TxtParser {
+
+  public static final boolean verbose = true ;
+  
+  public static HashMap result = new HashMap();
+	
+
+  public static void main(String args[]) throws ParseException {
+    TxtParser parser = new TxtParser(System.in);
+    parser.Input();
+    
+    System.out.println("\n\n\n********* testing result *********");
+    
+    final String test_key[] = { 
+    	"TECH_Masonry", 
+    	"TECH_Metallurgy" };
+    
+    for (int i=0;i<test_key.length;i++)
+    {
+    
+   		String s = (String)result.get( test_key[i] );
+    	System.out.println( test_key[i] + "\n  => " + s );
+    	
+    }
+    
+  }
+
+}
+
+PARSER_END(TxtParser)
+
+
+MORE : {
+
+    ";": IN_SINGLE_LINE_COMMENT }
+
+
+
+MORE : {
+
+    "##": IN_SINGLE_LINE_COMMENT }
+    
+
+MORE : {
+
+    "# ": IN_SINGLE_LINE_COMMENT }  
+  
+
+
+< IN_SINGLE_LINE_COMMENT > SPECIAL_TOKEN : {
+
+    < SINGLE_LINE_COMMENT: "\n"|"\r"|"\r\n" > : DEFAULT }
+
+      
+
+< IN_SINGLE_LINE_COMMENT > MORE : {
+
+    <  ~[] > }
+    
+    
+SKIP :
+{
+  "\t"
+| " "
+| "\r"
+| "\n"
+}
+
+TOKEN :
+{
+	< DIESE : "#" >
+| < EOL : "\n"|"\r"|"\r\n" >
+| < TEXT : ~["#",";","\r","\n"] (~["\r","\n"])* >
+| < MOT :  (["_","a"-"z","A"-"Z","0"-"9"])+ >
+
+
+
+  
+
+}
+
+void Input() :
+{ }
+{
+ 
+  ExpressionList() 
+ 
+ 
+}
+
+
+
+void ExpressionList() :
+{
+	
+}
+{
+	{
+	  System.out.println("Starting text parser");
+	}
+  ( Expression() )*
+  <EOF>
+}
+
+void Expression() :
+{
+	String key=null;
+	String value=null;
+   }
+{
+	//LOOKAHEAD(2)
+	<EOL>
+
+|	
+	
+ 	key=une_clef()
+
+	( value=une_valeur() )*
+	{
+		if (key!=null && value!=null)
+			result.put( key, value );
+	}
+
+		
+  
+}
+
+String une_clef() :
+{
+	Token t=null;
+   }
+{
+	
+//	LOOKAHEAD(2)
+		
+	<DIESE> (t=<MOT>)? (<TEXT>)? ( <EOL> | <EOF> )
+		{
+			if (verbose) System.out.println("found key :" + (t==null ? "null" : t.image));	
+		 	return (t==null ? null : t.image);
+		}
+
+
+		
+	
+}
+
+String une_valeur() :
+{
+	Token t=null;
+   }
+{
+	
+		(t=<TEXT>)?	( <EOL> | <EOF> )  
+		{
+			if (verbose) System.out.println("    => value :" + (t==null ? "null" : t.image));	
+		 	return (t==null ? null : t.image);
+		}
+		
+		
+}
+
+
+
+

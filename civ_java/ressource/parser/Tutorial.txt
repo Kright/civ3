@@ -1,0 +1,250 @@
+#COMMENT ______________________________________________________Settler active messages
+
+
+#TUT_FIRST_MESSAGE
+#ADVISOR Intérieur Heureux
+#TEXT
+^{Commencez par trouver un bon emplacement pour votre capitale.}
+^
+^Les meilleurs sites de construction se trouvent près des rivières, sur les prairies, dans les zones côtières, ou près de ressources spéciales.
+Pour déplacer votre colon, utilisez le bouton "ALLER A", ou les touches du $LINK<pavé numérique=GCON_Keypad>.
+^
+^Appuyez sur [Entrée] pour continuer.
+
+
+
+#TUT_GOOD_CITY_SITE_RESOURCES
+#ADVISOR Intérieur Heureux
+#Text
+^Veuillez m'excuser, mais cet endroit est parfait pour construire une ville
+car il est entouré par de nombreuses $LINK<ressources naturelles=GCON_ResourcesN>...
+^Appuyez sur [B] pour fonder une ville.
+
+
+
+#TUT_GOOD_CITY_SITE_RESOURCES_FOOD
+#ADVISOR Intérieur Heureux
+#Text
+^Veuillez m'excuser, mais cet endroit est parfait pour construire une ville grâce à toutes les
+$LINK<ressources naturelles=GCON_ResourcesN> et à l'abondance de $LINK<nourriture=GCON_Food> aux alentours...
+^Appuyez sur [B] pour fonder une ville.
+
+
+
+#TUT_GOOD_CITY_SITE_RESOURCES_COMMERCE
+#ADVISOR Intérieur Heureux
+#Text
+^Cet endroit est parfait pour construire une ville grâce à toutes les $LINK<ressources naturelles=GCON_ResourcesN> 
+et au terrain alentour, propice au $LINK<commerce=GCON_Commerce>...
+^Appuyez sur [B] pour fonder une ville.
+
+
+
+#TUT_GOOD_CITY_SITE_FRESHWATER
+#ADVISOR Intérieur Heureux
+#Text
+^Une ville construite à cet emplacement bénéficiera d'eau douce en abondance
+pour irriguer ses champs et produire de la $LINK<nourriture=GCON_Food>. Les zones près des rivières et des lacs 
+produisent aussi beaucoup de $LINK<commerce=GCON_Commerce>.
+^Appuyez sur [B] pour fonder une ville.
+
+
+
+#TUT_GOOD_CITY_SITE_COASTAL
+#ADVISOR Intérieur Heureux
+#Text
+^Ce colon se trouve dans une $LINK<zone côtière=TERR_Coast>, c'est un très bon emplacement pour construire de nouvelles villes.
+Les zones côtières sont favorables à la production de $LINK<nourriture=GCON_Food> et de $LINK<commerce=GCON_Commerce>.
+Plus tard, cette ville pourra construire des bateaux et des $LINK<ports=BLDG_Harbor>, ce qui peut s'avérer très utile pour
+améliorer les échanges et le commerce.
+^Appuyez sur [B] pour fonder une ville.
+
+
+
+#COMMENT _______________________________________________________________Worker active messages
+
+
+
+#TUT_FIRST_MOVE
+#ADVISOR Intérieur Heureux
+#Text
+^Ceci est un travailleur. Il peut entre autres construire des $LINK<routes=TFRM_Road>, des $LINK<mines=TFRM_Mine> et des systèmes d'
+$LINK<irrigation=TFRM_Irrigation>. Sa capacité à effectuer ces $LINK<tâches=GCON_Worker_Jobs> dépend du terrain où il se trouve.
+Gardez un oeil sur les boutons d'ordres ci-dessous quand vous déplacez un travailleur pour déterminer les tâches qu'il peut accomplir.
+
+
+
+#TUT_IRRIGATE
+#ADVISOR Intérieur Heureux
+#Text
+^Il est important d'$LINK<irriguer=TFRM_Irrigation> les terres autour de votre ville pour améliorer sa production de $LINK<nourriture=GCON_Food>.
+Ce travailleur pourrait irriguer cette zone grâce à l'eau douce qui se trouve à proximité.
+^Appuyez sur [I] pour irriguer cette case.
+
+#COMMENT  in the $RIVER_OR_LAKE1 next to him. // used to be the end of the previous sentence.  See Pat for why it was changed.
+
+
+#TUT_MINE
+#ADVISOR Intérieur Heureux
+#Text
+Ces $HILL_OR_MTN0 renferment des biens de production précieux. Si nous construisons une $LINK<mine=TFRM_Mine> à cet endroit nous 
+pouvons augmenter la production de $LINK<boucliers=GCON_Shields> à $CITY1, ce qui nous permettra de construire plus rapidement
+des unités militaires et des améliorations pour la ville.
+^Appuyez sur [M] pour construire une mine sur cette case.
+
+
+
+#TUT_ROAD
+#ADVISOR Intérieur Heureux
+#Text
+^Permettez-moi de suggérer que ce travailleur construise des $LINK<routes=TFRM_Road> près de la ville: $CITY0.
+Les routes augmentent la capacité de mouvement et la valeur commerciale des cases où elles sont construites, améliorant ainsi les
+$LINK<revenus fiscaux=GCON_Commerce> de la ville.
+^Appuyez sur [R] pour construire une route à cet emplacement.
+
+
+
+#TUT_STRATEGIC_RESOURCE
+#ADVISOR Intérieur Heureux
+#Text
+^Près de ce travailleur se trouve la ressource $RESOURCE0, qui permet de construire des $UNIT1.
+Pour l'exploiter, nous devons d'abord construire une route sur chaque case
+entre la cité et la ressource.
+^Si elle se trouve dans vos $LINK<frontières=GCON_Territory>, construisez simplement une route sur son emplacement;
+si elle est hors de votre territoire, vous devrez construire une $LINK<colonie=GCON_Colony> pour l'exploiter.
+^Appuyez sur [R] pour construire une route à cet emplacement.
+
+
+
+
+#TUT_STRATEGIC_LUXURY
+#ADVISOR Intérieur Heureux
+#Text
+^Près de ce travailleur se trouve la ressource $RESOURCE0. Si vous construisez une route la reliant à $NEAREST_CITY1,
+les habitants seront plus heureux... Pour ce faire, construisez une route sur chaque case qui sépare la ressource de la ville.
+^Si cette ressource se trouve sur votre $LINK<territoire=GCON_Territory>, construisez simplement une route sur son emplacement;
+si elle est hors de vos frontières, vous devrez construire une $LINK<colonie=GCON_Colony> pour l'exploiter.
+^Appuyez sur [R] pour construire une route à cet emplacement.
+
+
+
+#TUT_CONNECT_CITIES
+#ADVISOR Intérieur Heureux
+#Text
+^En reliant toutes nos villes les unes aux autres par des routes, vous pouvez créer un réseau de commerce
+permettant à notre peuple de partager toutes les $LINK<ressources échangeables=GCON_Trade> de l'empire.
+
+
+
+
+#COMMENT _________________________________________________Other Tut messages
+
+#TUT_SECOND_CITY
+#ADVISOR Intérieur Heureux
+^{Voilà un bon début}. Vous avez maintenant 2 villes, c'est une bonne chose. Continuez à construire des villes
+et à les relier avec des routes. Essayez de construire des routes vers autant de $LINK<ressources échangeables=GCON_Trade> que possible 
+et fraternisez avec vos voisins. A terme, vos frontières s'étendront et vous deviendrez plus puissant.
+^
+^Pour accéder à l'aide pendant le jeu, utilisez la $LINK<Civilopédia=MENU_Main> et suivez les liens pour trouver la réponse à vos questions.
+
+#TUT_SCOUT
+#ADVISOR Intérieur Heureux
+#Text
+^{Ceci est un éclaireur}. Les éclaireurs sont très utiles pour explorer les terres environnantes et fouiller les villages barbares
+car ils se déplacent plus vite que la plupart des unités disponibles à ce moment de la partie.
+L'exploration est un aspect très important du jeu auquel vous devriez porter une attention constante.
+
+
+
+#TUT_FIRST_MILITARY_UNIT
+#ADVISOR Intérieur Heureux
+#Text
+^{Vous venez de construire votre première unité militaire}. Les unités militaires peuvent explorer les terres autour de la ville,
+attaquer les unités et les villes ennemies (si nécessaire), et défendre votre civilisation.
+^Utilisez [ALLER A] ou le [pavé numérique] pour déplacer les unités, et les boutons d'ordres pour effectuer des actions spéciales.
+
+
+
+#COMMENT .... Player has only one city, and it is size 4+
+#TUT_ONE_CITY
+#ADVISOR Intérieur Heureux
+#Text
+^{La population a beaucoup augmenté à $CITY0}. Il serait peut-être bon de construire une deuxième ville.
+Pour cela, cliquez avec le bouton droit (ou double-cliquez) sur $CITY0 et ordonnez la construction d'un $LINK<colon=PRTO_Settler>.
+Déplacez ensuite le colon vers un site favorable et appuyez sur [B] pour fonder une ville.
+
+
+
+#TUT_CIVIL_DISORDER
+#ADVISOR Intérieur Triste
+#Text
+^{Une de vos villes connaît des émeutes}. Ces $LINK<émeutes=GCON_Disorder> se déclenchent quand le nombre de citoyens mécontents dépasse
+le nombre de citoyens heureux. La croissance et la production s'arrêtent tant que les émeutes persistent.
+^
+^{Pour calmer les émeutes, vous pouvez}:
+^* Transformer des citoyens en $LINK<amuseurs=GCON_Specialists>.
+^* Placer des unités militaires en garnison dans la ville (fortifier des unités dans la ville).
+^* Construire un $LINK<temple=BLDG_Temple>, une $LINK<cathédrale=BLDG_Cathedral>, ou un $LINK<colisée=BLDG_Colosseum>.
+^* Faire parvenir des $LINK<produits de luxe=GCON_ResourcesL> à la ville.
+
+
+
+#TUT_SHIP
+#ADVISOR Intérieur Triste
+#Text
+^{Vous avez construit votre première unité de $UNIT0}. Utilisez les bateaux pour explorer les mers et $LINK<transporter=GCON_Transport> vos
+unités sur d'autres continents. N'oubliez pas que certains bateaux peuvent être $LINK<perdus=PRTO_Galley> si ils s'éloignent trop des côtes.
+
+
+
+#TUT_AIR_UNIT
+#ADVISOR Intérieur Triste
+#Text
+^{Vous avez construit votre première unité de $UNIT0}. Les unités aériennes peuvent bombarder les unités et les
+installations terrestres, et assurer la sécurité de l'espace aérien de la ville dans laquelle elles sont basées.
+Contrairement aux autres unités, les unités aériennes reçoivent une $LINK<mission aérienne=GCON_Air_Missions> qu'elles effectuent sur-le-champ.
+
+
+#COMMENT -------------------------------------------- CITY MANAGEMENT TUTORIAL
+
+#TUT_FIRST_CITY_MANAGEMENT
+#ADVISOR Intérieur Heureux
+#Text
+{Bienvenue dans l'affichage de la ville}. Grâce à cet affichage, vous pouvez déterminer ce que la ville doit $LINK<construire=GCON_Shields>, 
+diriger les citoyens et avoir des informations détaillées sur l'état actuel de la ville. Pour accéder à cet écran,
+double-cliquez sur une ville depuis la carte principale. Pour plus d'informations, vous pouvez toujours accéder à la 
+$LINK<Civilopédia=MENU_Main> en cliquant avec le bouton droit sur les zones de menu où l'icone de livre apparaît.
+Pour quitter cette fenêtre, cliquez sur le "X" en bas à droite de l'écran.
+^{Appuyez sur Entrée pour continuer....}
+
+#TUT_PRODUCTION_BUTTON
+#ADVISOR Intérieur Heureux
+#Text
+Ceci est le bouton de changement de production. Un simple clic fait apparaître la liste de construction dans laquelle vous pourrez 
+choisir ce que doit produire la ville. Au fur et à mesure des progrès de votre civilisation, la liste s'allongera.
+Le dessin sur le bouton représente l'$LINK<unité=MENU_Units> ou l'$LINK<amélioration=MENU_City_Improvements>
+en cours de construction. 
+
+#TUT_SHIELDS
+#ADVISOR Intérieur Heureux
+#x 500
+#y 100
+#Text
+La case de production montre le nombre de $LINK<boucliers=GCON_Shields> accumulés pour le projet en cours 
+(représenté sur le bouton de changement de production). Quand la case de production est remplie de boucliers,
+l'unité ou l'amélioration est terminée
+et apparaît dans le jeu.
+
+
+#TUT_CITIZENS
+#ADVISOR Intérieur Heureux
+#Text
+Voici les citoyens de la ville. La tâche principale d'un citoyen est de travailler dans la $LINK<zone exploitable=GCON_Radius> de la ville
+pour produire de la $LINK<nourriture=GCON_Food>, des $LINK<boucliers=GCON_Shields>, et du $LINK<commerce=GCON_Commerce>.
+La position de chaque citoyen est représentée par les icones de nourriture, de boucliers et de commerce sur la carte.
+
+#Variables
+rivière
+lac
+collines
+montagnes

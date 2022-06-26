@@ -1,0 +1,226 @@
+/*
+ * PediaIcons.jj
+ *
+ * Created on 30 mars 2004, 15:56
+ * 
+ *  
+ * civ_java : civilization game toolkit.
+ * Copyright (C) 2003-2005  julien eyries (julien.eyries@9online.fr)
+ * 
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
+ 
+options {
+ JAVA_UNICODE_ESCAPE = false;
+ UNICODE_INPUT = true;
+ USER_CHAR_STREAM = false;
+ STATIC = false;
+}
+
+
+PARSER_BEGIN(PediaIcons)
+
+
+package ressource.parser;
+
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Iterator;
+import java.util.HashMap;
+import java.io.*;
+
+public class PediaIcons {
+
+  public boolean verbose = false ;
+  
+  public HashMap result = new HashMap();
+	
+	public String get( String key )
+	{
+		String s = (String)result.get( key );
+		return s;
+	}
+
+  public static void main(String args[]) throws ParseException {
+  
+  	java.io.InputStream stream=null; 
+  	
+  	if (args.length == 0)
+  		stream = System.in;
+  	else{ 		
+  		try { 
+  		stream = new BufferedInputStream( 
+  				new FileInputStream(args[0]));	
+  		}catch (FileNotFoundException e) {}
+  	}
+  	
+    PediaIcons parser = new PediaIcons(stream);
+    
+    parser.verbose = true;
+    parser.Input();
+    
+    System.out.println("\n\n\n********* testing result *********");
+    
+    final String test_key[] = { 
+    	"TECH_Masonry", 
+    	"TECH_Metallurgy" };
+    
+    for (int i=0;i<test_key.length;i++)
+    {
+    
+   		String s = parser.get( test_key[i] );
+    	System.out.println( test_key[i] + "\n  => " + s );
+    	
+    }
+    
+  }
+
+}
+
+PARSER_END(PediaIcons)
+
+
+MORE : {
+
+    ";": IN_SINGLE_LINE_COMMENT }
+
+
+
+MORE : {
+
+    "##": IN_SINGLE_LINE_COMMENT }
+    
+
+MORE : {
+
+    "# ": IN_SINGLE_LINE_COMMENT }  
+  
+
+
+< IN_SINGLE_LINE_COMMENT > SPECIAL_TOKEN : {
+
+    < SINGLE_LINE_COMMENT: "\n"|"\r"|"\r\n" > : DEFAULT }
+
+      
+
+< IN_SINGLE_LINE_COMMENT > MORE : {
+
+    <  ~[] > }
+    
+    
+SKIP :
+{
+  "\t"
+| " "
+| "\r"
+| "\n"
+}
+
+TOKEN :
+{
+  < EOL : "\n"|"\r"|"\r\n" >
+| < TEXT : ~["#",";","\r","\n"] (~["\r","\n"])* >
+| < KEY :  "#" (["_","a"-"z","A"-"Z","0"-"9"])* >
+
+
+
+  
+
+}
+
+void Input() :
+{ }
+{
+ 
+  ExpressionList() 
+ 
+ 
+}
+
+
+
+void ExpressionList() :
+{
+	
+}
+{
+	{
+	  if (verbose) System.out.println("Starting text parser");
+	}
+  ( Expression() )*
+  <EOF>
+}
+
+void Expression() :
+{
+	String key=null;
+	String value=null;
+   }
+{
+	//LOOKAHEAD(2)
+	<EOL>
+
+|	
+	
+ 	key=une_clef()
+
+	( value=une_valeur() | <EOL> )*
+	{
+		if (key!=null && value!=null)
+			result.put( key, value );
+	}
+
+		
+  
+}
+
+String une_clef() :
+{
+	Token t=null;
+   }
+{
+	
+//	LOOKAHEAD(2)
+		
+	(t=<KEY>) (<TEXT>)? ( <EOL> | <EOF> )
+		{
+			if (verbose) System.out.println("found key :" + (t==null ? "null" : t.image.substring(1)));	
+		 	return (t==null ? null : t.image.substring(1));
+		}
+
+
+		
+	
+}
+
+String une_valeur() :
+{
+	Token t=null;
+   }
+{
+	
+		(t=<TEXT>)	( <EOL> | <EOF> )  
+		{
+			if (verbose) System.out.println("    => value :" + (t==null ? "null" : t.image));	
+		 	return (t==null ? null : t.image);
+		}
+		
+		
+}
+
+
+
+

@@ -1,0 +1,1046 @@
+;
+; Sid Meier's CIVILIZATION III
+;
+; Miscellaneous Text Labels
+;
+; Copyright (c) 1997, 1998 Firaxis Games, Inc.
+
+#LABELS
+Expansion
+Pollution
+Nourriture
+Boucliers
+Commerce
+Produits de luxe
+Visages heureux
+Trésor
+Science
+Bonheur
+Production
+Stockage de nourriture
+Commerce vers corruption
+Boucliers gaspillés
+Retour arrière
+En arrière d'un tour
+Arrêt
+Lecture
+En avant d'un tour
+Continuer
+Tout réveiller
+Tout fortifier
+Mener espionnage
+Rapport d'émeutes
+Changer de production
+Accélérer la production
+Changer en spécialiste
+Choisir un spécialiste
+Enrôler un citoyen
+Contacter le gouverneur
+Abandonner la ville
+Voir l'article de la Civilopédia pour
+Génial, c'est parti.
+Quelle est la vue d'ensemble?
+Vue aérienne
+Afficher le lieu de l'événement
+créé(e) en
+capturé(e) en
+détruit(e) en
+fondé(e) en
+Graphiques par
+Vendre
+REDIFFUSION DU RESUME
+Date actuelle:
+Créer un espion
+Etablir une ambassade
+Employer espion
+Employer ambassade
+Sauvegarder la partie
+dans
+Techno. futures
+Temps de guerre
+Date
+Espace disponible:
+ 
+Troupes
+Carte
+Leur
+produit
+Notre
+offre
+offre
+demande
+veut
+donation
+donne
+Effacer
+Nouveau
+Actif
+NEANT
+Veuillez patienter...
+Tour suivant: ENTREE ou ESPACE
+Or
+Alliance
+Embargo
+tour
+tours
+OK
+Annuler
+Novice
+Expert
+par tour
+Nom:
+Formel:
+Nom:
+Adjectif:
+des
+lui
+lui
+son
+sa
+il
+elle
+Fermer
+Fleuve
+DECOUVERT
+Disponible
+Distant
+Préparation multijoueurs
+Joueurs
+OK
+Pas disponible
+OBSOLETE
+sur
+Sauvegarder les fichiers
+Fichiers de carte
+Zoom
+Titre
+Description
+Sexe
+Genre de la nation
+Activer
+Réveiller
+Contact
+Infos terrain
+Retour
+SANS TITRE
+Masculin
+Féminin
+Préférences
+Préférences avancées
+Préférences d'avertissement
+Préférences d'automatisation
+Préférences audio/affichage
+30-50 % de la surface
+Importantes (terrain vallonné et plat)
+Eparses (faibles précipitations)
+Rares
+OPTIONS DE PARTIE PERSONNALISEE
+Nbre max. de joueurs
+Niveau de difficulté global
+Taille de planète
+Couverture océanique
+Forces érosives
+Formes de vie locales
+Couverture nuageuse
+Bascule
+Charger carte
+Charger scénario
+Charger partie
+Aléatoire
+CARTE DEFINIE
+SAUVEGARDER
+PREPARER
+NE PAS PREPARER
+LANCER LA PARTIE
+Type de partie
+Nouvelle partie avec carte aléatoire
+Mouvements simultanés
+Préférences de la carte
+Rétablir par défaut
+Plus
+Mots de passe incorrects
+av. J.-C
+ap. J.-C.
+Cet accord durera jusqu'à la prochaine guerre.
+Cet accord peut être abandonné sans effet après 20 tours.
+Cet accord durera 20 tours.
+Militariste
+Commerçante
+Expansionniste
+Scientifique
+Religieuse
+Industrieuse
+et
+Civilopédia
+Les
+Esclaves
+Infos sur la case
+Nourriture:
+Boucliers:
+Or:
+Route
+Voie ferrée
+Ville
+Irrigation
+Village
+Aucune info. disponible
+Reg:
+Cont:
+Page, Case:
+Val. Site:
+CityNet
+-Néant-
+N° Case Art:
+Mine
+en guerre
+en paix
+au trésor
+extra
+or
+Causes de mécontentement
+S'abstiennent
+S'abstient
+vote pour
+CIVILOPEDIA
+Sommaire
+Concepts du jeu
+Améliorations urbaines
+Régimes politiques
+Avancées de civilisation
+Ressources naturelles
+Tâches des travailleurs
+Terrain
+Unités
+Grandes merveilles
+Petites merveilles
+Tribus
+Index
+Ressources bonus
+Produits de luxe
+Ressources stratégiques
+Index des ressources
+Saisie incorrecte
+NECESSITE
+PERMET
+Effets
+Précédent
+BONUS CASE
+Composant(s) du vaisseau
+Avancée
+Rien
+Rendement des travailleurs
+Travaux urgents
+Impossible d'accélérer
+Travail forcé
+Travail payé
+Corruption et gaspillage
+Minimes
+Gênants
+Problématiques
+Galopants
+Catastrophiques
+Généralisés
+Découragement lié à la guerre
+Pas de mécontentement
+Mécontentement modéré
+Fort mécontentement
+Régime requis
+Coût
+Maintenance
+Culture
+Obsolescence causée par
+Prairie avec bouclier
+Lac (eau douce)
+STATISTIQUES
+RENDEMENT
+Rendement minimum de case
+Coût de mouvement
+Bonus d'irrigation
+Bonus de mine
+Bonus routier
+Bonus de défense
+Construire colonie
+Tours nécessaires
+Stats
+Attaque
+Défense
+Mouvement
+Rayon d'action opérationnel
+Coût de population
+Bombarder
+Portée
+Cadence de tir
+Capacité de transport
+Rayon de supériorité aérienne
+Mise à niveau en
+Capacités
+INCORRECT
+Amél. de ville
+Actions
+Avancées
+G. merveilles
+P. merveilles
+Régimes
+Ressources
+MODULES
+COMPOSANTS
+STRUCTURES
+Requiert
+LANCEMENT
+Quitter
+ACHEVE
+affecter
+Aucune ville ne peut construire
+Villes
+éléments
+élément
+Emplacement de file
+VS
+^Il nous faut un espion -
+total
+Civilisation
+achevé
+en cours 
+Course à l'espace
+GRAPHIQUES
+SCORE
+TOP 5
+VILLES
+Afficher
+Puissance
+Score
+Echelle en
+Tours
+Années
+Tour en cours:
+Votre score:
+Résumé:
+Citoyens heureux:
+Citoyens satisfaits et spécialistes:
+Territoire:
+Techno. futures:
+Score pondéré:
+Classement mondial:
+La puissance est un mélange de villes, or, culture, avancées, ressources, puissance militaire, armes nucléaires et merveilles.
+La culture est la somme de la valeur culturelle de toutes vos villes.
+Le score détermine le vainqueur lorsque la dernière année de jeu est atteinte. Votre score global est composé par la moyenne des scores de chaque tour.
+Score calculé pour le tour en cours. Il sera pondéré dans le cadre du score global.
++
+>
+<
+Age d'or
+Conseillers
+Menu principal
+{Z}oom avant
+{Z}oom arrière
+Localiser une ville
+Vous n'avez aucune ville!
+Vous n'avez aucune ville à portée!
+Vous n'avez aucune ville sur ce continent!
+Vous n'avez aucune ville sur cet océan!
+pas de ville
+Renommer
+Architecture amérindienne 
+Architecture européenne 
+Architecture gréco-romaine 
+Architecture moyen-orientale 
+Architecture asiatique 
+CHOISISSEZ VOTRE MONDE
+TAILLE DU MONDE
+BARBARES
+Pas de barbares
+Sédentaires
+Nomades
+Agités
+Déchaînés
+REPARTITION DES TERRES ET OCEANS
+80 % d'eau
+70 % d'eau
+60 % d'eau
+Pangée
+Continents
+Archipel
+CLIMAT
+Aride
+Normal
+Humide
+TEMPERATURE
+Chaude
+Tempérée
+Froide
+AGE
+3 milliards
+4 milliards
+5 milliards
+PREPARATION JOUEUR
+VOTRE CIVILISATION
+Aléatoire
+DIFFICULTE
+(+ facile)
+(+ difficile)
+VOS ADVERSAIRES
+REGLES
+Autoriser
+Victoire par domination
+Victoire par course à l'espace
+Victoire diplomatique
+Victoire par conquête
+Victoire culturelle
+Autoriser cap. spéc. des civs
+Emplacts init. selon liens cult.
+Renaissance des joueurs IA
+Conserv. germe aléatoire
+Production accélérée
+Règles par défaut
+Tout aléatoire
+une défaite humiliante
+une défaite embarrassante
+CLASSEMENT                  HISTORIQUE
+Vous resterez dans l'histoire en tant que:
+le Nul
+le Pitoyable
+le Simplet
+le Doux
+le Cruel
+le Terrible
+le Juste
+le Fort
+l'Astucieux
+le Conquérant
+Coeur de lion
+le Grand
+le Sage
+le Magnifique
+Chacun son niveau ; le vôtre, c'est chef tribal!
+Pas de panique, champion, vous ferez mieux la prochaine fois. 
+J'aime bien votre tête de cocker quand vous perdez.
+On vous a écrasé, on vous a vu détaler, et maintenant on entend votre peuple se lamenter!
+Un peu à plat? Normal, vous vous êtes fait LAMINER!
+Nul et Lard sont dans un bateau. Lard tombe à l'eau...
+Ce qui est à vous m'appartient!
+"Perdant" en... Combien de lettres dans votre nom, déjà?
+La cause est entendue!
+Oh, c'était votre dernière ville? Il faudrait peut-être vous la rendre...
+Il n'y a pas de honte à abdiquer... vraiment... aucune honte... non, vraiment...
+Si vous êtes au bord du gouffre, le moment est venu de faire un pas en avant...
+C'est quoi, cette odeur? Quelqu'un a marché dans quelque chose?
+L'histoire se souviendra de vous comme d'un grand et noble... Euh, peut-être pas...
+Si vous vous entraînez un peu plus, je devrai peut-être faire un effort pour vous battre.
+Qu'est-ce qui se passe? C'est trop dur pour vous?
+Ah, voilà ce que j'appelle prendre ses jambes à son cou...
+Ouais, c'est vrai, rien de tel que la fuite!
+Nous ne sommes que des humains, après tout...
+Un jour, un joueur n'aura pas peut d'aller jusqu'au bout...
+De la chance, rien d'autre!
+Il n'est pas déshonorant de perdre face à un adversaire de talent... Alors, honte à moi.
+Facilitations!
+Même les pires ont leur jour de chance...
+Ah ouais? Vous et quelle armée, déjà? Oh, d'accord...
+La prochaine fois, je jouerai avec les deux mains.
+Quoi? Mais je ne pouvais pas perdre... Vous avez dû tricher!
+Cessez de fanfaronner et recommençons!
+Je vous parie 100 unités d'or que vous ne me battrez pas une fois de plus!
+Deux mots: vous allez voir, la prochaine fois!
+Vous savez vous débrouiller, semble-t-il!
+Quelle splendide démonstration de savoir-faire et de stratégie!
+Chapeau bas!
+Vous avez bien joué, mais je ne me laisserai plus déborder.
+Nos bardes chanteront vos hauts faits.
+Estimé collègue, je vous félicite pour votre victoire.
+Quel est le vainqueur du jour? C'est vous! Eh oui, vous!
+Ce fut un honneur de jouer contre un adversaire aussi talentueux.
+Le sort vous a été favorable aujourd'hui. Ce fut une belle partie. J'attends la suivante avec impatience.
+Waouh! J'ai été extraordinaire! Fantastique! Magistral! Mais vous avez quand même gagné...
+J'ai pris une raclée et les autres pingouins sont restés là à regarder...
+Vous êtes donc sans pitié? J'étais déjà à genoux, ce n'était pas la peine de m'éliminer.
+Attendez, je vais vous dire... je vais vous dire... Vous savez botter les... Bon, d'accord.
+Mon médecin m'autorise à vous affronter de nouveau d'ici une minute... Vous allez voir!
+Eh bien, on ne peut rien me reprocher. Je ne vous connais même pas!
+Heureusement pour vous, le monde entier s'est acharné contre moi jusqu'à en oublier votre existence...
+Les vrais guerriers n'ont pas besoin d'alliés!
+Moi qui pensais que l'assimilation culturelle se faisait sans douleur!
+Et moi qui croyais que nous étions [censés] vous rayer de la planète...
+Très bien, et maintenant?
+Comment ça, la partie est terminée? Je suis toujours là! Personne ne pourra m'abattre!
+Domination, abomination! Je refuse cette défaite!
+Vous avez perdu votre temps à m'achever, et pour quel résultat.
+Ensemble, nous aurions pu survivre à cette épreuve. Nous aurions triomphé.
+Vous auriez dû venir à mon aide. J'aurais voté pour vous!
+Dans la communauté internationale, celui qui la joue solo perd forcément...
+Toutes les armées du monde ne valent pas la culture.
+La plume est peut-être plus forte que l'épée, mais mon épée est plus longue que votre plume.
+Excusez-moi mais... seriez vous à court de villes? Quel dommage...
+C'était mérité!
+Je sais, vous pouvez me rayer de la carte. Mais en sortirez-vous grandi?
+Un vrai dur... qui se bat quand il est fort, mais s'enfuit quand le vent tourne.
+Pas question de fuir comme un chien sans affronter l'acier de mes ennemis.
+Refermez la porte en sortant. Et sans la claquer!
+Paramètres par défaut pour nouvelles villes
+(c) 2001-2002 Infogrames Europe. Tous droits réservés. Produit et distribué par
+Infogrames Europe. Toutes les marques déposées appartiennent à leurs propriétaires respectifs.
+Sid Meier's Civilization(r), Civ(r), Civilization(r) sont des marques déposées aux Etats-Unis. 
+Firaxis Games est une marque déposée de Firaxis Games, Inc.
+Colonie
+Vue de la ville
+Ville suivante
+Ville précédente
+Configuration du scénario...
+Initialisation de la partie...
+Initialisation des joueurs...
+Configuration des barbares...
+Configuration du joueur humain...
+Configuration du joueur IA
+Personnalisation des infos joueur...
+Affectation des couleurs d'équipe...
+
+#DRIVE_READ_ERROR
+Veuillez insérer le disque de Civilization III dans le lecteur de CD-Rom
+ERREUR
+
+#INSTALLATION_ERROR_PTW
+Aucune installation de Civilization III détectée
+ERREUR D'INSTALLATION
+
+#TECH_CIVILOPEDIA_LINKS
+Avancée
+Type d'unité
+Amélioration
+Petite merveille
+Grande merveille
+Ordres
+Citoyen
+Régime politique
+
+#TECH_BUTTON_LABELS
+<- Précédente
+Afficher l'époque précédente
+Suivante ->
+Afficher l'époque suivante
+
+#CITIZEN_DESCRIPTIONS
+Un heureux
+Un satisfait
+Un mécontent
+Un opposant
+Un
+Un
+
+#ADVISORS
+Intérieur
+Commerce
+Militaire
+Diplomatique
+Culturel
+Scientifique
+ 
+ 
+#ADVISOR_SCREENS
+Intérieur
+Commerce
+Militaire
+Diplomatique
+Culturel
+Scientifique
+Classement
+Top 5 villes
+
+#ADVISOR_MOODS
+Heureux
+En colère
+Triste
+Etonné
+
+#FOREIGN_ADVISOR
+Inconnu
+Le
+Régime
+Nous
+Ils
+sont
+en paix
+en guerre
+Avec
+ont un
+contre les
+Pacte de protection mutuelle
+Alliance militaire
+Embargo commercial
+Traités
+Echanges
+CONSEILLER DIPLOMATIQUE
+En vigueur
+Potentiel
+Embargo
+Contre
+Guerre
+Paix
+Protection mutuelle
+Droit de passage
+(
+)
+aimables
+polis
+prudents
+embarrassés
+furieux
+-
+Tout sélectionner
+Tout rejeter
+Nous avons une connaissance limitée des
+militaires
+La meilleure unité militaire dont disposent les
+est, à notre connaissance
+avec nous
+
+#FOREIGN_ADVISOR_BUTTONS
+->
+Suivant
+<-
+Précédent
+
+#DOMESTIC_ADVISOR
+Revenus:
+Des villes:
+Des autres civs:
+Des percepteurs:
+Des intérêts:
+Dépenses:
+: Corruption
+: Maintenance
+: Coût des unités
+: Aux autres civs
+TOTAL:
+Croissance.
+Equilibre.
+Déficit!
+Recherche en cours:
+Prod. en cours
+tours
+tour
+Population
+Villes
+.
+(
+)
+CONSEILLER A L'INTERIEUR
+: Science
++
+-
+Trésor:
+Or
+: Distractions
+Nourriture Consommée.Stockée
+Boucliers Gaspillés.Produits
+Heureux.Satisfaits
+Corruption.Commerce
+Corruption
+Maintenance
+Science
+Trésor
+ 
+Gain:
+Perte:
+!
+se développe
+croît lentement
+ne croît pas
+connaît la famine
+heureux
+mécontent
+satisfait
+Régime
+Mobilisation
+Normalité
+Temps de guerre
+Pour continuer à croître, il nous faut un aqueduc.
+Pour poursuivre sa croissance, notre ville a besoin d'un hôpital.
+
+#MILITARY_ADVISOR
+Unité en production
+Armée:
+Renseignement militaire
+Armée
+En guerre
+En paix
+Vue par
+Ville
+Unité
+|
+Nous ne connaissons pas d'autre civilisations
+Nous ne savons que ce que voient nos troupes.
+Il nous faut un espion pour connaître l'emplacement des forces.
+tours
+unités
+or/tour
+Dissoudre l'unité
+Fortifier l'unité
+Mettre à niveau l'unité vers
+(
+or
+)
+Total des unités
+     Unités autorisées
+Coût soutien armée
+CONSEILLER MILITAIRE
+Héros disponible
+*
+= Centre militaire/industriel
+Nous avons:
+Une ambassade
+Un espion
+Voir l'article de la Civilopédia pour
+Travailleurs capturés (0 or)
+Travailleurs perdus
+ 
+- Unités capturées
+- Unités perdues
+
+#MILITARY_ADVISOR_BUTTONS
+->
+<-
+Haut
+Bas
+Par ici
+Par là
+Précédent
+Suivant
+
+#CULTURE_ADVISOR
+Class.
+Culture
+=
+Améliorations
++
+Merveilles
+ 
+Influence
+oui
+non
+Art
+de
+Construit en
+Les
+sont
+notre culture.
+Notre population a développé
+un
+un
+culture.
+Villes
+valeur culturelle
+Notre valeur culturelle totale:
+Valeur:
+/tour
+CONSEILLER CULTUREL
+Valeur culturelle:
+Date actuelle:
+,
+nécessaire à l'expansion
+
+#CULTURE_ADVISOR_BUTTONS
+Haut
+Par ici
+Bas
+Par là
+
+#TRADE_ADVISOR
+CONSEILLER AU COMMERCE
+- accords commerciaux
+Local
+Import
+Export
+Villes commerçantes
+villes
+Villes
+Cités isolées
+réseau
+Commercent avec
+Nous pouvons commercer avec
+Nous ne pouvons commercer avec
+Hélas, nous ne connaissons personne avec qui commercer
+Route terrestre
+Route maritime
+Il nous faut une
+pour
+Près de
+Bonne qualité:
+Nous sommes en guerre avec les
+Nous avons un embargo contre les
+: embargo contre nous
+
+#TRADE_ADVISOR_BUTTONS
+Haut
+Par ici
+Bas
+Par là
+
+#SOREN_ADVISOR
+Inconnu
+Les
+Régime
+Nous
+Ils
+sont
+en paix
+en guerre
+avec
+ont un
+contre les
+pacte de protection mutuelle
+alliance militaire
+embargo commercial
+
+#SOREN_ADVISOR_BUTTONS
+->
+Suivant
+<-
+Précédent
+
+#WONDER_WIN
+MERVEILLES DU MONDE
+Possédé par:
+Construit en:
+Situé à:
+En cours de construction par
+
+#HALL_OF_FAME_WIN
+PANTHEON
+Listes des meilleurs scores
+Chacun
+:
+,
+.
+Néant
+Domination
+Militaire
+Culturelle
+Diplomatique
+Course à l'espace 
+A abdiqué
+Class.
+Score
+Nom
+Civilisation
+Difficulté
+Type de victoire
+Tous dirigeants
+Aucun dirigeant
+Fermer (Place de l'art?)
+(Perdu)
+(Gagné)
+
+#GOVERNOR_WIN
+Gouverneur de la ville
+Général
+Production
+Gérer l'humeur des citoyens
+Privilégier la nourriture
+Privilégier la production
+Privilégier le commerce
+Gérer la production
+Ne jamais construire de merveille
+Ne jamais construire de petite merveille
+Produire des unités terrestres offensives
+Produire des unités terrestres défensives
+Produire des unités d'artillerie
+Produire des colons
+Produire des travailleurs
+Produire des unités navales
+Produire des unités aériennes
+Produire de la croissance
+Produire des boucliers
+Produire du bonheur
+Produire de la science
+Produire de la richesse
+Produire du commerce
+Produire des unités d'exploration
+Produire de la culture
+Jamais
+Parfois
+Souvent
+Cette ville
+Toutes les villes
+Les villes de ce continent
+Cette ville
+Toutes les villes
+Les villes de ce continent
+à
+Non
+Oui
+
+#DEMO_WIN
+TOP 5 VILLES
+DEMOGRAPHIE
+Taux d'approbation
+Population
+PNB
+Production industrielle
+Territoire
+Alphabétisation
+Maladie
+Pollution
+Espérance de vie
+Taille de famille
+Service militaire
+Revenu annuel
+Productivité
+%
+$
+millions
+mégatonnes
+miles carrés
+tonnes
+ans
+enfants
+par tête
+Classement
+
+#AUDIOPREFS
+Volume des effets sonores
+Effets sonores Oui/Non
+Volume de la musique
+Musique Oui/Non
+Volume principal
+Son Oui/Non
+Préférences audio
+
+#TOP_MENU
+Nouvelle partie
+Démarrage rapide
+Didacticiel
+Charger une partie
+Charger un scénario
+Panthéon
+Préférences
+Préférences audio
+Crédits
+Quitter
+
+#AUDIOPREF_RADIO
+Préférences audio
+
+#comment Les étiquettes de l'interface sont destinées aux boutons de l'interface. Il s'agit d'abréviations. Voici le codage à traduire comme il convient:
+#comment Les deux premiers pour la case de mini-carte
+#comment G = Géographie
+#comment T = Terrain
+#comment Le reste pour la case d'infos sur l'unité
+#comment D = Diplomatie
+#comment E = Espionage
+#comment P = Palais 
+#comment H = grapHiques
+#comment S = vaisseau Spatial
+#INTERFACE_LABELS
+G
+T
+D
+E
+P
+H
+S
+Afficher la géographie
+Afficher le territoire
+Lancer la diplomatie
+Espionnage
+Vue du palais
+Graphiques
+Afficher la progression du vaisseau
+
+#UNIT_ACTIONS
+Halte (Espace): sauter un tour
+(W) Attendre
+(F) Fortifier
+(D) Dissoudre
+(G) Aller à: sélectionner la destination
+(L) Embarquer
+(L) Débarquer
+(T) Transport aérien: choisir une nouvelle base aérienne
+(P) Piller 
+(B) Bombarder: sélectionner une cible
+(A) Parachutage: sélectionner la destination
+(B) Construire une armée
+(H) Travaux d'urgence (Ctrl-H)
+(U) Mettre à niveau une unité
+(B) Construire une colonie
+(B) Fonder une ville
+(R) Construire une route
+Construire une voie ferrée (Shift-R)
+Construire une forteresse (Ctrl-F)
+(M) Construire une mine
+(I) Irriguer
+Défricher une forêt (Shift-C)
+Défricher la jungle (Shift-C)
+(N) Reboiser
+Dépolluer (Shift-C)
+(A) Automatiser
+(B) Rejoindre une ville
+(B) Mission de bombardement: choisir une cible
+(R) Mission de reconnaissance: sélectionner une zone de reco
+(S) Mission de supériorité aérienne: surveiller le ciel
+Mission de transfert (Shift-R): choisir une nouvelle base
+(P) Frappe de précision: sélectionner une ville ennemie
+
+ 
+#PULLDOWNS
+Autres choix (Shift pour haut/bas) 
+
+#CS_SECTION_LABELS
+RESSOURCES STRATEGIQUES
+AMELIORATIONS
+PRODUCTION
+NOURRITURE
+COMMERCE
+PRODUITS DE LUXE
+CULTURE
+POLLUTION
+par tour
+Croiss. en
+Achevé en
+tour
+tours
+%
+CHANGER
+ACCELERER
+GRENIER
+PENURIE
+- Aucune croissance -
+
+#CS_CITY_NAME
+Fondée en: 
+AP. J.-C.
+AV. J.-C.
+POP.
+OR
+
+#CS_GARRISON
+GARNISON
+Activer
+Fortifier
+Dissoudre
+Mettre à niveau vers
+
+#CS_QUEUE
+FILE: maintenir shift pour ajouter
+FILE ACTIVE
+Vide
+
+#CS_CULTURE_PANEL
+par tour
+Total
+
+#CS_MOUSEOVER
+Nourriture consommée
+Nourriture stockée
+Boucliers produits
+Boucliers gaspillés
+Commerce vers trésor
+Commerce vers science
+Commerce vers divertissement
+Commerce vers corruption
+Case de stockage de nourriture
+Case de production
+Trésor
+Science
+Bonheur
+
+
+# ; This line must remain at end of file

@@ -1,0 +1,410 @@
+using built-in scenario
+chargement URL file:/C:/julien/dev_java/civ_java/demo.biq
+Blast.construct_all()
+parse_section : VER#
+VER# major=12 minor=6 description=Il y a 2300 ans, la Méditerranée était en plein bouleversement. A l'est, la Macédoine et la Perse s'affrontaient pour la domination de l'Asie mineure. A l'ouest, la jeune cité de Rome commençait à défier la puissante Carthage pour le contrôle de la Méditerranée centrale. Vous sentez-vous prêt à prendre les rênes du pouvoir et à mener votre peuple vers la gloire et la richesse à la pointe de l'épée et de la lance ? title=L'ascension de Rome
+parse_section : BLDG
+parse_section : CTZN
+parse_section : CULT
+parse_section : DIFF
+parse_section : ERAS
+parse_section : ESPN
+parse_section : EXPR
+parse_section : GOOD
+parse_section : GOVT
+parse_section : RULE
+parse_section : PRTO
+parse_section : RACE
+parse_section : TECH
+parse_section : TFRM
+parse_section : TERR
+parse_section : WSIZ
+parse_section : FLAV
+parse_section : WCHR
+parse_section : WMAP
+parse_section : TILE
+parse_section : CONT
+parse_section : SLOC
+parse_section : CITY
+parse_section : UNIT
+parse_section : CLNY
+parse_section : GAME
+parse_section : LEAD
+parsing file "C:\jeux\Civilization III\civ3mod.bic"
+detected compressed BIC
+Blast.construct_all()
+parse_section : VER#
+VER# major=4 minor=1 description= title=
+parse_section : BLDG
+parse_section : CTZN
+parse_section : CULT
+parse_section : DIFF
+parse_section : ERAS
+parse_section : ESPN
+parse_section : EXPR
+parse_section : GOOD
+parse_section : GOVT
+parse_section : RULE
+parse_section : PRTO
+parse_section : RACE
+parse_section : TECH
+parse_section : TFRM
+parse_section : TERR
+parse_section : WSIZ
+parse_section : GAME
+loading image C:\jeux\Civilization III\art\Terrain\xtgc.pcx
+loading image C:\jeux\Civilization III\art\Terrain\xpgc.pcx
+loading image C:\jeux\Civilization III\art\Terrain\xdgc.pcx
+loading image C:\jeux\Civilization III\art\Terrain\xdpc.pcx
+loading image C:\jeux\Civilization III\art\Terrain\xdgp.pcx
+loading image C:\jeux\Civilization III\art\Terrain\xggc.pcx
+loading image C:\jeux\Civilization III\art\Terrain\wcso.pcx
+loading image C:\jeux\Civilization III\art\Terrain\wsss.pcx
+loading image C:\jeux\Civilization III\art\Terrain\wooo.pcx
+loading image C:\jeux\Civilization III\art\Terrain\Mountains.pcx
+loading image C:\jeux\Civilization III\art\Terrain\xhills.pcx
+loading image C:\jeux\Civilization III\art\Terrain\Mountains-snow.pcx
+loading image C:\jeux\Civilization III\art\Terrain\mountain forests.pcx
+loading image C:\jeux\Civilization III\art\Terrain\mountain jungles.pcx
+loading image C:\jeux\Civilization III\art\Terrain\tnt.pcx
+loading image C:\jeux\Civilization III\art\Terrain\plains forests.pcx
+loading image C:\jeux\Civilization III\art\Terrain\grassland forests.pcx
+loading image C:\jeux\Civilization III\art\Terrain\tundra forests.pcx
+loading image C:\jeux\Civilization III\art\Terrain\deltaRivers.pcx
+loading image C:\jeux\Civilization III\art\Terrain\mtnRivers.pcx
+loading image C:\jeux\Civilization III\art\Terrain\floodplains.pcx
+loading image C:\jeux\Civilization III\art\resources.pcx
+loading image C:\jeux\Civilization III\art\buttonsFinal.pcx
+loading image C:\jeux\Civilization III\art\Terrain\roads.pcx
+loading image C:\jeux\Civilization III\art\Terrain\irrigation.pcx
+loading image C:\jeux\Civilization III\art\Terrain\irrigation DESETT.pcx
+loading image C:\jeux\Civilization III\art\Terrain\irrigation PLAINS.pcx
+loading image C:\jeux\Civilization III\art\Terrain\irrigation TUNDRA.pcx
+loading image C:\jeux\Civilization III\art\Terrain\TerrainBuildings.PCX
+loading image C:\jeux\Civilization III\art\Cities\rAMER.PCX
+loading image C:\jeux\Civilization III\art\Cities\AMERWALL.PCX
+loading image C:\jeux\Civilization III\art\Cities\rEURO.PCX
+loading image C:\jeux\Civilization III\art\Cities\EUROWALL.PCX
+loading image C:\jeux\Civilization III\art\Cities\rROMAN.PCX
+loading image C:\jeux\Civilization III\art\Cities\ROMANWALL.PCX
+loading image C:\jeux\Civilization III\art\Cities\rMIDEAST.PCX
+loading image C:\jeux\Civilization III\art\Cities\MIDEASTWALL.PCX
+loading image C:\jeux\Civilization III\art\Cities\rASIAN.PCX
+loading image C:\jeux\Civilization III\art\Cities\ASIANWALL.PCX
+chargement images : 2163 ms
+scanning CIV3 units ... 
+scanning unit : Archers
+scanning unit : Archers babyloniens
+scanning unit : Archers longs
+scanning unit : Armée Antiquité
+scanning unit : Armée Epoque industrielle
+scanning unit : Armée Epoque moderne
+scanning unit : Armée Moyen Age
+scanning unit : Arquebusiers
+scanning unit : Artillerie
+scanning unit : Artillerie radar
+scanning unit : Bombardiers
+scanning unit : Bombardiers furtifs
+scanning unit : Canons
+scanning unit : Caravelles
+scanning unit : Catapultes
+scanning unit : Cavalerie
+scanning unit : Cavaliers
+scanning unit : Chars antiques
+scanning unit : Chars d'assaut
+scanning unit : Chars de guerre
+scanning unit : Chars modernes
+scanning unit : Chasseurs
+scanning unit : Chasseurs furtifs
+scanning unit : Chasseurs à réaction
+scanning unit : Chevaliers
+scanning unit : Colons
+scanning unit : Colons Epoque industrielle
+scanning unit : Colons Epoque moderne
+scanning unit : Combattants à cheval
+scanning unit : Corsaires
+scanning unit : Cosaques
+scanning unit : Croiseurs AEGIS
+scanning unit : Cuirassés modernes
+scanning unit : Cuirassés à vapeur
+scanning unit : Destroyers
+scanning unit : Eclaireurs
+scanning unit : Eléphants de guerre
+scanning unit : Epéistes
+scanning unit : Explorateurs
+scanning unit : F-15
+scanning unit : Frégates
+scanning unit : Fusiliers
+scanning unit : Galions
+scanning unit : Galères
+scanning unit : Guerriers
+scanning unit : Guerriers Jaguar
+scanning unit : Guerriers à cheval
+scanning unit : Hoplites
+scanning unit : Hélicoptères
+scanning unit : Héros Antiquité
+scanning unit : Héros Epoque industrielle
+scanning unit : Héros Epoque moderne
+scanning unit : Héros Moyen Age
+scanning unit : ICBM
+scanning unit : Immortels
+scanning unit : Impis
+scanning unit : Infanterie
+scanning unit : Infanterie mécanisée
+scanning unit : Lanciers
+scanning unit : Légionnaires
+scanning unit : Marines
+scanning unit : Missiles de croisière
+scanning unit : Mousquetaires
+scanning unit : Nucléaire tactique
+scanning unit : Panzers
+scanning unit : Parachutistes
+scanning unit : Piquiers
+scanning unit : Porte-avions
+scanning unit : Samouraïs
+scanning unit : Settler Modern
+scanning unit : Sous-marins
+scanning unit : Sous-marins nucléaires
+scanning unit : Transport
+scanning unit : Travailleurs
+scanning unit : Travailleurs Epoque industrielle
+scanning unit : Travailleurs Epoque moderne
+scanning unit : Vaisseaux de ligne
+scanning CIV3PTW units ... 
+scanning unit : Ansar Warrior
+scanning unit : Berserk
+scanning unit : Canons
+scanning unit : Catapultes
+scanning unit : Conquistador
+scanning unit : Epéistes
+scanning unit : F-15
+scanning unit : Gallic Swordsman
+scanning unit : Guerilla
+scanning unit : Hwacha
+scanning unit : ICBM
+scanning unit : Infanterie
+scanning unit : Keshik
+scanning unit : King
+scanning unit : King American
+scanning unit : King Arab
+scanning unit : King Aztec
+scanning unit : King Babylonian
+scanning unit : King Carthaginian
+scanning unit : King Celtic
+scanning unit : King Chinese
+scanning unit : King Egyptian
+scanning unit : King English
+scanning unit : King French
+scanning unit : King German
+scanning unit : King Greek
+scanning unit : King Indian
+scanning unit : King Iroquois
+scanning unit : King Japanese
+scanning unit : King Korean
+scanning unit : King Mongol
+scanning unit : King Ottoman
+scanning unit : King Persian
+scanning unit : King Roman
+scanning unit : King Russian
+scanning unit : King Spanish
+scanning unit : King Viking
+scanning unit : King Zulu
+scanning unit : Libyan Mercenary
+scanning unit : Medieval Infantry
+scanning unit : Nucléaire tactique
+scanning unit : Princess
+scanning unit : Sipahi
+scanning unit : The King
+scanning unit : Travailleurs Epoque Moderne
+scan animation : 471 ms
+loading image C:\jeux\Civilization III\art\Terrain\FogOfWar.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp00.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp01.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp02.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp03.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp04.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp05.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp06.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp07.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp08.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp09.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp10.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp11.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp12.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp13.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp14.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp15.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp16.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp17.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp18.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp19.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp20.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp21.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp22.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp23.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp24.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp25.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp26.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp27.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp28.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp29.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp30.pcx
+loading image C:\jeux\Civilization III\art\units\Palettes\ntp31.pcx
+next_screen = title_screen
+loading image C:\jeux\Civilization III\art\title.pcx
+loading image C:\jeux\Civilization III\art\buttonsFINAL.pcx
+next_screen = main_screen
+loading image C:\jeux\Civilization III\art\interface\menuButtons.pcx
+loading image C:\jeux\Civilization III\art\interface\menuButtonsAlpha.pcx
+loading image C:\jeux\Civilization III\art\interface\box left color.pcx
+loading image C:\jeux\Civilization III\art\interface\box left alpha.pcx
+loading image C:\jeux\Civilization III\art\interface\box right color.pcx
+loading image C:\jeux\Civilization III\art\interface\box right alpha.pcx
+loading image C:\jeux\Civilization III\art\interface\nextturn states color.pcx
+loading image C:\jeux\Civilization III\art\interface\nextturn states alpha.pcx
+switch_to_next_unit
+find_next_unit
+current_unit=16
+switching to unit : unit id=16 owner=1 proto=16 x=43 y=61 moved=0 rank=0 hits=0
+*** PRTO_Legionary (Légionnaires I)
+lookup animation with CIV3PTW method ... 
+lookup animation with CIV3 method ... 
+lookup animation with Translate method ... 
+loading : C:\jeux\Civilization III\art\units\Légionnaires\LegionaryDefault.flc
+background=BufferedImage@888e6c: type = 1 DirectColorModel: rmask=ff0000 gmask=ff00 bmask=ff amask=0 IntegerInterleavedRaster: width = 1024 height = 768 #Bands = 3 xOff = 0 yOff = 0 dataOffset[0] 0
+*** PRTO_Spearman (Lanciers)
+lookup animation with CIV3PTW method ... 
+lookup animation with CIV3 method ... 
+loading : C:\jeux\Civilization III\art\units\Lanciers\SpearmanDefault.flc
+*** PRTO_Archer (Archers)
+lookup animation with CIV3PTW method ... 
+lookup animation with CIV3 method ... 
+loading : C:\jeux\Civilization III\art\units\Archers\ArcherDefault.flc
+*** PRTO_Pikeman (Garnisons)
+lookup animation with CIV3PTW method ... 
+lookup animation with CIV3 method ... 
+lookup animation with Translate method ... 
+loading : C:\jeux\Civilization III\art\units\Piquiers\PikemanDefault.flc
+*** PRTO_Citizen (Citoyens)
+lookup animation with CIV3PTW method ... 
+lookup animation with CIV3 method ... 
+lookup animation with Translate method ... 
+lookup animation with Rescue method ... 
+RulerClassic : move unit 16 direction 3
+*** PRTO_Berserk (Guerriers teutons)
+lookup animation with CIV3PTW method ... 
+loading : C:\jeux\Civilization III\CIV3PTW\Art\Units\Berserk\x_berserk default.flc
+menu_buttons : action_performed : conseillers
+next_screen = domestic_screen
+loading image C:\jeux\Civilization III\art\advisors\domestic.pcx
+loading image C:\jeux\Civilization III\art\City Screen\CityIcons.pcx
+loading image C:\jeux\Civilization III\CIV3PTW\art\units\units_32.pcx
+loading image C:\jeux\Civilization III\art\SmallHeads\popHeads.pcx
+loading image C:\jeux\Civilization III\CIV3PTW\art\City Screen\buildings-small.pcx
+Domestic_Advisor : leader name=César custom_civ_data=1 human_player=1 gender=0 technology=[0,1,2,3,4,5,6,7,8,9,10,12,14,15,16,17,25,26,] difficulty=-2 initial_era=0 start_cash=800 government=4 civ=1 color=1 id=-1 race=-1 capitale=-1 tax_rate=5 science_rate=5
+loading image C:\jeux\Civilization III\art\SmallHeads\advisor_tab.pcx
+loading image C:\jeux\Civilization III\art\exitBox-backgroundStates.pcx
+scrollpane.getColumnHeader=null
+scrollpane.getRowHeader=null
+leader : leader name=César custom_civ_data=1 human_player=1 gender=0 technology=[0,1,2,3,4,5,6,7,8,9,10,12,14,15,16,17,25,26,] difficulty=-2 initial_era=0 start_cash=800 government=4 civ=1 color=1 id=-1 race=-1 capitale=-1 tax_rate=5 science_rate=5
+leader_value : LeaderValue revenus=59 revenus_villes=59 revenus_percepteurs=0 revenus_civ=0 revenus_interets=0 depenses=201 depenses_science=31 depenses_distractions=0 depenses_corruption=0 depenses_maintenance=135 depenses_unites=35 depenses_civ=0 gain=-142 science_nb_tours=0 free_units=0
+leader : leader name=César custom_civ_data=1 human_player=1 gender=0 technology=[0,1,2,3,4,5,6,7,8,9,10,12,14,15,16,17,25,26,] difficulty=-2 initial_era=0 start_cash=800 government=4 civ=1 color=1 id=-1 race=-1 capitale=-1 tax_rate=5 science_rate=5
+leader_value : LeaderValue revenus=59 revenus_villes=59 revenus_percepteurs=0 revenus_civ=0 revenus_interets=0 depenses=201 depenses_science=31 depenses_distractions=0 depenses_corruption=0 depenses_maintenance=135 depenses_unites=35 depenses_civ=0 gain=-142 science_nb_tours=0 free_units=0
+domestic_advisor, action_performed : exit
+next_screen = main_screen
+menu_buttons : action_performed : menu principal
+loading image C:\jeux\Civilization III\art\popupborders.pcx
+loading image C:\jeux\Civilization III\art\PopUpandMenuBackground.pcx
+loading image C:\jeux\Civilization III\art\X-o_ALLstates-sprite.pcx
+cache hit : C:\jeux\Civilization III\art\buttonsFINAL.pcx
+menu_principal : action_performed : button_x
+switching to unit : unit id=17 owner=1 proto=9 x=43 y=61 moved=0 rank=0 hits=0
+switching to unit : unit id=17 owner=1 proto=9 x=43 y=61 moved=0 rank=0 hits=0
+RulerClassic : move unit 16 direction 1
+switch_to_next_unit
+find_next_unit
+find_next_unit :unit id=16 owner=1 proto=16 x=45 y=59 moved=3 rank=0 hits=0
+current_unit=17
+switching to unit : unit id=17 owner=1 proto=9 x=43 y=61 moved=0 rank=0 hits=0
+RulerClassic : move unit 17 direction 1
+RulerClassic : move unit 17 direction 1
+RulerClassic : move unit 17 direction 1
+switch_to_next_unit
+find_next_unit
+find_next_unit :unit id=17 owner=1 proto=9 x=43 y=55 moved=3 rank=0 hits=0
+current_unit=81
+switching to unit : unit id=81 owner=1 proto=16 x=40 y=58 moved=0 rank=0 hits=0
+RulerClassic : move unit 81 direction 1
+switch_to_next_unit
+find_next_unit
+find_next_unit :unit id=81 owner=1 proto=16 x=40 y=56 moved=3 rank=0 hits=0
+current_unit=82
+switching to unit : unit id=82 owner=1 proto=16 x=40 y=58 moved=0 rank=0 hits=0
+RulerClassic : move unit 82 direction 1
+switch_to_next_unit
+find_next_unit
+find_next_unit :unit id=82 owner=1 proto=16 x=40 y=56 moved=3 rank=0 hits=0
+current_unit=83
+switching to unit : unit id=83 owner=1 proto=16 x=51 y=51 moved=0 rank=0 hits=0
+*** PRTO_Hoplite (Hoplites)
+lookup animation with CIV3PTW method ... 
+lookup animation with CIV3 method ... 
+loading : C:\jeux\Civilization III\art\units\Hoplites\hopliteDefault.flc
+RulerClassic : move unit 83 direction 1
+RulerClassic : move unit 83 direction 3
+switch_to_next_unit
+find_next_unit
+find_next_unit :unit id=83 owner=1 proto=16 x=53 y=49 moved=3 rank=0 hits=0
+current_unit=84
+switching to unit : unit id=84 owner=1 proto=4 x=48 y=52 moved=0 rank=0 hits=0
+RulerClassic : move unit 84 direction 1
+switch_to_next_unit
+find_next_unit
+find_next_unit :unit id=84 owner=1 proto=4 x=48 y=50 moved=3 rank=0 hits=0
+current_unit=85
+switching to unit : unit id=85 owner=1 proto=26 x=48 y=52 moved=0 rank=0 hits=0
+RulerClassic : move unit 85 direction 1
+RulerClassic : move unit 85 direction 1
+switch_to_next_unit
+find_next_unit
+find_next_unit :unit id=85 owner=1 proto=26 x=48 y=48 moved=6 rank=0 hits=0
+current_unit=86
+switching to unit : unit id=86 owner=1 proto=9 x=47 y=55 moved=0 rank=0 hits=0
+RulerClassic : move unit 86 direction 1
+panel_right : action_performed : button_nextturn
+RulerClassic : player 1 : end of turn
+player 1 (César) : end of turn 0
+panel_right : action_performed : button_nextturn
+RulerClassic : player 1 : end of turn
+player 1 (César) : end of turn 1
+RulerClassic : move unit 86 direction 7
+switch_to_next_unit
+find_next_unit
+find_next_unit :unit id=86 owner=1 proto=9 x=45 y=53 moved=3 rank=0 hits=0
+current_unit=87
+switching to unit : unit id=87 owner=1 proto=9 x=47 y=67 moved=0 rank=0 hits=0
+switching to unit : unit id=16 owner=1 proto=16 x=45 y=59 moved=0 rank=0 hits=0
+switching to unit : unit id=16 owner=1 proto=16 x=45 y=59 moved=0 rank=0 hits=0
+panel_right : action_performed : button_nextturn
+RulerClassic : player 1 : end of turn
+player 1 (César) : end of turn 2
+*** PRTO_Warrior (Guerriers)
+lookup animation with CIV3PTW method ... 
+lookup animation with CIV3 method ... 
+loading : C:\jeux\Civilization III\art\units\Guerriers\WarriorDefault.flc
+*** PRTO_Libyan_Mercenary (Mercenaires numides)
+lookup animation with CIV3PTW method ... 
+loading : C:\jeux\Civilization III\CIV3PTW\Art\Units\Libyan Mercenary\x_Libyan Mercenary default.flc
+*** PRTO_Galley (Galères)
+lookup animation with CIV3PTW method ... 
+lookup animation with CIV3 method ... 
+loading : C:\jeux\Civilization III\art\units\Galères\GalleyDefault.flc
+cache hit : C:\jeux\Civilization III\art\popupborders.pcx
+cache hit : C:\jeux\Civilization III\art\PopUpandMenuBackground.pcx
+cache hit : C:\jeux\Civilization III\art\X-o_ALLstates-sprite.pcx
+cache hit : C:\jeux\Civilization III\art\buttonsFINAL.pcx
+menu_quitter : action_performed : Oui, sur-le-champ !
+next_screen = exit
+null screen, exitting.
+exitting ..
+bye bye.

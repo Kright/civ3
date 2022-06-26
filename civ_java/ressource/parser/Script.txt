@@ -1,0 +1,3307 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Sid Meier's Civilization III
+;
+; Dialog box scripts
+;
+; Copyright (c) 2000, 2001 by Firaxis Games, Inc.
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; INSTRUCTIONS FOR TRANSLATORS!
+;
+; 1) These files must not be saved in "Microsoft Word Format", or they will
+;    be ruined. They MUST be saved in "Text Only" format.
+;
+; 2) Please do not insert extra blank lines, nor remove existing blank
+;    lines, as this will cause the program to malfunction.
+;
+; 3) But it is normally okay to turn a long line into two shorter lines;
+;    for instance:
+;
+;    This is a very long sentence; it probably won't fit on one line in German.
+;
+;                       is equivalent to:
+;
+;    This is a very long sentence; It probably
+;    won't fit on one line in German.
+;
+; 4) It is also okay to have lines be pretty much as long as they need
+;    to be off the edge of the screen (up to, say, 150-200 characters
+;    long.
+;
+; 5) Lines beginning with "#" are control lines, and the FIRST WORD
+;    immediately following the # should NOT be translated. Subsequent
+;    words on the line SHOULD be translated. For example:
+;
+;    #caption Hello
+;         to
+;    #caption Bonjour
+;
+;    #button Yes
+;         to
+;    #button Oui
+;
+; 6) The "{" and "}" characters are used to indicate text which should
+;    be displayed in BOLD type. The "[" and "]" characters indicate
+;    text which should be displayed in ITALIC type. A {} sequence or
+;    a [] sequence can begin and end on different lines.
+;
+; 7) Lines beginning with "^" begin on new lines.
+;
+; 8) Lines beginning with "^^" are centered.
+;
+; 9) The "$" character indicates a string is to be substituted. The
+;    $ is followed by the name and ID of the string, as in:
+;
+;    Greetings, $PLAYERNAME1.
+;
+;    In this case, the ID of the string is 1. The name of the string
+;    is for informational purposes only, so $PLAYERNAME1, $NAME1,
+;    $STRING1, and $WHOZIT1 are all equivalent. The names themselves
+;    do NOT need to be translated, although translating them won't
+;    cause harm as long as the numerical ID is left alone (except in
+;    the case below).
+;
+;    An important EXCEPTION is that $NUM0 (or $NUM1, $NUM2, etc)
+;    indicate a numerical value is to be displayed, and $HEX0 $HEX1,
+;    etc indicate a hexadecimal value will be displayed. "NUM" and
+;    "HEX" must NOT be translated or their special meaning will be lost.
+;
+;    Other exceptions are $LINK0, $LINK1, etc., $DROPDOWN0, $DROPDOWN1, etc.,
+;    $DROPLINK0, $DROPLINK1, etc. These must NOT be translated or their
+;    special meaning will be lost.
+;
+; 10) Sequences enclosed in < > angle brackets are used to perform
+;     gender and plurality substitutions.
+;
+;     $<...> sequences must BEGIN AND END ON THE SAME LINE!
+;
+;     Here are the substitution forms, followed by some examples:
+;
+; $FACTION3          = Substitute string 3
+; $<3:has:have>      = Substitute based on plurality of string 3
+; $<3:le:la:les:les> = Substitute based on plurality & gender of string 3
+; $<3:masc:fem:neut:pmasc:pfem:pneut> = plurality & gender, includes neuter
+; $<3:$FACTIONADJ4>  = Inserts string 4 and parses based on
+;                      plurality & gender of string 3.
+; $<M1:$FACTIONADJ4> = Inserts string 4 and parses for the
+;                      masculine singular form.
+; $<F2:$FACTIONADJ4> = ...Feminine plural, etc.
+;
+; Since English doesn't have the masculine/feminine
+; problem, and no plural problem for "the", there will be cases where
+; YOU THE TRANSLATOR will have to add sequences of this type. For
+; example, you can convert the following sentences (For "faction",
+; imagine substituting any of "Barbarians", "The Roman Empire", etc)
+;
+; The $FACTION4 $<4:has:have> ...
+;
+; into:
+;
+; $<4:Le:La:Les:Les> $FACTION4 $<4:a:ont> ...
+;
+; and convert...
+;
+; $TITLE0 $NAME1 of the $FACTION2
+;
+; into:
+;
+; $TITLE0 $NAME1 $<2:du:de la:des:des> $FACTION2
+;
+; Note that the "4:" or "2:" is important as it tells the computer which word
+; in the sentence to take its gender/plurality from (there are often
+; several substitutions in a paragraph).
+;
+; FRENCH translators note that the program will AUTOMATICALLY handle
+; the L' and D' contractions for le, la, and de.
+;
+; 11. English also doesn't have adjective gender/plurality
+; issues (rah rah English!) which means you'll need to correct
+; those as you go along. There are two basic situations you'll
+; encounter. The first is adjectives present in the text and
+; used to modify words being substituted in:
+;
+; the pretty $ITEM3 that $NAME4 ...
+;
+; which you can convert to:
+;
+; $<3:le:la:les:les> $ITEM3 $<3:bel:belle:bels:belles> que $NAME4 ...
+;
+; Again the "3:" reminds the computer to substitute based on the
+; plurality and gender of $ITEM3 rather than (for instance) $NAME4.
+;
+; The other situation you'll encounter is where an ADJECTIVE is being
+; substituted in to modify words present in the text:
+;
+; $<M1:$FACTIONADJ0> sisters ...
+;
+; The "M1" calls for a masculine singular substitution (remember,
+; English doesn't have this problem so I've set everything to the
+; default). Obviously "sisters" is neither masculine nor singular,
+; so you'll want to call for the feminine plural form:
+;
+; soeurs $<F2:$FACTIONADJ0> ...
+;
+; 12. GERMAN translators can do the same thing, and simply use
+;     $<...> sequences with SIX items to take care of neuter forms.
+;     Unfortunately I don't know any German at all, so I can't give
+;     you any good examples.
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+#comment ______________________________________________________________________Standard Variables
+
+#comment DIFF = Chieftain, Warlord, Regent, Monarch, Emperor, Deity
+#comment PLAYER = the player's name
+#comment CIVADJ = one of the civilizations Adjective Form. 
+#comment CIVNOUN = one of the civilizations Noun Form. 
+#comment CIVNAME = one of the civilizations Name Form. 
+#comment CITY = one of the cities currently on the map
+#comment CITYSIZE = either town, city, or Metropolis
+#comment UNIT = one of the unit types (see the units list in the Unit Type Tab)
+#comment IMPROVEMENT = one of the city improvements (see the improvements list in Buildings Tab)
+#comment WONDER = on of the great wonders
+#comment SMALL_WONDER = one of the small wonders
+#comment SPACESHIP_PART = one of the spaceship parts
+#comment GOVERNMENT = one of the Government types, Despotism, Monarchy, Communism, Republic, Democracy
+#comment TERRAIN = one of the terrain types in the game (see Terrain on the Terrain Types Tab)
+#comment TECH = one of the Civilization Advances (see the Technologies Tab)
+#comment TECHS = the two technologies the player starts the game with, (always X and Y)
+#comment IMPROVEMENT_WONDER_OR_UNIT = Improvement, Wonder, or Unit
+#comment RULER_TITLE = What the people call the player (Depends upon Government type, see Ruler title on Governments Tab)
+#comment WISEMEN = What the people call their researchers (Depends upon the current era, see the Eras Tab)
+#comment ORDERS = One of the actions that require more than one turn (see Unit Orders Tab)
+#comment BARBARIAN = a barbarian tribe (See the Races Tab, select Barbarian Chiefdom, and look at the "city Names" list.
+#comment CULTURAL_LEVEL = Adjective describing the level of cultural development of a civilization (see MISC RULES Tab, Cultural Levels Box)
+#comment TITLE = the title of one of the enemy leaders (See RACES Tab, Leader Section)
+#comment LEADER = The name of an enemy leader (see RACES Tab, Leader Section)
+#comment CULTURAL_OPINION = How one civ feels about another's cultural development (See CULTURE Tab)
+#comment RESOURCES = one of the resources on the map (see GOOD TYPE Tab)
+#comment GREAT_LEADER = one of the nations Great Leaders (see RACES Tab, Leaders list)
+#comment GREAT_PERSON = one of the great people
+#comment MOOD = happy, indifferent, annoyed
+#comment DOES = Thrives, is growing very slowly, is not growing at all, is starving
+#comment PUNCT = Ending punctuation (ignore)
+#comment HAPPY = happy, unhappy, content
+#comment STRENGTH = civ-specific strength
+
+#comment________________________________________________________________________End Variables
+
+#comment_________________________________________________________________________________________CONSOLE MESSAGES
+
+#LANDCONQUER
+Seules les unités [terrestres] peuvent attaquer des installations.
+
+#COMBATCONQUER
+Seules les unités de [combat] peuvent capturer une ville.
+
+#NOTAMPHIB
+Seules les unités de Marines peuvent attaquer depuis la mer.
+
+#NONCOMBATANT
+Les unités non-combattantes ne peuvent pas attaquer.
+
+#BLITZLIMIT
+Cette unité ne peut attaquer qu'une fois par tour.
+
+#BARBARIAN_ATTACK
+Un groupe de barbares $BARBARIAN0 nous a tendu une embuscade!
+
+#GLOBALWARMING_FOREST_JUNGLE
+#map_center 0
+Le réchauffement planétaire a détruit tous les terrains de $TERRAIN0!
+
+#GLOBALWARMING
+#map_center 0
+Le réchauffement planétaire a transformé les terrains de type $TERRAIN0 en $TERRAIN1!
+
+#GLOBALWARMING_RISING_COASTLINES
+Le niveau des mers monte! Selon les scientifiques, c'est le réchauffement planétaire qui est en cause...
+
+#CAPTURE_BARBARIAN
+Nous avons démantelé un campement de $BARBARIAN0 et récupéré 25 unités d'or!
+
+#STARVE
+Famine à $CITY0!
+
+#CITYPRODUCE
+$CITY0 construit le projet: $IMPROVEMENT_WONDER_OR_UNIT1.
+
+#WELOVEKING
+Célébration de la journée "Gloire à notre $TITLE0".
+
+#WELOVEKINGOVER
+La journée de célébration "Gloire à notre $TITLE0" est terminée.
+
+#HARVEST_FOREST
+Forêt défrichée. $CITY0 reçoit $NUM0 $<#0:bouclier:boucliers>.
+
+#CULTUREBORDER
+Notre influence culturelle s'étend!
+
+#DISBANDSHIELDS
+Notre unité de $UNIT0 a été convertie en $NUM0 $<#0:bouclier:boucliers>.
+
+#UNITPROMOTIONREG
+Notre unité de $UNIT0 de niveau Conscrit a atteint le niveau Standard.
+
+#UNITPROMOTIONVET
+Notre unité de $UNIT0 de niveau Standard est désormais de niveau Vétéran.
+
+#UNITPROMOTIONELITE
+Notre unité de $UNIT0 de niveau Vétéran a atteint le niveau Elite!
+
+#UNITCAPTURED
+Notre unité de $UNIT0 a été capturée!
+
+#UNITSCAPTURED
+Nos unités ont été capturées!
+
+#THEIRUNITCAPTURED
+Nous avons capturé une unité ennemie de $UNIT0!
+
+#THEIRUNITSCAPTURED
+Nous avons capturé des unités ennemies!
+
+#UNITDESTROYED
+Notre unité de $UNIT0 a été détruite!
+
+#UNITSDESTROYED
+Nos unités ont été détruites!
+
+#SHIPSUNK
+Notre unité de $UNIT0 a disparu dans des eaux traîtresses!
+
+#UNITJUNGLEDISEASE
+Notre unité de $UNIT0 est morte de maladie dans la jungle!
+
+#comment___________________________________________________________________________Barbarian Stuff
+
+#GOODY_MONEY
+Ce village de barbares $BARBARIAN0 nous a remis $NUM0 unités d'or.
+
+#GOODY_MAPS
+Les $BARBARIAN0, barbares très amicaux, nous ont donné des cartes de leur région.
+
+#GOODY_CITY
+Un village de barbares $BARBARIAN0 très développés s'est joint à nous!
+
+#GOODY_NOTHING
+Ce village de barbares $BARBARIAN0 est désert.
+
+#GOODY_SETTLERS
+Une unité de $UNIT1 des $BARBARIAN0 souhaite se joindre à notre $GOVERNMENT2.
+
+#GOODY_MERCENARIES
+Ce village de barbares $BARBARIAN0, nous a amicalement offert une unité de $UNIT1 très compétente.
+
+#GOODY_BARBARIANS
+Nous avons provoqué la colère d'une unité de $UNIT1 des $BARBARIAN0.
+
+#CIVIL_DISORDER
+Emeutes à $CITY0.
+
+#CIVIL_DISORDER_OVER
+Ordre rétabli à $CITY0.
+
+#CIVIL_DISORDER_INTENSIFIES
+Les émeutes s'intensifient à $CITYNAME0! La foule a détruit l'amélioration: $IMPROVEMENT1!
+
+#SETTLEMENT_FOUNDED
+$CITY0 fondée en $NUM0 $BC_AD1
+
+#SUMMARY_DISEASE
+La maladie frappe $CITY0.
+
+#POLLUTION
+$CITY0 est touchée par la pollution.
+
+#NEWLEADER
+Notre victoire a généré un héros: $GREAT_LEADER0!
+
+#RESISTANCEQUELLED
+Nos troupes ont maté $NUM0 $<#0:opposant:opposants>!
+
+#RESISTANCEENDS
+Toute trace d'opposition a disparu à $CITY0!
+
+#POPDESTROYED
+Certains citoyens de $CITY0 ont péri!
+
+#FACDESTROYED
+$CITY0 a perdu l'amélioration: $IMPROVEMENT1!
+
+#comment________________________________________________________________________________________WRAPPER POP-UPS
+
+#CUSTOMNAMES
+#xs 440
+#caption Personnalisez votre tribu
+
+#CUSTOMGENDER
+Quel est le sexe de $NAME0 ?
+
+#PREFS
+#caption Préférences
+#y 3
+#itemlist
+   Sauvegarde automatique
+   Afficher les unités au-dessus des villes
+   Afficher nourriture et boucliers sur la carte
+   Afficher le disque de couleur de l'équipe
+   Toujours attendre à la fin d'un tour
+   Animer les combats
+   Animer nos mouvements manuels
+   Afficher nos mouvements manuels
+   Animer nos mouvements automatiques
+   Afficher nos mouvements automatiques
+   Animer les mouvements amis
+   Afficher les mouvements amis
+   Animer les mouvements ennemis
+   Afficher les mouvements ennemis
+   Mode didacticiel
+   Annuler les ordres de l'unité de combat amie
+   Annuler les ordres de l'unité de combat ennemie
+   Demander les ordres de construction une fois l'unité terminée
+   Toujours recommencer la construction de l'unité précédemment construite
+   Afficher l'avertissement d'émeute
+   Afficher le pointeur de la Civilopédia
+   Gouverneur de la capitale par défaut pour les nouvelles villes
+   Affichage adapté aux daltoniens
+   Afficher l'ombrage du nombre de population de la ville
+   Afficher l'avertissement de construction d'une merveille
+   Désactiver l'avertissement de limite de population
+   Toujours renégocier les accords
+
+#REALLYQUIT
+#wave 43
+#caption Oh non!
+Voulez-vous vraiment quitter la partie?
+#itemlist
+Non, pas vraiment.
+Oui, sur-le-champ!
+
+#REALLYRETIRE
+#xs 320
+#caption Oh, allez.
+Etes-vous prêt(e) à abdiquer?
+
+Non. Pourquoi?
+Oui, que ce cauchemar prenne fin.
+
+#LOADGAME
+#xs 320
+#caption Partie sauvegardée
+^^Niveau de difficulté: $DIFF0
+^^$TITLE1 $LEADER2 des $CIVNOUN3
+^^$DATE4
+
+#GAMEOVERMAN
+#xs 440
+#caption Eh, c'est fini!
+Voilà, la partie est terminée. Aucun autre score ne sera marqué.
+
+Parfait! J'ai terminé!
+Non, laissez-moi encore jouer quelques tours...
+
+#END_GAME_WIN
+#caption Victoire!!
+#text
+^Vous avez obtenu $TYPE0
+
+#END_GAME_WIN2
+#caption félicitations!
+#text
+^La partie est terminée et vous êtes vainqueur!
+
+#END_GAME_LOSS
+#caption Honte à vous!
+^Vous avez subi $TYPE0
+
+#comment________________________________________________________MENU "System"
+#comment {G}ame Menu removed, 8/15 - JS
+#comment Miscell{A}neous removed 8/27 - JS
+#comment {I}nfo Screens removed 09/16 - JS
+#GMENU_MAIN
+#caption Menu principal
+#itemlist
+Carte
+Charger partie [(Ctrl-L)]
+Nouvelle partie [(Ctrl-Shift-Q)]
+Préférences [(Ctrl-P)]
+Préférences audio [(Shift-S)]
+Abdiquer [(Ctrl-Q)]
+Sauvegarder partie [(Ctrl-S)]
+Quitter partie [(Echap)]
+
+#COMMENT canned 09/16 - JS
+#GMENU_INFO
+#caption Ecrans d'information
+#itemlist
+Ecran des graphiques [(F8)]
+Ecran du palais [(F9)]
+Ecran du vaisseau [(F10)]
+Ecran de démographie [(F11)]
+
+#GOTO_CITY
+#caption Rejoindre la ville
+#itemlist
+
+#GMENU_MAP
+#caption Carte
+#itemlist
+Commandes de la grille [(Ctrl-G)]
+Centrer l'écran [(C)]
+Nettoyer la carte [(Ctrl-Shift-M)]
+Localiser une ville [(Shift-L)]
+$ZOOM0 [(Z)]
+
+#comment Has gone away for now, left in case we change our minds 08/27 -JS 
+#GMENU_MISC
+#caption Divers
+#itemlist
+A propos de Civilization III
+
+#ABOUT_CIV3
+#caption A propos de Civilization III
+Civ 3 est passé par là...
+^Ecrivez-moi.
+
+#comment__________________________________________________________________________________End Menu System
+
+#DAWN_OF_MAN
+#caption L'aube de la civilisation
+#xs 400
+#y 10
+^Nous sommes en 4 000 av. J.-C. Vos ancêtres étaient nomades. Mais au fil des générations, votre peuple a appris les
+secrets de l'[agriculture], de la [construction de route] et de l'[irrigation] et peut désormais se sédentariser.
+^
+^{$PLAYER0}, votre tribu est {$STRENGTHS4} et a récemment maîtrisé de nouveaux savoirs: $TECHS3.
+^
+^Le peuple vous a investi du [pouvoir absolu] car il estime que vous seul(e) pouvez fonder une civilisation capable de résister à l'épreuve du temps!
+
+#DAWN_OF_MAN_NO_BONUS
+#caption L'aube de la civilisation
+#xs 400
+#y 10
+^Nous sommes en 4 000 av. J.-C. Vos ancêtres étaient nomades. Mais au fil des générations, votre peuple a appris les
+secrets de l'[agriculture], de la [construction de route] et de l'[irrigation] et peut désormais se sédentariser.
+^
+^{$PLAYER0}, votre tribu a récemment maîtrisé les savoirs suivants: $TECHS3. Si vous exploitez ces connaissances avec discernement,
+vous pourrez bâtir une civilisation capable de résister à l'épreuve du temps.
+
+#DAWN_OF_MAN_NO_TECHS
+#caption L'aube de la civilisation
+#xs 400
+#x -5
+#y -5
+{$PLAYER0}, votre tribu est {$STRENGTHS4} et connaît les secrets de l'[agriculture, de la construction de route
+et de l'irrigation] qui lui ont permis des réalisations grandioses et promettent des lendemains glorieux.
+Si vous exploitez ces connaissances avec discernement, $PLAYER0, vous pourrez bâtir une civilisation
+capable de résister à l'épreuve du temps.
+
+#DAWN_OF_MAN_BARE
+#caption L'aube de la civilisation
+#xs 400
+#x -5
+#y -5
+{$PLAYER0}, votre tribu connaît les secrets de l'[agriculture, de la construction de route
+et de l'irrigation] qui lui ont permis des réalisations grandioses et promettent des lendemains glorieux.
+Si vous exploitez ce savoir avec discernement, $PLAYER0, vous pourrez bâtir une civilisation capable de résister à l'épreuve du temps.
+
+#comment __________________________________________________________VICTORY AND DEFEAT
+
+#RETIREWARNING
+#xs 440
+#caption Fin de la partie
+^^
+^^FIN DE MANDAT OBLIGATOIRE!
+^^
+^^LA PARTIE S'ACHEVERA EN $YEAR0
+^^
+
+#TIMELIMIT
+#xs 440
+#caption Fin de la partie
+^^
+^^FIN DE MANDAT OBLIGATOIRE!
+^^
+^^$YEAR0
+^^
+^^FIN DE LA PARTIE
+^^
+^^VAINQUEUR AUX POINTS: $CIVNAME1
+^^
+
+#DIPLOVICTORYVOTEOPTION
+#caption Vote des Nations-Unies
+Voulez-vous organiser l'élection du Secrétaire-général de l'ONU?
+#itemlist
+Oui.
+Non.
+
+#DIPLOVICTORYVOTE
+#xs 400
+#caption Election du Secrétaire-général de l'ONU...
+
+#DIPLOVICTORYVOTERESULTS
+#xs 400
+#caption Résultats du vote...
+
+#NODIPLOVICTORY
+#caption Résultats du vote...
+Ballottage: aucune majorité ne s'est dégagée.
+
+#comment _______________________________________________________________________________________ADVISOR MESSAGES
+
+#comment ____________________________________________________________________DOMESTIC STATEMENTS
+
+#REVOLUTIONNOTAVAILABLE
+#advisor Intérieur Triste
+Nous ne pourrons déclencher une révolution que lorsque nous connaîtrons d'autres régimes politiques.
+
+#REVOLUTION
+#advisor Intérieur Etonné
+Le peuple a renversé notre $GOVERNMENT0. Notre civilisation sombre dans l'anarchie!
+
+#ALREADYREVOLTING
+#advisor Intérieur En colère
+Mais enfin! Nous sommes déjà en pleine révolution!
+^
+^Auriez-vous oublié de prendre votre traitement?
+
+#HURRY_CIVIL_DISORDER
+#advisor Intérieur En colère
+Impossible de lancer des travaux urgents tant qu'il y a des opposants dans la ville.
+
+#HURRY_RESISTANCE
+#advisor Intérieur En colère
+Nous ne pouvons accélérer la production dans une ville en pleine émeute.
+
+#HURRY_CANNOT
+#advisor Intérieur Triste
+Impossible d'accélérer le projet $IMPROVEMENT_WONDER_OR_UNIT0.
+
+#HURRY_UNAVAILABLE
+#advisor Intérieur En colère
+Notre régime actuel ne nous autorise pas les $LINK<travaux d'urgence=GCON_Hurry>.
+
+#HURRY_NOT_ENOUGH_PEOPLE
+#advisor Intérieur Triste
+Accélérer ce projet entraînerait la perte de trop de citoyens.
+
+#GOVERNMENT_CANNOT_HURRY
+#advisor Intérieur En colère
+Nous sommes en pleine révolution: impossible d'accélérer la production.
+
+#HURRY_NOT_NECESSARY
+#advisor Intérieur Heureux
+Il est inutile d'accélérer cette production.
+
+#SUMMARY_LOW_TREASURY
+#advisor Intérieur Triste
+Le niveau du trésor est dangereusement bas!
+
+#SUMMARY_GOLDEN_AGE
+#advisor Intérieur Heureux
+Notre glorieuse civilisation vient d'entrer dans un Age d'or!
+
+#SUMMARY_END_GOLDEN_AGE
+#advisor Intérieur Triste
+L'Age d'or de notre civilisation vient de s'achever. C'est du moins ce qu'affirment les experts...
+
+#SUMMARY_NEW_SMALL_WONDER
+#advisor Intérieur Heureux
+Notre population veut construire la petite merveille appelée $SMALL_WONDER0! C'est peut-être une bonne idée...
+
+#WONDERCHANGE
+#map_center 0
+#advisor Intérieur
+$CITY0 ne pouvant plus travailler sur le projet $LINK0, cette ville s'est lancée dans le projet $LINK1.
+#itemlist
+Zoom sur la ville.
+Cela semble parfait.
+
+#comment LINK = one of the Great Wonders
+#WONDERPRODUCE
+#map_center 0
+#advisor Intérieur
+$CITY0, ville de nos rivaux $CIVADJ1, vient d'achever le grand projet $LINK0.
+
+#SETTLEMENTTOONEAR
+#xs 320
+#wave 3
+#advisor Intérieur Triste
+Nous ne pouvons construire de villes aussi proches l'une de l'autre.
+
+#comment ___________________________________________________________________________________DOMESTIC GAME STOPPERS
+
+#MIMIMI
+#xs 320
+#advisor Intérieur Triste
+^Cette opération remplacera un aménagement de terrain antérieur ($MINE_OR_IRRIGATION0).
+Souhaitez-vous continuer?
+
+Annuler l'action.
+Continuer.
+
+#DISBAND_NONCOM
+#advisor Intérieur 
+#xs 320
+Dissoudre l'unité de $UNIT0?
+Pardonnez-moi, mais ils sont avec NOUS. Voulez-vous vraiment dissoudre cette unité?
+#itemlist
+Oui, il le faut!
+Non. Vous devez avoir raison.
+
+#MELTDOWN
+#map_center 0
+#advisor Intérieur Triste
+#xs 440
+#text
+A $CITY0, la centrale nucléaire a causé une catastrophe:
+on compte des milliers de morts et la pollution a fortement réduit la production!
+#itemlist
+Zoom sur la ville.
+Oh, je m'attendais à pire!
+
+#ABANDONBASE
+#map_center 0
+#xs 320
+#advisor Intérieur En colère
+Pas de croissance à $CITY0, or cette ville ne pourra construire une unité de $UNIT1 que si sa population augmente.
+Que devons-nous faire?
+#itemlist
+Retarder la production.
+Zoom sur $CITY0.
+Laisser tomber $CITY0.
+
+#CONFIRM_ABANDON_CITY
+#comment Cet avertissement s'affiche lorsque le joueur choisit "Laisser tomber" dans le menu optionnel.
+#advisor Intérieur En colère
+Etes-vous sûr de vouloir abandonner $CITY0?
+#itemlist
+Oui, cette ville n'a plus d'intérêt.
+Non. Autant pour moi.
+#active 1
+
+#MAINTSHORT
+#map_center 1
+#xs 400
+#wave 24
+#advisor Intérieur En colère
+#text
+Il n'est plus possible d'entretenir l'amélioration $IMPROVEMENT0 à $CITY1. Nous devons faire plus attention au trésor!
+#itemlist
+Entendu
+Quelle est la vue d'ensemble?
+
+#NEW_GOVERNMENT_AVAILABLE
+#advisor Intérieur Etonné
+#text
+$RULER_TITLE0, la population réclame l'adoption du régime appelé
+^^$LINK0.
+^Devons-nous encourager une révolution?
+#itemlist
+Dites-m'en plus sur les régimes.
+Oui, que la révolution commence!
+Non. Conservons le régime actuel.
+#active 2
+
+#IMPROVEMENT_COMPLETE
+#map_center 1
+#advisor Intérieur Heureux
+#text
+$RULER_TITLE0, $CITY1 a produit l'amélioration
+^^$LINK0.
+^Cette ville doit-elle commencer le projet
+^^$DROPLINK0?
+#itemlist
+Zoom sur [$CITY1].
+OK.
+#active 1
+
+#comment I have manually inserted a map_center here.  This is an odd beast because it is not a popup,
+#comment rather a graphicwin.
+#WONDERSPLASH
+$RULER_TITLE0, $CITY1 a achevé la construction de l'amélioration $LINK0.
+
+#IMPROVEMENT_SCRAP
+#advisor Intérieur Triste
+#text
+Voulez-vous vraiment vendre cette amélioration pour $NUM0 unités d'or et $NUM1 $<#1:bouclier:boucliers>?
+#itemlist
+Oui, vraiment.
+Après mûre réflexion, non...
+
+#VERBOSE_DISEASE_UNKNOWN
+#map_center 0
+#advisor Intérieur Triste
+#text
+$RULER_TITLE1, la $LINK<maladie=GCON_Disease> a frappé $CITY0 et décime la population. Nos $WISEMEN2 sont dépassés
+et ne parviennent pas à déterminer l'origine de ce fléau...
+#itemlist
+Continuer.
+Zoom sur la ville.
+
+#VERBOSE_DISEASE_TERRAIN
+#map_center 0
+#advisor Intérieur Triste
+#text
+$RULER_TITLE1, à $CITY0, les citoyens meurent de $LINK<maladie=GCON_Disease>. Selon nos $WISEMEN2, l'insalubrité du
+terrain environnant ([$TERRAIN3]) en est la cause.
+#itemlist
+Zoom sur la ville.
+Continuer.
+#active 1
+
+#comment In this case IMPROVEMENT is either Aqueduct or Hospital.
+#POPULATION_LIMIT
+#map_center 1
+#advisor Intérieur Heureux
+#text
+$RULER_TITLE0, $CITY1 ne possède pas les infrastructures lui permettant d'accueillir une plus vaste population. Il lui faut
+un [$IMPROVEMENT2]. Le projet actuel de $CITY1 est: [$IMPROVEMENT_WONDER_OR_UNIT3] ; faut-il le remplacer par un [$IMPROVEMENT2]?
+#itemlist
+Oui, changer immédiatement.
+Laissons $CITY1 terminer son projet actuel avant d'y construire un [$IMPROVEMENT2].
+$CITY1 se débrouille très bien. N'intervenons pas.
+Non, et qu'on ne me le demande plus !
+#active 2
+
+#CONFIRMREVOLUTION
+#advisor Intérieur
+Souhaitez-vous réellement déclencher une révolution?
+#itemlist
+Oui. Tout se passera bien.
+Non. C'est hors de question.
+
+#CONFIRMSWITCH
+#advisor Intérieur Heureux
+Vous avez bien conscience que l'abandon du projet $IMPROVEMENT_WONDER_OR_UNIT0 entraînera la perte de $NUM0 $<#0:bouclier:boucliers>.
+#itemlist
+C'est dommage, mais il le faut.
+Tant que ça? Dans ce cas, non...
+
+#HURRY_PEOPLE
+#advisor Intérieur Triste
+#text
+L'accélération du projet $IMPROVEMENT_WONDER_OR_UNIT0 risque de coûter la vie à $NUM0 citoyens.
+#itemlist
+Je tiens à ce projet. Faites donner le fouet!
+Oh, vraiment? Oublions ce projet, alors.
+
+#HURRY_NOT_ENOUGH_GOLD
+#advisor Intérieur En colère
+Mmh... il nous faudrait $NUM0 unités d'or pour ça.
+
+#HURRY_GOLD
+#advisor Intérieur Etonné
+#text
+Vous y tenez vraiment? Accélérer le projet $IMPROVEMENT_WONDER_OR_UNIT0 va nous coûter $NUM0 unités d'or...
+#itemlist
+Cessez de discuter. Commencez à compter!
+C'est effectivement un peu cher. Laissons tomber.
+
+#CONFIRMCANCELTERRAFORM
+#advisor Intérieur
+Cette unité de travailleurs aura achevé dans $NUM0 tours l'ordre actuel ($ORDERS0).
+^Voulez-vous lui ordonner de s'arrêter?
+#itemlist
+Oui. Il y a des tâches plus importantes.
+Non. Qu'ils continuent.
+
+#CANCELGOVCITIZENS
+#advisor Intérieur
+Voulez-vous vraiment que le gouverneur de cette ville cesse de gérer ses citoyens?
+#itemlist
+Oui.
+Non.
+#active 1
+
+#comment _______________________________________________________________DOMESTIC Civil Disorder Reports
+
+#DISORDER_REPORT_ENTERTAINERS
+#map_center 1
+#advisor Intérieur En colère
+#wave 1
+#text
+[$CITY1 ne produit plus rien car la population passe son temps à manifester!]
+^Les gens réclament des distractions, des produits de luxe et des améliorations urbaines...
+^Qu'allons-nous faire?
+#itemlist
+Je m'occuperai des "gens" de cette ville plus tard.
+Donnez-leur des distractions.
+Zoom sur $CITY1.
+#active 1
+
+#DISORDER_REPORT
+#map_center 1
+#advisor Intérieur En colère
+#wave 1
+#text
+Barricades à $CITY1.
+^C'est l'émeute générale!
+^Qu'allons-nous faire?
+#itemlist
+Pas d'inquiétude. Je m'occuperai de cette ville plus tard.
+#itemindex 2
+Zoom sur $CITY1.
+#active 0
+
+#DISORDER_REPORT_ENTERTAINERS_WAR
+#map_center 1
+#advisor Intérieur En colère
+#wave 1
+#text
+[$CITY1 a cessé toute production!]
+^Les gens manifestent contre la guerre.
+^Que devons-nous faire?
+#itemlist
+Laissez-les faire. Ils vont se lasser.
+Donnez-leur des distractions.
+Zoom sur $CITY1.
+#active 1
+
+#DISORDER_REPORT_WAR
+#map_center 1
+#advisor Intérieur Triste
+#wave 1
+#text
+Je suis au regret d'annoncer [l'arrêt de toute production à $CITY1.]
+^Les gens manifestent contre la guerre.
+^Que devons-nous faire?
+#itemlist
+Qu'ils manifestent tant qu'il leur plaît!
+#itemindex 2
+Zoom sur $CITY1.
+#active 0
+
+#NOSUPPORT
+#xs 320
+#wave 24
+#advisor Militaire En colère
+Nous manquons d'or pour continuer à entretenir toutes nos unités.
+^Une unité de $UNIT1 va être dissoute (et quelqu'un ferait bien de garder un oeil sur le trésor...).
+
+#WHICHICON
+#caption Action?
+Que souhaitez-vous faire?
+
+#comment ___________________________________________________________________________MILITARY STATEMENTS
+#comment __________________________________________________Barbarians
+
+#SUMMARY_BARBARIAN_EXPLOSION_CITY
+#advisor Militaire Etonné
+$CITY0 fait état de nombreux raids barbares dans son voisinage!
+
+
+#BARBARIAN_CAPTURE_CITY_PRODUCTION
+#map_center 0
+#advisor Militaire En colère
+#wave 0
+Des $BARBARIAN1 ont $LINK<pillé=GCON_Barbarians> $CITY0!
+Nos travaux sur le projet $IMPROVEMENT_WONDER_OR_UNIT2 ont été anéantis!
+
+
+#BARBARIAN_CAPTURE_CITY_POPULATION
+#map_center 0
+#advisor Militaire En colère
+#wave 0
+Des $BARBARIAN1 ont $LINK<pillé=GCON_Barbarians> $CITY0!
+Une partie des habitants a péri!
+
+
+#BARBARIAN_CAPTURE_CITY_GOLD
+#map_center 0
+#advisor Militaire En colère
+#wave 0
+Des $BARBARIAN1 ont $LINK<mis à sac=GCON_Barbarians> $CITY0!
+Ils ont emporté $NUM0 unités d'or! Nous [devons renforcer] notre potentiel militaire!
+
+
+#BARBARIAN_DESTROY_WALLS
+#map_center 1
+#advisor Militaire En colère
+#wave 0
+Les $BARBARIAN2 ont attaqué $CITY1! Ils ont détruit les murailles de la ville !
+Il faut absolument renforcer nos troupes. Je vous en prie!
+
+
+#COLONY_BARBS
+#advisor Militaire En colère
+Notre colonie exploitant la ressource $RESOURCE0 a été envahie par des $BARBARIAN1. Nous devrions mieux protéger nos colonies!
+
+
+#COLONY_CIV
+#advisor Militaire En colère
+$CITY2 signale que les odieux $CIVNOUN1 ont envahi notre colonie exploitant la ressource $RESOURCE0. Nous devrions défendre nos colonies!
+
+#comment ______________________________________________________________________________________Conquest and Loss
+
+#WE_CONVERT_CITY
+#map_center 1
+#advisor Militaire Heureux
+$RULER_TITLE0, à $CITY1, des citoyens loyaux ont $LINK<renversé=GCON_Conversion> leurs oppresseurs et pris contact avec nous!
+Ils souhaitent se joindre à notre empire.
+#itemlist
+Excellent! Qu'on installe un nouveau gouverneur dans cette ville.
+$CITY1 n'a aucun intérêt. Oublions ces rebelles.
+
+#WE_CONVERT_CITY_WITH_WONDER
+#map_center 1
+#advisor Militaire Heureux
+$RULER_TITLE0, à $CITY1, les citoyens ont $LINK<renversé=GCON_Conversion> leurs oppresseurs et souhaitent nous rejoindre!
+^N'oubliez pas que cette ville abrite la merveille $WONDER3!
+#itemlist
+Waouh! Dépêchez-y vite un nouveau gouverneur!
+Merveille ou pas, $CITY1 ne m'intéresse pas.
+
+#THEY_REFUSED_TO_CONVERT_CITY
+#map_center 1
+#advisor Militaire Heureux
+$RULER_TITLE0, à $CITY1, le peuple s'est soulevé
+et $LINK<demande à rejoindre=GCON_Conversion> les $CIVNOUN3!
+^Cependant, les responsables $CIVADJ2 ont rejeté cette requête!
+^$CITY1 est donc de nouveau sous notre contrôle!
+
+#THEY_CONVERT_CITY
+#map_center 1
+#advisor Militaire En colère
+#wave 2
+Une nouvelle affligeante, $RULER_TITLE0!
+^A $CITY1, la population a $LINK<déposé=GCON_Conversion> notre gouverneur et demandé à rejoindre les rangs de ces misérables $CIVNOUN2!
+^$CITY1 semble "admirer" la prétendue "culture" des $CIVNOUN2... C'est incompréhensible.
+
+#THEY_CONVERT_CITY_WITH_WONDER
+#map_center 1
+#advisor Militaire En colère
+#wave 2
+Une nouvelle catastrophique, $RULER_TITLE0!
+^A $CITY1, la population a $LINK<déposé=GCON_Conversion> notre gouverneur et demandé à rejoindre les rangs de ces misérables $CIVNOUN2!
+^Cette trahison, $RULER_TITLE0, nous vaut la perte de la merveille $WONDER3!
+
+#WE_DESTROY_CITY_GOLD
+#map_center 1
+#advisor Militaire Heureux
+$RULER_TITLE0, une fois de plus, nos glorieuses armées sont [victorieuses!]
+^Nous avons détruit $CITY1 et "libéré" $NUM0 unités d'or.
+
+#THEY_DESTROY_CITY_GOLD
+#map_center 1
+#advisor Militaire En colère
+Une nouvelle catastrophique, $RULER_TITLE0!
+^Les odieux $CIVNOUN2 ont dérobé [$NUM0 unités d'or] à $CITY1 et réduit la ville en cendres!
+^Nous devrions leur faire payer cher ces atrocités!
+
+#WE_CAPTURE_CITY_GOLD
+#map_center 1
+#advisor Militaire Heureux
+$RULER_TITLE0, une fois de plus, nos glorieuses armées sont [victorieuses!]
+^Nous avons capturé $CITY1 et "libéré" $NUM0 unités d'or.
+#itemlist
+Excellent! Qu'on installe un nouveau gouverneur dans cette ville.
+Je ne veux pas de cette ville. Rasez-la!
+
+#SEIZE_CITY_WITH_WONDER
+#map_center 1
+#advisor Militaire Heureux
+$RULER_TITLE0, nos glorieuses armées ont encore remporté la victoire!
+^Nous avons pris $CITY1 et y avons "libéré" $NUM0 unités d'or.
+^Grâce à cette conquête nous contrôlons désormais la merveille $WONDER3!
+#itemlist
+Excellent! Qu'on installe un nouveau gouverneur dans cette ville.
+Je ne veux pas de cette ville. Rasez-la!
+
+#THEY_RAZE_CITY_GOLD
+#map_center 1
+#advisor Militaire En colère
+#wave 2
+Une nouvelle accablante, $RULER_TITLE0!
+^Les odieux $CIVNOUN2 ont dérobé [$NUM0 unités d'or] à $CITY1 et réduit la ville en cendres!
+^Nous devrions leur faire payer cher ces atrocités!
+
+#CITY_RAZED_WITH_WONDER
+#map_center 1
+#advisor Militaire En colère
+Catastrophe, $RULER_TITLE0!
+^$CITY1 a été réduite en cendres par les [odieux $CIVNOUN2!]
+^Ils y ont volé [$NUM0 unités d'or] et [détruit la merveille $WONDER3!]
+^Ce sont des monstres! Traitons-les comme ils le méritent.
+
+#THEY_CAPTURE_CITY_GOLD
+#map_center 1
+#advisor Militaire En colère
+#wave 2
+Une nouvelle tragique, $RULER_TITLE0!
+^Les [odieux $CIVNOUN2] ont capturé $CITY1!
+^Ils ont vidé les coffres et emporté [$NUM0 unités d'or].
+
+#CITY_LOST_WITH_WONDER
+#map_center 1
+#advisor Militaire En colère
+Une tragédie est arrivée, $RULER_TITLE0!
+^Les [odieux $CIVNOUN2] ont pris $CITY1 et avec cette ville, la merveille $WONDER3!
+^Ils y ont également volé [$NUM0 unités d'or].
+^Nous devons leur faire payer ça!
+
+
+#comment ____________________________________________________________________________________Game Rules
+
+#RESISTERS
+#map_center 2
+#advisor Militaire En colère
+$RULER_TITLE0, $CITY1 compte $NUM0 $<#0:opposant:opposants>.
+^Nous devrions placer en garnison de puissantes unités à $CITY1 afin de mater cette opposition.
+
+#comment _____________________________________________________________________________________MILITARY GAMESTOPPERS
+
+#CIV_DESTROYED_BY_PLAYER
+#advisor Militaire Heureux
+#text
+$RULER_TITLE2, nous avons détruit les $CIVNOUN0, dont le niveau de culture est $CULTURAL_LEVEL3.
+#itemlist
+Quelle est la vue d'ensemble?
+Bien! Ils le méritaient. Continuons ainsi...
+#active 1
+
+#DISBAND
+#xs 320
+#advisor Militaire Etonné
+Dissoudre cette unité de $UNIT0?
+^Sauf votre respect, l'attaque [est] la meilleure défense.
+^Y tenez-vous vraiment?
+#itemlist
+Oui, il le faut!
+Non. Vous devez avoir raison.
+
+#UPGRADE
+#xs 320
+#advisor Militaire Heureux
+Mettre à niveau ces $UNIT0 en $UNIT1 pour $NUM0 unités d'or?
+#itemlist
+Oui.
+Non.
+
+#NO_UNITS_TO_UPGRADE_ALL
+#advisor Militaire Triste
+Nous ne possédons aucune unité de $UNIT0 susceptible d'être mise à niveau!
+
+#NO_GOLD_TO_UPGRADE_ALL
+#advisor Militaire Triste
+Il nous faudrait $NUM0 unités d'or pour réaliser toutes les mises à niveau!
+
+#UPGRADE_ALL
+#advisor Militaire Heureux
+Mettre à niveau toutes les unités de $UNIT0 ($NUM0 au total) pour $NUM1 unités d'or?
+#itemlist
+Oui.
+Non.
+
+#CONFIRMWAR
+#advisor Militaire En colère
+Détruisons-les!
+#itemlist
+Vous avez raison! Ce [sont] des misérables!
+Non. Nous devons respecter nos voisins.
+#active 1
+
+#OURNUKEFAILED
+#advisor Militaire En colère
+Notre [coûteux] missile nucléaire a été intercepté par leur +#@%! @+!#% d'[IDS]!
+
+#THEIRNUKEFAILEDBYUS
+#advisor Militaire Heureux
+L'un des missiles nucléaires $CIVADJ0 a été détruit par notre [magistrale IDS]!
+
+#THEIRNUKEFAILEDBYOTHERS
+#advisor Militaire Triste
+Le missile nucléaire des combattants $CIVADJ0 a été abattu par l'IDS des soldats $CIVADJ1!
+
+#comment ________________________________________________________________________________________FOREIGN STATEMENTS
+
+#MUTUALPROTECTIONOURWAR
+#advisor Diplomatique En colère
+La civilisation "$CIVNAME0" a attaqué nos "frères" de la civilisation "$CIVNAME1". Notre $LINK<pacte de protection mutuelle=GCON_Agreements> exige
+que nous déclarions la guerre à la civilisation "$CIVNAME0".
+
+
+#MUTUALPROTECTIONWARONUS
+#advisor Diplomatique En colère
+A cause de notre juste croisade contre cette civilisation geignarde appelée $CIVNAME0, les idiots qui composent la civilisation "$CIVNAME1" se sont bêtement senti obligés de nous déclarer la guerre!
+^Ils avaient conclu un $LINK<pacte de protection mutuelle=GCON_Agreements>!
+
+
+#MILITARYALLIANCEOURWAR
+#advisor Diplomatique Heureux
+Un accord avec la civilisation "$CIVNAME0" nous oblige à punir la civilisation "$CIVNAME1". Nous déclarons donc la guerre à la civilisation "$CIVNAME1". 
+
+
+#MILITARYALLIANCEWARONUS
+#advisor Diplomatique En colère
+Les misérables citoyens de la civilisation "$CIVNAME0" et ceux de l'odieuse civilisation "$CIVNAME1" nous ont déclaré la guerre! Ils ont conclu une alliance militaire pour nous détruire!
+
+
+#MAKEPEACE
+#advisor Diplomatique Heureux
+$CIVNAME0 et $CIVNAME1 ont signé un traité de paix.
+
+
+#MUTUALPROTECTIONPACT
+#advisor Diplomatique
+$CIVNAME0 et $CIVNAME1 ont signé un pacte de protection mutuelle.
+
+
+#MILITARYALLIANCEAGAINSTUS
+#advisor Diplomatique
+$CIVNAME0 et $CIVNAME1 ont conclu une alliance militaire contre nous.
+
+
+#MILITARYALLIANCE
+#advisor Diplomatique
+$CIVNAME0 et $CIVNAME1 ont conclu une alliance militaire contre la civilisation "$CIVNAME2".
+
+
+#TRADEEMBARGO
+#advisor Diplomatique En colère
+$CIVNAME0 et $CIVNAME1 ont signé un embargo commercial contre nous.
+^Ne vous avais-je pas dit qu'ils n'étaient que des misérables?
+
+
+#TRADEEMBARGOENDS
+#advisor Diplomatique Heureux
+L'embargo commercial conclu entre $CIVNAME0 et $CIVNAME1 contre nous a pris fin.
+ 
+
+#SUMMARY_CIV_DESTROYED_BY_CIV
+#advisor Diplomatique Triste
+Les redoutables combattants $CIVADJ1 ont détruit les $CIVNOUN0.
+
+
+#SUMMARY_CIV_DESTROYED
+#advisor Diplomatique Heureux
+Les $CIVNOUN0 ont été détruits.
+
+
+#SUMMARY_THEY_DECLARE_WAR_ON_US
+#advisor Diplomatique En colère
+Les $CIVNOUN0 nous ont déclaré la guerre!
+
+
+#SUMMARY_DECLARE_WAR
+#advisor Diplomatique Etonné
+La civilisation "$CIVNAME0" a déclaré la guerre aux $CIVNOUN1.
+
+
+#TECH_MUST_SELECT_FOR_STEALING
+#map_center 1
+#advisor Diplomatique Heureux
+Notre agent à $CITY1 veut savoir quel domaine de recherche vous intéresse, $RULER_TITLE0.
+
+#TECH_THEFT_CONFIRMATION
+#advisor Diplomatique Heureux
+$RULER_TITLE0, voulez-vous que nous volions ceci: $LINK0?
+
+#TECH_HAS_NOT_LEARNED
+#advisor Diplomatique Heureux
+$RULER_TITLE0, leur $TITLE1 $LEADER2 ne comprend pas ces secrets.
+
+
+#TECH_ALREADY_LEARNED_STEALING
+#advisor Diplomatique Heureux
+$RULER_TITLE0, nous connaissons déjà ces secrets.
+
+
+#NODIPLOMACY
+#advisor Diplomatique En colère
+Les $CIVNOUN0 ont repoussé notre émissaire!
+
+
+#FA_NO_KNOWLEDGE
+Hélas, nous ignorons tout des moyens militaires $CIVADJ0.
+
+
+#FA_BEST_UNIT
+La meilleure unité des $CIVNOUN0 est [-- à notre connaissance --] celle des $UNIT1.
+
+
+#FA_CULTURAL
+Les citoyens $CIVADJ0 sont [$CULTURAL_OPINION1] notre culture.
+
+
+#FA_NO_CAN_TRADE
+Impossible de commercer avec les citoyens $CIVADJ0. Il nous faudrait une $LINK<route commerciale viable=GCON_Trade>.
+
+
+#FA_IMPORT_GOOD
+Si vous le souhaitez, nous pouvons commercer avec les $CIVNOUN0. Leurs ressources en $RESOURCES1 ne manquent pas d'intérêt.
+
+
+#FA_NO_SURPLUS
+Malheureusement, les $CIVNOUN0 ne possèdent pas de surplus de ressources à échanger.
+
+
+#FA_WE_NO_SURPLUS
+Nous n'avons aucun surplus de marchandises a échanger avec les $CIVNOUN0.
+
+
+#FA_EXPORT_GOOD
+Les $CIVNOUN0 pourraient être intéressés par nos ressources en $RESOURCES1.
+
+
+#comment MOOD = happy, indifferent, annoyed
+#FA_HAPPINESS_1
+Les $CIVNOUN0 sont $MOOD1 envers nous.
+
+#FA_HAPPINESS_2
+Les $CIVNOUN0 sont $MOOD1 à notre égard.
+
+#comment ________________________________________________________________________________________FOREIGN GAMESTOPPERS
+
+#CONFIRMDIPLOMACY 
+#advisor Diplomatique Heureux
+Les $CIVNOUN0 ont demandé audience. Les recevrez-vous?
+#itemlist
+Bien sûr, écoutons-les.
+Non, plus tard!
+
+
+#CONFIRMRENEGOTIATEPEACE
+#advisor Diplomatique Etonné
+Pensez-vous qu'il soit vraiment opportun de renégocier la paix?
+#itemlist
+Oui. Absolument.
+Non, peut-être pas.
+#active 1
+
+
+#DECLARE_WAR
+#advisor Diplomatique Triste
+#text
+$RULER_TITLE1, ceci entraînera la guerre avec les citoyens $CIVADJ0.
+^Est-ce vraiment ce que vous voulez?
+#itemlist
+Faites comme [J'AI DIT!]
+Non, vous avez raison, cela mérite réflexion.
+#active 1
+
+
+#VERBOSE_CIV_DESTROYED
+#advisor Diplomatique Triste
+#text
+$RULER_TITLE2, nous venons d'apprendre la disparition des $CIVNOUN0, de niveau culturel $CULTURAL_LEVEL3.
+#itemlist
+Quelle est la vue d'ensemble?
+Dommage pour eux...
+#active 1
+
+
+#VERBOSE_CIV_DESTROYED_BY_CIV
+#advisor Diplomatique Triste
+#text
+$RULER_TITLE2, les $CIVNOUN0, de niveau culturel $CULTURAL_LEVEL3, ont été détruits par les combattants $CIVADJ1.
+#itemlist
+Quelle est la vue d'ensemble?
+Eh bien, cela ne devrait pas nous gêner, n'est-ce pas?
+#active 1
+
+#comment _________________________________________________________________________________________SCIENCE STATEMENTS
+
+#TECH_FREE
+#advisor Scientifique Heureux
+$RULER_TITLE0, nos $WISEMEN1 ont découvert un nouveau secret: ils l'appellent $LINK0.
+
+#GOODY_TECH
+#advisor Scientifique Heureux
+Les barbares $BARBARIAN0 nous ont enseigné un secret. Il a pour nom
+^^$LINK0.
+
+#TECH_MUST_SELECT_FOR_RESEARCH
+#advisor Scientifique Triste
+$RULER_TITLE0, nos $WISEMEN1 veulent avoir des directives. Que faut-il rechercher?
+
+#TECH_ALREADY_LEARNED
+#advisor Scientifique Heureux
+$RULER_TITLE0, nous connaissons ces secrets.
+
+#TECH_CIVILOPEDIA_LINKS
+#advisor Scientifique
+Voir l'article de la Civilopédia correspondant à:
+
+#comment these next two popups are now graphic windows.  So the strings here in script are just
+#comment text strings.  Please do not add popup control lines to them.
+#TECH_NEW_ERA1
+$TITLE0, d'après nos historiens, nous sommes entrés dans une nouvelle époque de notre développement!
+
+#TECH_NEW_ERA2
+Les découvertes de nos $WISEMEN1 ont entraîné une nouvelle ère de prospérité pour notre peuple, $RULER_TITLE0!
+
+#LOSTSPACESHIP
+#advisor Scientifique En colère
+Les $CIVNOUN0 ont détruit notre vaisseau spatial!
+
+#DESTROYEDSPACESHIP
+#advisor Scientifique Heureux
+Nous avons détruit le vaisseau spatial de nos rivaux $CIVADJ0!
+
+#SUMMARY_THEIR_SPACESHIP_PART
+#advisor Scientifique Etonné
+Le vaisseau spatial des $CIVNOUN0 compte un nouvel élément: $SPACESHIP_PART1.
+
+#SUMMARY_WONDER_OBSOLETE
+#advisor Scientifique Triste
+La découverte du secret appelé $TECH0 a rendu la merveille $WONDER1 obsolète.
+
+#comment _______________________________________________________________________________________SCIENCE GAMESTOPPERS
+
+#TECH_ADVANCED
+#advisor Scientifique
+#text
+^$RULER_TITLE0, nos $WISEMEN1 ont fait une découverte. Ils l'appellent
+^^$LINK0.
+^Que doivent-ils rechercher maintenant?
+^^$DROPLINK0.
+#itemlist
+OK. Ca me paraît bien.
+Quelle est la vue d'ensemble?
+
+
+#TECH_ACQUIRED_ONE_SOURCE
+#advisor Scientifique
+#text
+$RULER_TITLE0, nous avons acquis auprès des $CIVNOUN_OR_BARBARIAN2 un nouveau savoir, appelé $TECH3.
+Que doivent maintenant rechercher nos $WISEMEN1?
+^^$DROPLINK0
+#itemlist
+OK.
+Quelle est la vue d'ensemble? 
+
+
+#TECH_ACQUIRED_TWO_SOURCES
+#advisor Scientifique
+#text
+$RULER_TITLE0, nous avons acquis auprès des $CIVNOUN_OR_BARBARIAN2 et des $CIVNOUN_OR_BARBARIAN3 le savoir appelé $TECH4.
+Que doivent désormais rechercher nos $WISEMEN1?
+^^$DROPLINK0
+#itemlist
+OK.
+Quelle est la vue d'ensemble?
+
+
+#TECH_FIRST
+#advisor Scientifique
+#text
+$RULER_TITLE0, nos $WISEMEN1 demandent votre avis.
+^Devons-nous acquérir le savoir suivant:
+^^$DROPLINK0?
+#itemlist
+OK
+Quelle est la vue d'ensemble?
+
+
+#comment ____________________________________________________________________________________________TRADE STATEMENTS
+
+#LOSTGOOD
+#advisor Commerce Etonné
+Nous avons perdu notre ressource en $RESOURCES0!
+
+
+#GOODDISAPPEARED
+#advisor Commerce Etonné
+Cette ressource ($RESOURCES0) est épuisée!
+
+
+#GOODAPPEARED
+#advisor Commerce Heureux
+Nous avons découvert une nouvelle ressource en $RESOURCES0!
+
+
+#comment ___________________________________________________________________________________CULTURAL STATEMENTS
+
+#CULTUREBORDERVERBOSE
+#map_center 1
+#advisor Culturel Heureux
+$RULER_TITLE0, $CITY1 voit ses frontières s'étendre en raison de son imposante $LINK<culture=GCON_Culture>!
+
+#CULTUREBORDEROVER
+#advisor Culturel Triste
+Le déclin de notre culture a réduit nos frontières.
+
+
+#SUMMARY_TRAVELERS_REPORT
+#advisor Culturel
+Les $CIVNOUN0 sont en train de construire la merveille $WONDER1.
+
+
+#VERBOSE_TRAVELERS_REPORT
+#advisor Culturel
+#text
+Les $CIVNOUN0 ont entrepris le grand projet:
+^^$LINK0.
+#itemlist
+Vous m'en direz tant...
+Quelle est la vue d'ensemble?
+
+#comment _______________________________________________________________________________________OTHER STATEMENTS
+
+#comment ______________________________________________________________________________________OTHER GAMESTOPPERS
+
+#UNIT_PRODUCED_LEADER
+#advisor Militaire Heureux
+#x 10
+#y 40
+#xs 320
+#caption Renommer cette unité victorieuse ?
+
+Nom :
+
+#NOTENOUGHGOLD
+Pas assez d'or.
+
+#TOOMANYCITIES
+Trop de villes.
+
+#NEWCITY
+#advisor Culturel Heureux
+#x 10
+#y 40
+#xs 320
+#caption Cette ville a pour nom?
+
+Nom:
+
+#BADCITYNAME
+#advisor Culturel Triste
+#text
+Une autre ville porte déjà ce nom. 
+^Choisissez un nom [unique].
+
+#RENAME_CITY
+#advisor Culturel Etonné
+#caption Renommer $CITY0?
+#x 10
+#y 40
+#xs 320
+
+Nom:
+
+#ENEMY_UNIT_DOUBLECLICK
+#caption $CIVADJ0 $UNIT1
+#text
+Qu'y a-t-il?
+#itemlist
+Conduisez-moi à votre chef.
+Rien. Excusez-moi!
+
+#DISEMBARK
+Débarquer?
+#itemlist
+Ne rien faire.
+Tout débarquer.
+#active 1
+
+#SELECT_TRANSPORT
+#caption Quel transport?
+Choisissez sur quel transport embarquer:
+
+#CHANGEMOBILIZATION
+#xs 400
+Régler le niveau de mobilisation sur...
+#itemlist
+Normalité
+Temps de guerre
+
+#PICKWHOM
+#xs 400
+#caption Choisissez la civilisation...
+
+#CHANGE_GOVERNMENT
+#caption Régimes politiques
+#text
+Sélectionnez un nouveau régime. 
+
+#comment __________________________________________________________________________________________UNHAPPY REASONS
+
+#UNHAPPY_REASON_NONE
+"Aucune vraie raison à mon mécontentement. Ce doit être un défaut de programmation..."
+
+
+#UNHAPPY_REASON_POP_LIMIT
+"Il y a vraiment trop de monde, ici."
+
+
+#UNHAPPY_REASON_AT_WAR
+"Nous voulons que vous donniez une chance à la paix!"
+
+
+#UNHAPPY_REASON_NATIONALITY
+"Mettez fin à votre agression contre notre pays d'origine!"
+
+
+#UNHAPPY_REASON_PROPAGANDA
+"Toute la propagande entourant votre régime nous fait douter."
+
+
+#UNHAPPY_REASON_DRAFT
+"Stop. Plus de conscription! Nous n'irons pas, un point c'est tout!"
+
+
+#UNHAPPY_REASON_SACRIFICE
+"Impossible pour nous d'oublier votre cruelle oppression."
+
+
+#UNHAPPY_REASON_BUILDING_THIS_CITY
+"Certaines améliorations de cette ville nous déplaisent"
+
+
+#UNHAPPY_REASON_BUILDING_OTHER_CITY
+"Certaines améliorations d'une autre ville nous déplaisent"
+
+#comment __________________________________________________________________________________________ESPIONAGE
+
+#ESPIONAGE_DIPLOMATIC_MISSION_UNAVAILABLE
+#caption Ministère des Affaires Etrangères
+Nous ne pouvons mener de missions diplomatiques car nous ne connaissons pas d'autres civilisations.
+
+#ESPIONAGE_DIPLOMATIC_MISSION_CURRENTLY_UNAVAILABLE
+#caption Ministère des Affaires Etrangères 
+Les missions diplomatiques ne sont pas disponibles actuellement.
+
+#ESPIONAGE_SPY_MISSION_UNAVAILABLE
+#caption Ministère des Affaires Etrangères 
+Nous ne pouvons mener de missions d'espionnage car nous ne connaissons pas d'autres civilisations.
+
+#ESPIONAGE_SPY_MISSION_CURRENTLY_UNAVAILABLE
+#caption Ministère des Affaires Etrangères 
+Les missions d'espionnage ne sont pas disponibles actuellement.
+
+#ESPIONAGE_DIPLOMATIC_MISSION_SELECT2
+#caption Ministère des Affaires Etrangères 
+Que devons-nous faire, $RULER_TITLE0?
+
+#ESPIONAGE_DIPLOMATIC_MISSION_SELECT
+#caption Espionnage à $CITY0
+Qu'allons-nous faire, $RULER_TITLE1?
+
+#ESPIONAGE_SPY_MISSION_SELECT
+#caption Espionnage à $CITY0
+Sélectionnez la mission d'espionnage à mener.
+
+#ESPIONAGE_SAFETY_LEVEL
+#advisor Diplomatique Heureux
+#text
+Méthode d'exécution de cette mission:
+#itemlist
+[Immédiate] ($NUM0 unités d'or - faible probabilité de succès)
+[Prudente]  ($NUM1 unités d'or - probabilité de succès modérée)
+[Sûre]      ($NUM2 unités d'or - probabilité de succès élevée)
+#itemindex -1
+[Minute!] Tout ça est trop risqué. Réévaluons la situation.
+
+#ESPIONAGE_START_MISSION_ESTABLISH_EMBASSY
+#caption Ministère des Affaires Etrangères 
+Etablir une ambassade auprès de qui?
+
+#ESPIONAGE_NO_EMBASSIES_AT_THIS_TIME
+#caption Ministère des Affaires Etrangères 
+Nous ne pouvons établir de nouvelles ambassades pour l'instant. 
+
+#ESPIONAGE_MISSION_ESTABLISH_EMBASSY_SUCCESS
+#map_center 3
+#advisor Diplomatique Heureux
+$TITLE0, nous avons établi une ambassade auprès des citoyens
+$CIVADJ1, à $CITY3 ($CITYSIZE2).
+
+#ESPIONAGE_FOREIGN_EMBASSY_ESTABLISHED
+#advisor Diplomatique Heureux
+$TITLE0, $LEADER1, qui dirige les $CIVNOUN2, a établi une ambassade dans notre capitale.
+
+#ESPIONAGE_START_MISSION_INVESTIGATE_CITY
+#caption Espionnage à $CITY0
+Choisissez une ville sur laquelle enquêter.
+
+#ESPIONAGE_MISSION_INVESTIGATE_CITY_IMMUNE
+#caption Espionnage à $CITY0
+Les citoyens $CIVADJ1 sont immunisés contre les enquêtes sur les villes.
+
+#ESPIONAGE_MISSION_INVESTIGATE_CITY_SUCCESS
+#caption Espionnage à $CITY0
+Nous avons enquêté sur la ville suivante: $CITY1.
+
+#comment ______________________________________________________________________________ESPIONAGE SPIES
+
+#ESPIONAGE_NO_CIVS_WITHOUT_MOLES
+#caption Ministère des Affaires Etrangères 
+Nous disposons d'espions dans toutes les civilisations que nous connaissons.
+
+
+#ESPIONAGE_START_MISSION_PLANT_MOLE
+#caption Ministère des Affaires Etrangères 
+Où voulez-vous placer un espion?
+
+
+#ESPIONAGE_MISSION_PLANT_MOLE_SUCCESS
+#caption Ministère des Affaires Etrangères 
+Nous avons désormais un agent à $CITY0.
+
+
+#ESPIONAGE_MISSION_PLANT_MOLE_FAILURE
+#caption Ministère des Affaires Etrangères 
+Notre agent à $CITY0 a été pris et exécuté. $LEADER2, leur $TITLE1, exprime son mécontentement.
+
+
+#ESPIONAGE_CAUGHT_MOLE
+#advisor Diplomatique en colère
+Nous avons pris $LEADER1, $TITLE0 des $CIVNOUN2, en train d'essayer d'implanter un espion dans notre capitale.
+
+
+#ESPIONAGE_START_MISSION_EXPOSE_MOLE
+#caption Ministère des Affaires Etrangères 
+Choisissez la civilisation dont il faut démasquer l'espion.
+
+
+#ESPIONAGE_MISSION_EXPOSE_MOLE_IMMUNE
+#caption Espionnage à $CITY0
+Les citoyens $CIVADJ1 sont immunisés contre le démasquage d'espion.
+
+
+#ESPIONAGE_MISSION_EXPOSE_MOLE_SUCCESS
+#map_center 0
+#advisor Diplomatique Heureux
+Une fois encore, nos investissements en matière d'espionnage ont payé.
+^Nous avons démasqué et neutralisé l'espion mis en place à $CITY0 par le dirigeant suivant: $TITLE1 $LEADER2.
+
+
+#ESPIONAGE_MISSION_EXPOSE_MOLE_SUCCESS_EXPOSED
+#advisor Diplomatique
+Notre agent à $CITY0 (nom de code: Guido) est parvenu à démasquer l'espion mis en place par le dirigeant suivant:$TITLE1$ LEADER2.
+^La menace a disparu, mais la couverture de notre agent aussi. 
+
+
+#ESPIONAGE_MISSION_EXPOSE_MOLE_FAILURE
+#map_center 0
+#advisor Diplomatique En colère
+Notre opération contre l'agent mis en place à $CITY0 par le dirigeant suivant: $TITLE1 $LEADER2 a échoué et notre espion a perdu sa couverture.
+Ce dirigeant nous menace de représailles.
+
+
+#ESPIONAGE_CAUGHT_EXPOSING_MOLE_SUCCESS
+#map_center 3
+#advisor Diplomatique Triste
+Notre agent à $CITY3 a été capturé! Nous avons également pris un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2.
+
+
+#ESPIONAGE_CAUGHT_EXPOSING_MOLE
+#advisor Diplomatique
+Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été pris alors qu'il tentait de démasquer notre espion.
+
+
+#ESPIONAGE_MISSED_EXPOSING_MOLE
+#map_center 0
+#advisor Diplomatique
+Notre agent à $CITY0 a été capturé!
+
+#comment ________________________________________________________________________________ESPIONAGE PROPAGANDA
+
+#ESPIONAGE_START_MISSION_INITIATE_PROPAGANDA
+#caption Espionnage à $CITY0
+Sélectionnez une cité à corrompre.
+
+
+#ESPIONAGE_MISSION_INITIATE_PROPAGANDA_IMMUNE
+#caption Espionnage à $CITY0
+Les citoyens $CIVADJ1 sont insensibles à la propagande.
+
+
+#ESPIONAGE_MISSION_INITIATE_PROPAGANDA_SUCCESS
+#map_center 0
+#caption Espionnage à $CITY1
+A $CITY0, les citoyens ont renversé leur gouverneur et rejoint notre cause!
+
+
+#ESPIONAGE_MISSION_INITIATE_PROPAGANDA_FAILURE
+#map_center 0
+#caption Espionnage à $CITY1
+Nous n'avons pas rallié assez de citoyens à notre cause à $CITY0. La campagne de propagande est un échec.
+
+
+#ESPIONAGE_MISSED_PROPAGANDA_LOST_CITY
+#map_center 0
+#advisor Diplomatique
+Nous avons perdu $CITY0 à cause d'une campagne de propagande!
+
+
+#ESPIONAGE_MISSED_PROPAGANDA
+#map_center 0
+#advisor Diplomatique
+A $CITY0, une campagne de propagande a entraîné le soulèvement des citoyens.
+
+#comment _________________________________________________________________________ESPIONAGE SABOTAGE
+
+#ESPIONAGE_START_MISSION_SABOTAGE_PRODUCTION
+#caption Espionnage à $CITY0
+Où faut-il tenter la mission de sabotage?
+
+
+#ESPIONAGE_MISSION_SABOTAGE_PRODUCTION_IMMUNE
+#caption Espionnage à $CITY0
+Les citoyens $CIVADJ1 sont insensibles au sabotage.
+
+
+#ESPIONAGE_MISSION_SABOTAGE_PRODUCTION_SUCCESS
+#map_center 0
+#caption Espionnage à $CITY4
+Notre agent à $CITY0 y a saboté la production. La ville va devoir reprendre à zéro le projet $ITEM1.
+
+
+#ESPIONAGE_MISSION_SABOTAGE_PRODUCTION_SUCCESS_EXPOSED
+#map_center 0
+#advisor Diplomatique
+Nous avons saboté la production de l'amélioration $IMPROVEMENT1 à $CITY0.
+^Malheureusement, notre agent (nom de code: Gweeto) a été [pris sur le fait] et suppprimé.
+^$LEADER3, leur $TITLE2, exprime son mécontentement.
+
+
+#ESPIONAGE_MISSION_SABOTAGE_PRODUCTION_FAILURE
+#map_center 0
+#advisor Diplomatique
+Notre tentative de sabotage contre $CITY0 a échoué et notre agent a été capturé.
+^$LEADER3, leur $TITLE2, fulmine...
+
+
+#ESPIONAGE_CAUGHT_SABOTAGING_SUCCESS
+#map_center 3
+#advisor Diplomatique
+La production a été sabotée à $CITY3! Un espion implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été capturé.
+
+
+#ESPIONAGE_CAUGHT_SABOTAGING
+#map_center 3
+#advisor Diplomatique
+Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été capturé à $CITY3 alors qu'il y effectuait une tentative de sabotage.
+
+
+#ESPIONAGE_MISSED_SABOTAGING
+#map_center 0
+#advisor Diplomatique
+La production a été sabotée à $CITY0!
+
+#comment __________________________________________________________________________ESPIONAGE STEALING
+
+#ESPIONAGE_MISSION_STEAL_PLANS_IMMUNE
+#caption Espionnage à $CITY0
+Les citoyens $CIVADJ1 sont immunisés contre le vol de plans.
+
+
+#ESPIONAGE_MISSION_STEAL_PLANS_SUCCESS
+#caption Ministère des Affaires Etrangères
+Notre agent à $CITY0 a pu s'emparer de plans cruciaux décrivant les mouvements de troupes du dirigeant suivant :$TITLE1 $LEADER2.
+Nous connaissons maintenant l'emplacement de toutes ses troupes.
+
+
+#ESPIONAGE_MISSION_STEAL_PLANS_SUCCESS_EXPOSED
+#map_center 0
+#caption Ministère des Affaires Etrangères
+Notre agent à $CITY0 a pu s'emparer de plans cruciaux décrivant les mouvements de troupes du dirigeant suivant :$TITLE1 $LEADER2.
+Nous connaissons maintenant l'emplacement de toutes ses troupes. En revanche, notre agent a été 
+capturé et exécuté. $LEADER2, leur $TITLE1, exprime son mécontentement.
+
+
+#ESPIONAGE_MISSION_STEAL_PLANS_FAILURE
+#map_center 0
+#caption Ministère des Affaires Etrangères
+Notre agent à $CITY0 a été pris alors qu'il tentait de voler des plans cruciaux. Il a été exécuté.
+$LEADER2, leur $TITLE1, exprime son mécontentement.
+
+
+#ESPIONAGE_CAUGHT_STEALING_PLANS_SUCCESS
+#advisor Diplomatique
+Nos plans de déploiement militaire ont été volés! Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été capturé.
+
+
+#ESPIONAGE_CAUGHT_STEALING_PLANS
+#advisor Diplomatique
+Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été pris alors qu'il tentait de dérober nos plans de mouvements de troupes.
+
+
+#ESPIONAGE_MISSED_STEALING_PLANS
+#advisor Diplomatique
+Nos plans de déploiement de troupes ont été volés!
+
+#comment __________________________________________________________________________________Technology
+
+#ESPIONAGE_MISSION_STEAL_TECH_IMMUNE
+#caption Espionnage à $CITY0
+Les citoyens $CIVADJ1 sont immunisés contre le vol de technologie.
+
+
+#ESPIONAGE_MISSION_STEAL_TECH_UNABLE
+#caption Espionnage à $CITY0
+$RULER_TITLE2, nous avons découvert que les $CIVNOUN1 n'étaient pas plus technologiquement avancés que nous.
+Il nous a donc été impossible de leur dérober une technologie.
+
+
+#ESPIONAGE_MISSION_STEAL_TECH_SUCCESS
+#caption Espionnage à $CITY0
+Nous avons pu dérober une technologie aux $CIVNOUN1.
+
+
+#ESPIONAGE_MISSION_STEAL_TECH_FAILURE
+#map_center 2
+#caption Espionnage à $CITY0
+Notre agent à $CITY1 n'est pas parvenu à dérober de technologie. Il a cependant pu s'échapper sans trop attirer l'attention.
+
+
+#ESPIONAGE_MISSION_STEAL_TECH_FAILURE_CAUGHT
+#map_center 2
+#caption Espionnage à $CITY0
+Notre agent à $CITY1 a été capturé alors qu'il tentait d'y dérober une technologie. $LEADER3, leur $TITLE2, exprime son mécontentement.
+
+
+#ESPIONAGE_CAUGHT_STEALING_TECH
+#advisor Diplomatique
+Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été capturé alors qu'il tentait de voler une technologie.
+
+#comment __________________________________________________________________________________World Maps
+
+#ESPIONAGE_MISSION_STEAL_WORLD_MAP_IMMUNE
+#caption Espionnage à $CITY0
+Les citoyens $CIVADJ1 sont immunisés contre le vol de carte du monde.
+
+
+#ESPIONAGE_MISSION_STEAL_WORLD_MAP_SUCCESS
+#caption Espionnage à $CITY0
+Nous sommes parvenus à dérober aux $CIVNOUN1 leur carte du monde.
+
+
+#ESPIONAGE_MISSION_STEAL_WORLD_MAP_FAILURE
+#map_center 2
+#caption Espionnage à $CITY0
+Notre espion féminin à $CITY1 n'a pas réussi à voler la carte du monde. Elle a cependant pu s'échapper sans trop attirer l'attention.
+
+
+#ESPIONAGE_MISSION_STEAL_WORLD_MAP_FAILURE_CAUGHT
+#map_center 2
+#caption Espionnage à $CITY0
+Nous avons perdu notre agent féminin à $CITY1. Elle a été capturée alors qu'elle tentait de s'emparer de leur carte du monde.
+$LEADER3, leur $TITLE2, exprime son mécontentement.
+
+
+#ESPIONAGE_CAUGHT_STEALING_MAP
+#advisor Diplomatique
+Un agent implanté par $LEADER1, $TITLE0 des $CIVNOUN2, a été capturé alors qu'il tentait de voler notre carte du monde.
+
+
+#comment ________________________________________________________________________________Various
+
+#BOMBARDFAILED
+Echec du bombardement d'artillerie.
+
+#BOMBARDSUCCEEDED
+Bombardement d'artillerie efficace! Améliorations détruites.
+
+#UNITBOMBARDSUCEEDED
+Bombardement d'artillerie efficace! Unités ennemies touchées.
+
+#UNITBOMBSUCEEDED
+Bombardement aérien efficace! Unités ennemies touchées.
+
+#AIRINTERCEPTED
+Nous avons été abattus par un intercepteur ennemi!
+
+#AIRINTERCEPTORDESTROYED
+Nous avons abattu un intercepteur ennemi!
+
+#AIRINTERCEPTSUCCESS
+Nous avons intercepté une unité ennemie!
+
+#AIRINTERCEPTFAILURE
+Notre unité d'intercepteurs a été abattue!
+
+#AIRSAMINTERCEPTED
+Nous avons été abattus par des SAM ennemis!
+
+#BOMBFAILED
+Notre bombardement aérien a échoué.
+
+#BOMBSUCCEEDED
+Bombardement aérien efficace: améliorations détruites.
+
+
+#NEEDEMPTYSQUARE
+#xs 320
+Cette action ne peut être menée sur une case contenant déjà un établissement.
+
+
+#NEEDGOOD
+#xs 320
+Cette action ne peut être menée sur une case contenant une $LINK<ressource pouvant être échangée=GCON_NResources>.
+
+
+#HAVEDESTROYED
+#map_center 1
+Les $CIVNOUN0 ont détruit des aménagements près de la ville suivante: $CITY1!
+
+
+#HAVEARTYDESTROYED
+#map_center 1
+Les moyens d'artillerie $CIVADJ2 ont détruit des aménagements près de la ville suivante: $CITY1!
+
+
+#PAUSED
+#xs 300
+$NAME0 a mis la partie en pause.
+
+
+#UNPAUSED
+#xs 300
+$NAME0 a relancé la partie.
+
+
+#CHANGINGSERVERS
+#xs 300
+Patientez pendant qu'un joueur est éliminé de la partie...
+
+
+#AIRDROPFAILED
+Echec du parachutage!
+
+
+#MADEAIRDROP
+Des parachutistes $CIVADJ0 ont atterri!
+
+
+#ALREADYMOVED
+Cette unité s'est déjà déplacée.
+
+
+#DEBUGGOODS
+#xs 500
+
+
+#comment _________________________________________________________________________________ADVISOR_ADVICE
+
+#comment ____________________________________________________________DIPLO_ADVICE
+
+#DIPLOADVICEMILITARY_MORETHANUS
+#advisor Diplomatique Triste
+Les combattants $CIVADJ0 sont plus nombreux que nous! Ce n'est pas bon...
+
+
+#DIPLOADVICEMILITARY_EQUALWITHUS
+#advisor Diplomatique Heureux
+Les moyens militaires $CIVADJ0 sont à peu près aussi importants que les nôtres.
+
+
+#DIPLOADVICEMILITARY_LESSTHANUS
+#advisor Diplomatique Heureux
+Nos forces sont plus nombreuses que celles des $CIVNOUN0. C'est une bonne chose...
+
+
+#DIPLOADVICESCIENCE_MORETHANUS
+#advisor Diplomatique Triste
+Nos rivaux $CIVADJ0 sont technologiquement avancés!
+
+
+#DIPLOADVICESCIENCE_EQUALWITHUS
+#advisor Diplomatique Heureux
+Les accomplissements scientifiques $CIVADJ0 sont comparables aux nôtres.
+
+
+#DIPLOADVICESCIENCE_LESSTHANUS
+#advisor Diplomatique Heureux
+Les savants $CIVADJ0 ne sont pas très efficaces.
+
+
+#DIPLOADVICETHEIRSCIENCE_MORETHANUS
+#advisor Diplomatique Heureux
+Les citoyens $CIVADJ0 nous trouvent technologiquement avancés!
+
+
+#DIPLOADVICETHEIRSCIENCE_EQUALWITHUS
+#advisor Diplomatique Heureux
+Les citoyens $CIVADJ0 pensent que nous sommes au même niveau qu'eux sur le plan scientifique.
+
+
+#DIPLOADVICETHEIRSCIENCE_LESSTHANUS
+#advisor Diplomatique Triste
+Pour les citoyens $CIVADJ0, notre technologie est primitive.
+
+
+#DIPLOADVICEFEAR
+#advisor Diplomatique Heureux
+Les soldats $CIVADJ0 craignent nos $UNIT1.
+
+
+#DIPLOADVICETHEIRCULTURAL
+Les citoyens $CIVADJ1 sont [$CULTURAL_OPINION0] notre culture.
+
+
+#DIPLOADVICECULTURAL
+Nos citoyens sont [$CULTURAL_OPINION0] les progrès culturels $CIVADJ1.
+
+
+#DIPLOADVICEBESTUNIT
+#advisor Diplomatique Triste
+Les militaires $CIVADJ0 possèdent des [$UNIT1.]
+
+
+#DIPLOADVICEACTOFAGGRESSION
+#advisor Diplomatique En colère
+N'oubliez pas que les militaires $CIVADJ0 nous ont déjà attaqués. Je ne sais pas si l'on peut leur faire confiance.
+
+
+#DIPLOADVICEFOREIGN_HAVE_NOT_MET
+#advisor Diplomatique Heureux
+Il s'agit de la première rencontre. [Prudence...]
+
+
+#DIPLOADVICEFOREIGN_LIAR
+#advisor Diplomatique En colère
+$LEADER0 a la réputation de [manquer à sa parole]. Méfiez-vous...
+
+
+#DIPLOADVICEFOREIGN_BETRAYAL
+#advisor Diplomatique En colère
+$LEADER0 a [déjà trahi nos amis] les $CIVNOUN1.
+
+
+#DIPLOADVICETRADE_LAND_ROUTE
+#advisor Diplomatique Triste
+Impossible d'échanger des produits de luxe ou des ressources stratégiques sans voie commerciale. Une route reliant nos capitales suffirait.
+
+
+#DIPLOADVICETRADE_SEA_ROUTE
+#advisor Diplomatique Triste
+Impossible d'échanger des produits de luxe ou des ress. stratégiques avec les $CIVNOUN0 sans voie commerciale. Construire un port suffirait.
+
+
+#DIPLOADVICETRADE_OUREMBARGO
+#advisor Diplomatique Triste
+Nous avons accepté de ne pas commercer avec les $CIVNOUN0 - nous avons un embargo commercial contre eux.
+
+
+#DIPLOADVICETRADE_THEIREMBARGO
+#advisor Diplomatique En colère
+Impossible d'échanger des produits de luxe ou des ress. stratégiques avec les $CIVNOUN0 - embargo commercial contre nous.
+
+
+#DIPLOADVICETRADE_LAND
+#advisor Diplomatique Triste
+Négociation d'accords commerciaux (prod. de luxe ou ress. stratégiques) avec les $CIVNOUN0 impossible. Pas de route vers leur capitale.
+
+
+#DIPLOADVICETRADE_WATER
+#advisor Diplomatique Triste
+Négociation d'accords commerciaux (prod. de luxe ou ress. stratégiques) avec les $CIVNOUN0 impossible. Pas de route maritime. 
+
+
+#DIPLOADVICE_TRADE_HAS_ROUTE
+#advisor Diplomatique Heureux
+Nous disposons d'une voie commerciale avec les $CIVNOUN0... Nous devrions peut-être leur proposer notre surplus en $RESOURCE_OR_LUXURY1.
+
+
+#DIPLOADVICE_TRADE_HAS_ROUTE_THEM
+#advisor Diplomatique Heureux
+Les $CIVNOUN0 seraient peut-être prêts à nous fournir leurs surplus en $RESOURCE_OR_LUXURY1 dans le cadre d'échanges commerciaux.
+
+
+#DIPLOADVICE_TRADE_HAS_ROUTE_SURPLUS
+#advisor Diplomatique Heureux
+Nous avons $NUM0 unités de surplus en $RESOURCE1, les $CIVNoun0 seraient ravis d'en profiter. Voyons ce qu'ils peuvent offrir en échange...
+
+
+#DIPLOADVICETRADE_DEAL_ACCEPT
+#advisor Diplomatique Heureux
+Cet accord sera probablement acceptable.
+
+
+#DIPLOADVICETRADE_DEAL_WEAKREJECT
+#advisor Diplomatique Heureux
+Nous nous rapprochons d'un accord.
+
+
+#DIPLOADVICETRADE_DEAL_NEUTRALREJECT
+#advisor Diplomatique Triste
+Cela m'étonnerait qu'ils acceptent cette proposition.
+
+
+#DIPLOADVICETRADE_DEAL_STRONGREJECT
+#advisor Diplomatique en colère
+Ils vont probablement considérer cette offre comme une insulte.
+
+
+#DIPLOADVICETRADE_DEAL_TOTALREJECT
+#advisor Diplomatique en colère
+Ils n'accepteront jamais un tel accord.
+
+
+#comment _________________________________________________________________DOMESTIC_ADVICE
+
+#DOMESTICADVICERANK
+Construisez davantage de villes!
+
+#comment DOES = Thrives, is growing very slowly, is not growing at all, is starving
+#comment PUNCT = Ending punctuation (ignore)
+#comment OPTIONALSTRING = This will just tell you if you need an aqueduct or not
+#DOMESTICADVICECITYSIZE
+$CITY0 $DOES1, $TITLE2$PUNCT3  $OPTIONALSTRING4
+
+
+#comment HAPPY = happy, unhappy, content
+#DOMESTICADVICEHAPPINESS
+$RULER_TITLE0, les citoyens sont $HAPPY2 à $CITY1.
+
+
+#DOMESTICADVICEANARCHY
+#advisor Intérieur Etonné
+Nous connaissons une période d'anarchie. Ce n'est que provisoire... Nous devrions avoir repris le contrôle d'ici $NUM0 tours environ.
+
+
+#comment _________________________________________________________________TRADE_ADVICE
+
+#TRADEADVICERANK
+#advisor Commerce Etonné
+Concluez plus d'accords! 
+
+
+#TRADEADVICEACQUIREMORE
+#advisor Commerce Triste
+Nous devrions nous procurer davantage de ressources et de produits de luxe.
+
+
+#TRADEADVICEMORE
+#advisor Commerce Triste
+Nous ne possédons qu'une seule source d'approvisionnement en $RESOURCE0. Trouvons-en d'autres afin de faire des échanges.
+
+
+#TRADEADVICEROUTE
+#advisor Commerce Heureux
+Nous devrions essayer d'établir une voie commerciale nous reliant aux $CIVNOUN0.
+
+
+#TRADEADVICEEMBARGO
+#advisor Commerce Heureux
+Si nous concluons un embargo avec les $CIVNOUN0, cela pourrait nous aider dans le cadre de notre guerre avec notre ennemi $CIVNAME1.
+
+
+#TRADEADVICEWEHAVENOTHING
+#advisor Commerce Triste
+Nous n'avons aucune ressource à échanger. Nous devrions nous en procurer au plus vite avant qu'elles ne soient monopolisées par d'autres.
+
+
+#comment _________________________________________________________________MILITARY_ADVICE
+
+#MILITARYADVICERANK_WEAK
+#advisor Militaire En colère
+Comparé à celui de cette nation, notre potentiel militaire est ridicule!
+
+
+#MILITARYADVICERANK_AVERAGE
+#advisor Militaire Triste
+Nos forces armées sont à peu près égales aux leurs.
+
+
+#MILITARYADVICERANK_STRONG
+#advisor Militaire Heureux
+Nos forces armées sont largement supérieures aux leurs!
+
+
+#MILITARYADVICESUPPORT_TOO_COSTLY
+#advisor Militaire Triste
+Impossible de soutenir un plus grand nombre de nos glorieuses unités tant que nous n'aurons pas plus d'or.
+
+
+#MILITARYADVICESUPPORT_NOTENOUGHUNITS
+#advisor Militaire Heureux
+Nous pourrions soutenir davantage d'unités militaires.
+
+
+#MILITARYADVICESUPPORT_NOTENOUGHUNITS_BESTUNIT
+#advisor Militaire Heureux
+Nous pouvons soutenir davantage de troupes. Construisons des $UNIT0.
+
+
+#MILITARYADVICEBARBARIANS
+#advisor Militaire En colère
+$CITY1 signale la présence de tribus barbares, des $BARBARIAN0, aux alentours!
+
+
+#MILITARYADVICEMOLE
+#advisor Militaire En colère
+Implantons des espions pour en savoir plus sur nos ennemis (et nos alliés)!
+
+
+#comment _______________________________________________________________FOREIGN_ADVICE
+
+#FOREIGNADVICERANK
+Faisons-nous plus d'amis!
+
+
+#comment _______________________________________________________________CULTURAL_ADVICE
+
+#CULTURALADVICERANK
+#advisor Culturel Heureux
+La construction d'améliorations culturelles dans nos villes étendra notre empire! C'est une bonne chose.
+#comment $LINK<cultural improvements=GCON_Culture>
+
+#CULTURALADVICEOPINION
+Les citoyens ($CIVNAME0) sont $CULTURAL_OPINION1 notre culture...
+
+
+#CULTURALADVICELIBRARIES
+#advisor Culturel Heureux
+En procurant à notre population [des livres, de la musique] et [d'autres formes d'art], nous étendrons notre influence sur le monde.
+Construisons des [bibliothèques] et des [colisées].
+
+
+#CULTURALADVICEARTS
+#advisor Culturel Heureux
+Si nous étudions les arts, nous pourrons réaliser de grandes merveilles intellectuelles et étendre notre influence et notre culture.
+
+
+#CULTURALADVICEWONDER
+#advisor Culturel Etonné
+Nous devrions construire la merveille [$WONDER0]! Le monde entier nous envierait.
+
+
+#CULTURALADVICEIMPROVEMENT
+Nous devrions construire l'amélioration [$IMPROVEMENT0] dans toutes nos villes. Les gens se battraient pour nous rejoindre.
+
+
+#comment _______________________________________________________________SCIENCE_ADVICE
+
+#SCIENCEADVICERANK_WEAK
+#advisor Scientifique Triste
+Nous sommes en retard. Cela [ne peut pas] continuer ainsi!
+
+
+#SCIENCEADVICERANK_WEAK_FUNDING
+#advisor Scientifique Triste
+Nous manquons de fonds pour la recherche. Veuillez augmenter le financement scientifique.
+
+
+#SCIENCEADVICERANK_AVERAGE
+#advisor Scientifique Heureux
+Nous sommes modérément avancés.
+
+
+#SCIENCEADVICERANK_AVERAGE_FUNDING
+#advisor Scientifique Heureux
+Notre recherche scientifique est à peine suffisante. Veuillez augmenter le financement scientifique.
+
+
+#SCIENCEADVICERANK_STRONG
+#advisor Scientifique Heureux
+Nous sommes technologiquement avancés!
+
+
+#SCIENCEADVICERANK_STRONG_FUNDING
+#advisor Scientifique Heureux
+Grâce à vos généreuses subventions, notre recherche scientifique progresse à un bon rythme!
+
+#SCIENCEADVICETECHRECOMMEND
+#advisor Scientifique Heureux
+Je vous recommande de rechercher la technologie suivante: $TECH0.
+
+
+#comment ______________________________________________________________TECH BLURBS
+
+
+#SCIENCEADVICETECH0
+Ah, oui, le {travail du bronze}. Cela nous permettrait de fabriquer des pointes de lance en bronze et de colossales statues.
+
+
+#SCIENCEADVICETECH1
+La {maçonnerie} nous permettra de construire des murailles et de grands monuments.
+
+
+#SCIENCEADVICETECH2
+Si nous possédions un {alphabet}, nous pourrions apprendre à écrire, à archiver notre histoire et nos récits. Ce serait une bonne chose.
+
+
+#SCIENCEADVICETECH3
+Si nous connaissions la {poterie}, nous pourrions stocker de la nourriture pour l'avenir et les longs voyages.
+
+
+#SCIENCEADVICETECH4
+Si nous connaissions la {roue}, les choses tourneraient bien. Nous pourrions atteler des chevaux et nous faire transporter dans des chars.
+
+
+#SCIENCEADVICETECH5
+Développer le {code du guerrier} permettrait de constituer de meilleures unités militaires, comme les archers.
+
+
+#SCIENCEADVICETECH6
+Nous devrions songer au {rite funéraire}. Qui sait ce qui se passe après la mort... Le peuple a besoin de stabilité et de dieux à adorer.
+
+
+#SCIENCEADVICETECH7
+Nos forgerons tentent de maîtriser le {travail du fer}. S'ils y parviennent, ils pourront fabriquer des armes plus résistantes. Mais nous avons besoin de {minerai de fer}.
+
+
+#SCIENCEADVICETECH8
+L'{écriture} offre de nombreuses possibilités. Nous pourrions établir des ambassades et signer des accords écrits avantageux pour nous...
+
+#SCIENCEADVICETECH9
+Nos pratiques rituelles ont ouvert la porte au {mysticisme}. Nombre de nos shamans pensent pouvoir construire un puissant "Oracle".
+
+
+#SCIENCEADVICETECH10
+Nos sages pensent pouvoir exploiter l'alphabet afin de développer les {mathématiques}, qui sont une nouvelle manière de décrire notre monde.
+
+
+#SCIENCEADVICETECH11
+Certains de nos penseurs et écrivains tentent d'expliquer l'existence du cosmos et souhaitent développer une {"philosophie"}.
+
+
+#SCIENCEADVICETECH12
+D'autres auteurs aimeraient créer un {code juridique} afin de mieux gouverner la population... L'idée semble bonne.
+
+
+#SCIENCEADVICETECH13
+Nos citoyens créent une {littérature}. Nous devrions la stocker dans les bibliothèques comme témoignage de notre civilisation... Qu'en dites-vous?
+
+
+#SCIENCEADVICETECH14
+Nous pouvons désormais stocker de la nourriture et écrire, découvrons le monde et traçons des cartes. La {cartographie} nous apprendra la navigation maritime.
+
+
+#SCIENCEADVICETECH15
+Nous pourrions peut-être [monter] ces chevaux! L'{équitation} nous fournirait un avantage - Nous pourrions former des troupes de cavaliers...
+
+
+#SCIENCEADVICETECH16
+Nos mystiques estiment qu'il peut exister un grand nombre de dieux et veulent explorer les voies du {polythéisme}... Après tout, qui sait?
+
+
+#SCIENCEADVICETECH17
+Nos mathématiciens proposent de développer la {monnaie} afin de faciliter le commerce. 
+
+
+#SCIENCEADVICETECH18
+Nos philosophes et juristes commencent à décrire un nouveau régime politique, la {république}, qui repose sur des représentants "du peuple".
+
+
+#SCIENCEADVICETECH19
+Nos guerriers et nos prêtres mystiques envisagent un régime dirigé par vos soins, avec la bénédiction des dieux. Il s'agit d'une {monarchie}.
+
+
+#SCIENCEADVICETECH20
+Nos connaissances en maçonnerie, travail du fer et mathématiques nous permettent d'envisager des {constructions} encore plus imposantes: aqueducs, fortifications et colisées.
+
+
+#SCIENCEADVICETECH21
+Selon nos prêtres, il peut exister un seul dieu tout-puissant. Ce {monothéisme} pourrait constituer une idée majeure menant à d'importantes réalisations culturelles.
+
+
+#SCIENCEADVICETECH22
+La {féodalité} nous apporterait des piquiers en armure, mais il nous faudra du fer pour constituer de telles unités.
+
+
+#SCIENCEADVICETECH23
+Certains de nos experts en construction étudient l'{ingénierie}, permettant de fabriquer des ponts enjambant les rivières et de planter des forêts.
+
+
+#SCIENCEADVICETECH24
+Notre clergé est conscient des multiples facettes de Dieu et cherche la vérité sur sa nature et sa puissance. Ils appellent cette discipline {"théologie"}.
+
+
+#SCIENCEADVICETECH25
+Certains de nos combattants en armure transforment la guerre en art, en style de vie. La {chevalerie} n'est sans doute pas une fin en soi, mais elle nous fournira des chevaliers...
+
+
+#SCIENCEADVICETECH26
+Nos ingénieurs découvrent des moyens d'utiliser matériaux et techniques afin de résoudre divers problèmes. L'{invention} engendrera une culture de créativité scientifique.
+
+
+#SCIENCEADVICETECH27
+Il nous faut un moyen de communiquer en peu de temps des idées à un grand nombre de gens. L'{imprimerie} devrait permettre de répandre rapidement de nouveaux concepts.
+
+#SCIENCEADVICETECH28
+Nos musiciens écrivent désormais leurs créations et pourraient développer le {solfège}. Ce système de composition musicale permettrait de créer des oeuvres d'une grande beauté...
+
+
+#SCIENCEADVICETECH29
+Nos théologiens avisés veulent créer des universités afin d'enseigner à la population notre mode de vie. L'{éducation} ouvrira de nombreuses voies à notre civilisation...
+
+
+#SCIENCEADVICETECH30
+Nos inventeurs tentent de maîtriser la puissance du feu pour améliorer notre armement. Grâce à la {poudre à canon}, nos soldats seront plus forts! Mais il nous faudra du salpêtre...
+
+
+#SCIENCEADVICETECH31
+Nos enseignants insistent sur l'intérêt que présentent l'épargne, le prêt et l'investissement. Pour eux, la {banque} est une idée qui rapportera...
+
+
+#SCIENCEADVICETECH32
+Nos sages commencent à tracer des schémas reliant les étoiles et à expliquer leurs relations avec nous. Cette nouvelle science, l'{astronomie}, semble prometteuse, notamment pour la navigation maritime.
+
+
+#SCIENCEADVICETECH33
+Le succès remporté par la poudre à canon amène nos savants à s'intéresser à d'autres composés. Ils veulent étudier la {chimie} de manière approfondie... Cela peut se révéler utile...
+
+
+#SCIENCEADVICETECH34
+L'imprimerie contribue à répandre quelques idées très bizarres. Parmi elles, on trouve un concept baptisé {"démocratie"} selon lequel "le peuple" se dirige lui-même. On aura tout vu...
+
+
+#SCIENCEADVICETECH35
+Maintenant que nous disposons d'un système bancaire, il est important que nos érudits étudient le fonctionnement de l'{économie}.
+
+
+#SCIENCEADVICETECH36
+Nos astronomes aimeraient formaliser un système de {navigation} sur l'océan. C'est une bonne idée, cela nous permettrait d'explorer le monde!
+
+
+#SCIENCEADVICETECH37
+Nos mathématiciens, chimistes et astronomes travaillent de concert afin de découvrir les lois qui régissent le monde matériel. La {physique} ouvrira la porte à de nouveaux champs de recherche.
+
+
+#SCIENCEADVICETECH38
+Nos forgerons pourraient développer leurs activités en combinant mieux les minerais pour créer de nouveaux alliages. La {métallurgie} peut avoir d'importants avantages en matière d'armes lourdes et de fortifications.
+
+
+#SCIENCEADVICETECH39
+Nos artistes devraient s'exprimer librement et créer ainsi des oeuvres que le monde entier nous envierait. Notre société est assez mûre pour favoriser les {beaux arts}.
+
+
+#SCIENCEADVICETECH40
+Nos physiciens tâchent d'expliquer le mouvement naturel. Ils appellent cela la {théorie de la gravitation}. Sa portée pourrait être énorme!
+
+
+#SCIENCEADVICETECH41
+Une force mystérieuse, le {magnétisme}, est à l'étude par nos physiciens. Elle pourrait donner naissance à des instruments de navigation qui nous assureraient la maîtrise des mers!
+
+
+#SCIENCEADVICETECH42
+Nos généraux réclament une {tradition militaire}. Ils assurent qu'elle permettrait de former de meilleurs soldats et officiers.
+
+
+#SCIENCEADVICETECH43
+Le sentiment selon lequel nous formons "une grande nation" croît dans nos villes. Ce {nationalisme} pourrait augmenter notre force et notre unité et développer la fierté et la notion d'intérêt général.
+
+
+#SCIENCEADVICETECH44
+Certains inventeurs tentent de développer une nouvelle forme d'énergie grâce à la {machine à vapeur}. Ceci nous permettrait de construire des véhicules automoteurs, tels les navires et les trains.
+
+
+#SCIENCEADVICETECH45
+Nous pourrions découvrir les causes des maladies et leurs remèdes. La {médecine} permettra de grandes choses.
+
+
+#SCIENCEADVICETECH46
+Certains fustigent le sort des ouvriers dans notre société. Un nouveau régime politique appelé {communisme} vise à mieux répartir les richesses.
+
+
+#SCIENCEADVICETECH47
+La machine à vapeur et d'autres appareils mécaniques modifient considérablement notre société. Nos scientifiques et nos entrepreneurs veulent développer l'{industrialisation} afin d'accroître notre production. 
+
+
+#SCIENCEADVICETECH48
+Ecoutez, c'est passionnant: nos savants et inventeurs pensent qu'il est possible de maîtriser l'énergie de la foudre! Ils pensent pouvoir produire de l'{électricité} à l'aide de machines à vapeur et d'aimants!
+
+
+#SCIENCEADVICETECH49
+Nous proposons d'instaurer une approche systématique de la découverte du savoir. La {méthode scientifique} fait appel à l'hypothèse et à l'expérience. C'est une excellent idée, croyez-moi.
+
+
+#SCIENCEADVICETECH50
+Le cloaque dans lequel nous vivons nous rend (littéralement) malades. Il est temps de développer des méthodes d'{assainissement}. Ceci permettra à nos villes de continuer à grandir.
+
+
+#SCIENCEADVICETECH51
+Il est plus important que jamais de garder un oeil sur nos rivaux. Nous avons été trop souvent trahis. Mettons sur pied un service d'{espionnage} afin de protéger notre mode de vie.
+
+
+#SCIENCEADVICETECH52
+Les affaires prennent chaque jour plus d'importance. La {société anonyme} protégera nos entrepreneurs de la responsabilité personnelle et favorisera la croissance de notre économie.
+
+
+#SCIENCEADVICETECH53
+Certaines de nos sociétés apprennent le {raffinage} des matières premières sur une grande échelle. Ceci leur permet de les transformer en produits utiles. 
+
+
+#SCIENCEADVICETECH54
+Nous pourrions développer une nouvel alliage métallique très résistant - appelons-le {acier} - qui modifierait à jamais les méthodes de construction.
+
+
+#SCIENCEADVICETECH55
+Grâce à la méthode scientifique, nous sommes sur le point de définir la {théorie atomique} qui explique l'essence même de la matière. Ca, c'est quelque chose!
+
+
+#SCIENCEADVICETECH56
+Nos astucieux inventeurs travaillent sur un moteur à {combustion interne} capable de maîtriser la puissance du feu. Ceci permettrait de déplacer rapidement de grands engins.
+
+
+#SCIENCEADVICETECH57
+Voilà une bonne idée: construisons nos machines et engins à l'aide de {pièces détachées} standardisées. Cela évitera d'avoir à jeter le tout si seule une petite partie est hors d'usage!
+
+
+#SCIENCEADVICETECH58
+Nos inventeurs pensent qu'il est possible de construire des machines volantes. Le {vol} pourrait bien changer à jamais la face du monde...
+
+
+#SCIENCEADVICETECH59
+Nos généraux songent à une nouvelle forme de guerre dans laquelle nos troupes attaqueraient depuis la mer! Les {opérations amphibies} vont rendre nos ennemis nerveux!
+
+
+#SCIENCEADVICETECH60
+Grâce aux pièces détachées, nous sommes à même de développer un système de {production de masse} capable d'accélérer le rythme de fabrications des machines.
+
+
+#SCIENCEADVICETECH61
+Grâce à notre compréhension de l'atome, nous pouvons développer l'{électronique}. Ceci accélérerait considérablement la production dans nos usines.
+
+
+#SCIENCEADVICETECH62
+Nos ingénieurs peuvent développer l'{automobile} qui permet de construire de petits engins motorisés.
+
+
+#SCIENCEADVICETECH63
+Découvrir l'{aéronautique} est impératif. Imaginez un peu: des engins volants suspendus dans l'air, nos soldats attaquant du ciel... Pas mal, non?
+
+
+#SCIENCEADVICETECH64
+La {radio} autorisera des communications instantanées sur de grandes distances. Que rêver de mieux?
+
+
+#SCIENCEADVICETECH65
+Le {moteur-fusée} nous permettrait d'expédier des objets dans l'espace... mais aussi de produire des missiles et de développer l'avion à réaction...
+
+
+#SCIENCEADVICETECH66
+Nos physiciens explorent l'atome en détail et pensent qu'il peut receler une énergie inouïe. La {fission} pourrait servir en temps de guerre comme en temps de paix.
+
+
+#SCIENCEADVICETECH67
+Nous pourrions développer des ordinateurs permettant de traiter l'information à la vitesse de la lumière. Cela nous procurerait des armes plus "intelligentes" et accélérerait le rythme de la recherche...
+
+
+#SCIENCEADVICETECH68
+Nous devons prendre soin de notre environnement. Le {recyclage} de nos déchets est une voie à suivre.
+
+
+#SCIENCEADVICETECH69
+Nos scientifiques pensent que grâce à l'{astronautique}, nous pourrions aller, pourquoi pas, jusqu'à Alpha Centauri...
+
+
+#SCIENCEADVICETECH70
+Les avantages de la fission ont été cruciaux. Nos scientifiques pensent maîtriser l'{énergie nucléaire}. Grâce à elle, ils pourront produire de l'électricité ou fabriquer des armes de destruction massive.
+
+
+#SCIENCEADVICETECH71
+Nous pourrions développer le {supraconducteur} pour continuer nos recherches sur les particules de matière. Ceci facilitera aussi nos travaux dans le domaine spatial.
+
+
+#SCIENCEADVICETECH72
+Grâce aux nouveaux matériaux et aux ordinateurs, nous pourrions développer la {miniaturisation} capable à l'avenir de générer des avancées presque magiques.
+
+
+#SCIENCEADVICETECH73
+Une approche intelligente de l'{écologie} nous aidera à gérer la pollution et nous procurera d'autres avantages au niveau national.
+
+
+#SCIENCEADVICETECH74
+Nos travaux sur le recyclage nous ont apporté des {fibres synthétiques} dotées de propriétés encore inimaginables il y a quelques années. Nous devrions continuer à explorer cette voie.
+
+
+#SCIENCEADVICETECH75
+Notre programme spatial continue à porter ses fruits. Nous pourrions développer les {satellites} afin de mieux connaître notre planète et d'améliorer les communications.
+
+
+#SCIENCEADVICETECH76
+Nous pourrions développer une nouvelle technologie, le {laser}. Il emploie une lumière fortement concentrée et ses usages semblent illimités.
+
+
+#SCIENCEADVICETECH77
+Nos médecins étudient l'essence même de la vie. Mieux comprendre la {génétique} nous permettrait d'éradiquer de nombreuses maladies et de prolonger l'existence.
+
+
+#SCIENCEADVICETECH78
+En combinant nos connaissances en physique aux fibres synthétiques, nous pouvons développer la {furtivité} qui rendra nos avions quasiment invisibles.
+
+
+#SCIENCEADVICETECH79
+A l'aide du guidage laser, des ordinateurs miniaturisés et des satellites, nous pouvons construire des {armes intelligentes} capables de mener des frappes de précision. Qu'en dites-vous?
+
+
+#SCIENCEADVICETECH80
+Grâce à notre savoir en matière de laser, d'ordinateurs et de miniaturisation, nous pourrions développer des {robots} capables d'effectuer plus rapidement et plus efficacement des tâches dangereuses.
+
+
+#SCIENCEADVICETECH81
+Nous sommes désormais capables de construire une défense intégrée globale de type {IDS}. Pourquoi ne pas tenter de construire un bouclier contre les missiles ennemis?
+
+
+#comment ____________________________________________________________________________________________________
+
+
+#PALACE_VIEW_UPGRADE
+#caption Le peuple vous aime
+Le peuple admire tellement vos réalisations qu'il propose d'embellir votre palais.
+
+
+#SSVIEW_SWITCH_PROD
+#map_center 0
+#advisor Scientifique Triste
+$CITY0 doit construire ceci: $PART5.
+^$CITY0 construit actuellement le projet $ITEM1, et $NUM0 $TEXT3 se trouvent dans la file
+#itemlist
+Zoom sur la ville.
+Modifier et produire: $PART4.
+Terminer le projet $ITEM2, puis construire: $PART4.
+Placer dans la file le projet $PART4.
+#active 3
+
+
+#comment _______________________________________New Abilities__________________________________________________
+
+
+#WRITING
+#advisor Diplomatique Heureux
+Maintenant que nous savons $LINK<écrire=TECH_Writing>, nous pouvons établir des $LINK<ambassades=GCON_Embassies> auprès de nos voisins. 
+Qu'en dites-vous?
+#itemlist
+Entendu, allons-y.
+Non, pas pour l'instant.
+
+
+#IRONWORKING
+#advisor Militaire Heureux
+#text
+Nos sages nous ont enseigné le $LINK<travail du fer=TECH_Iron_Working> permettant de forger de meilleures armes.
+Mais nous devons pour cela $LINK<relier=GCON_Trade> des gisements de $LINK<minerai de fer=GOOD_Iron> à nos villes.
+Recherchez des gisements de fer afin de tirer profit du travail du fer.
+
+
+#CONSTRUCTION
+#advisor Militaire Heureux
+#text
+Maintenant que nous connaissons la $LINK<construction=TECH_Construction>, $RULER_TITLE0, nos travailleurs peuvent bâtir des 
+$LINK<forteresses=GCON_Fortresses> pour protéger nos populations. Appuyez sur [Ctrl-F] pour faire construire une forteresse par une unité de travailleurs.
+
+
+#MAPMAKING
+#advisor Commerce Heureux
+#text
+Notre population trace des cartes de notre univers et nous pouvons échanger nos $LINK<cartes du monde=GCON_Maps>
+avec d'autres civilisations afin d'accroître nos connaissances.
+
+
+#ASTRONOMY
+#advisor Scientifique Heureux
+#text
+Nos sages ont développé $LINK<l'astronomie=TECH_Astronomy> qui facilite la navigation de nos marins.
+Nos navires peuvent désormais franchir sans danger les cases de $LINK<mer=TERR_Sea>.
+
+
+#NAVIGATION
+#advisor Scientifique Heureux
+#text
+Grâce à la découverte de la $LINK<navigation=TECH_Navigation> et aux nouveaux instruments associés, nos navires peuvent désormais
+franchir en toute sécurité les $LINK<océans=TERR_OCEAN>.
+
+
+#GUNPOWDER
+#advisor Scientifique Heureux
+#text
+Nos chercheurs ont progressé dans l'étude de la $LINK<poudre à canon=TECH_Gunpowder> et nous pouvons désormais construire des $UNIT0.
+Néanmoins, il nous faut relier nos villes à des sources de $LINK<salpêtre=GOOD_Saltpeter> pour constituer des unités dotées d'arquebuses.
+Recherchez le salpêtre sur la carte.
+
+
+#ENGINEERING
+#advisor Scientifique Heureux
+#text
+Grâce à notre maîtrise de $LINK<l'ingénierie=TECH_Engineering>, nos populations construisent des ponts enjambant tous les fleuves de
+l'empire et nos travailleurs peuvent repeupler nos forêts en $LINK<reboisant=GCON_Worker_Jobs>.
+Appuyez sur [N] pour qu'une unité de travailleurs reboise une forêt.
+
+
+#NATIONALISM
+#advisor Diplomatique Heureux
+#text
+Notre population a désormais un fort sentiment d'identité: le $LINK<nationalisme=TECH_Nationalism>. Nous pouvons faire appel à la 
+$LINK<mobilisation=GCON_Mobilization> pour modifier l'objectif de notre économie (consultez le conseiller à l'intérieur).
+Nous pouvons également signer des $LINK<pactes de protection mutuelle et des embargos commerciaux=GCON_Agreements> avec les nations alliées.
+
+
+#STEAM_POWER
+#advisor Scientifique Heureux
+#text
+Notre compréhension de la $LINK<machine à vapeur=TECH_Steam_Power> révolutionne notre société. Nos travailleurs 
+peuvent transformer les routes en voies ferrées, ce qui accélérera le transport des $LINK<marchandises=GCON_Commerce> et des personnes.
+Mais, pour alimenter les trains et nos industries, nous devrons $LINK<relier=GCON_Trade> 
+nos villes à des sources de $LINK<charbon=GOOD_Coal>. Recherchez sur la carte les gisements de charbon
+et reliez-les à nos villes!
+
+
+#ELECTRICITY
+#advisor Scientifique Heureux
+#text
+La découverte de $LINK<l'électricité=TECH_Electricity> améliore considérablement l'existence, $RULER_TITLE0.
+Nous pouvons apporter l'eau douce sur de longues distances et n'avons donc plus besoin d'une source proche pour irriguer.
+
+
+#REPLACEABLE_PARTS
+#advisor Commerce Heureux
+La découverte des pièces détachées nous a révélé l'existence du $LINK<caoutchouc=GOOD_Rubber>. Cette matière première possède de nombreux usages. Dénichons-en et faisons-en profiter notre empire.
+
+
+#REFINING
+#advisor Scientifique heureux
+#text
+Avec le $LINK<raffinage=TECH_Refining>, il apparaît que nous avons besoin d'un meilleur carburant pour nos machines.
+Nous devons $LINK<relier=GCON_Trade> nos villes à des gisements pétroliers.
+Recherchez du $LINK<pétrole=GOOD_Oil> pour alimenter nos unités motorisées et nos usines.
+
+
+#ROCKETRY
+#advisor Scientifique Heureux
+#text
+Pour mettre à profit nos récentes expériences sur le $LINK<moteur-fusée=TECH_Rocketry>, il nous faut des alliages plus légers et plus flexibles.
+Nous devrions rechercher des sources $LINK<d'aluminium=GOOD_Aluminum> qui nous permettront de construire de meilleurs avions,
+des fusées et des missiles.
+
+
+#FISSION
+#advisor Scientifique Heureux
+#text
+La $LINK<fission=TECH_Fission> nous permettra de produire plus efficacement de l'énergie pour nos usines.
+Mais nous allons devoir $LINK<relier=GCON_Trade> nos villes à des sources $LINK<d'uranium=GOOD_Uranium>.
+
+
+#SMART_WEAPONS
+#advisor Scientifique Heureux
+$RULER_TITLE, maintenant que nous possédons des $LINK<armes intelligentes>, nos $LINK<avions furtifs=PRTO_Stealth_Fighter> peuvent mener des $LINK<frappes de précision Strikes=GCON_Air_Missions> 
+contre les villes ennemies.
+
+
+#HAVE_RESOURCE
+#map_center 1
+#advisor Commerce Heureux
+Nos travailleurs ont construit une route permettant d'acheminer à $CITY1 la ressource $RESOURCE0. Ceci nous permettra de construire des $UNIT2. Beau travail!
+
+
+#HAVE_RESOURCE_NO_UNIT
+#map_center 1
+#advisor Commerce Heureux
+Nos travailleurs ont construit une route permettant d'acheminer à $CITY1 la ressource $RESOURCE0. Ceci nous permettra de construire de nouvelles unités ou améliorations. Beau travail!
+
+
+#HAVE_LUXURY
+#map_center 1
+#advisor Commerce Heureux
+Nos travailleurs ont construit une route permettant d'acheminer à $CITY1 le produit de luxe suivant $LUX0. Ceci rendra les citoyens $LINK<heureux=GCON_Moods>. Bien joué!
+
+#comment ______________________________________________________________NO NEED TO TRANSLATE ANY FARTHER AT THIS TIME
+
+
+#comment _________________________________________________________________________________________Multi-player Stuff
+
+#DIALOGUEMESS
+#x 300
+#y 280
+#xs 320
+#caption Saisissez votre message
+
+Message:
+
+
+#DIALOGUE
+#caption Sélection du dirigeant
+#text
+A qui voulez-vous envoyer le message?
+
+#INITIATETRADE
+#caption Sélection du dirigeant
+#text
+Avec qui voulez-vous commercer?
+
+#TRADECONFIRM
+#caption Requête commerciale
+#text
+$LEADER0 voudrait commercer avec vous. Acceptez-vous?
+
+#TRADEBUSY
+#caption Requête commerciale
+#text
+$LEADER0 est occupé.
+
+#TRADEREJECT
+#caption Commerce repoussé
+#text
+$LEADER0 a rejeté votre requête commerciale.
+
+#TRADECANCEL
+#caption Commerce annulé
+#text
+$LEADER0 a rompu les négociations commerciales avec vous.
+
+#WAITINGFORSESSION
+#caption CIVILIZATION III
+#text
+Attente du début de session...
+
+#ASKGOLD
+#xs 150
+{Saisissez le montant...}
+
+Or:
+
+#PICKUNIT
+#xs 400
+#caption Sélection de l'unité à activer
+
+
+#SERVERONLY
+#xs 440
+#caption Désolés!
+Seul l'hôte peut modifier ces paramètres.
+
+#BADTECHKEY
+#xs 440
+#caption Analyseur de règles
+^^Une mauvaise clé {technologique} a été découverte dans le fichier suivant:
+^^
+^^$FILENAME0
+^^
+^^La clé indéchiffrable est:
+^^
+^^$KEY1
+^^
+^^L'erreur s'est produite à la ligne suivante:
+^^
+^^$LINE2
+^^
+^^Ceci est probablement dû à une tentative de modification du fichier.
+^^Le fichier original peut être restauré en réinstallant Civilization III
+^^à partir du CD-ROM d'origine.
+
+#DUPLICATETECH
+#xs 440
+#caption Analyseur de règles
+^^Une clé {technologique en double} a été découverte dans le fichier suivant:
+^^
+^^$FILENAME1
+^^
+^^La clé en double est:
+^^
+^^$KEY0
+^^
+^^Sa deuxième occurrence se trouve à la ligne suivante:
+^^
+^^$LINE2
+^^
+^^Les deux technologies sont #$NUM0 et #$NUM1.
+^^
+^^Ceci est probablement dû à une tentative de modification du fichier.
+^^Le fichier original peut être restauré en réinstallant Civilization III
+^^à partir du CD-ROM d'origine.
+
+
+#SENDPTWSCORES
+#advisor Militaire
+Voulez-vous vous connecter et consulter vos scores?
+#itemlist
+Non
+Oui
+
+
+#PLAYERFILE
+#xs 440
+#caption Analyseur de nation
+^^Impossible de trouver la mention suivante dans un fichier de nation:
+^^
+^^NATION
+^^
+^^Le fichier de nation est:
+^^
+^^$FACTIONFILE1
+^^
+^^Cette mention est obligatoire dans les fichiers de nation.
+
+#EDITVEHWHO
+#xs 400
+#caption Sélection du propriétaire d'unité
+
+#MPRECEIVEFILE
+#xs 400
+Réception du fichier de scénario manquant $FILENAME0 à partir du serveur.
+$NUM0 fichier(s) restant(s).
+Appuyez sur [Echap] pour quitter le scénario.
+
+#SAVEFAILED
+#xs 400
+#caption Erreur de sauvegarde
+^^
+^^ECHEC DE LA SAUVEGARDE DE PARTIE
+^^
+^^$FILENAME0
+^^
+
+#VERSIONCONTROL
+#xs 440
+^^
+^^SID MEIER'S CIVILIZATION III
+^^
+^^VERSION: $VERSION0
+^^DATE: $VERSIONDATE1
+^^
+
+#SYNCHINGGAME2
+#xs 400
+Synchronisation de partie... Var. globales   ($NUM0/$NUM1)
+
+#SYNCHINGWORLD2
+#xs 400
+Synchronisation de partie... Carte du monde ($NUM0/$NUM1)
+
+#SYNCHINGPLAYERS2
+#xs 400
+Synchronisation de partie... Dirigeants   ($NUM2: $NUM0/$NUM1)
+
+#SYNCHINGVEHICLES2
+#xs 400
+Synchronisation de partie... Véhicules ($NUM0/$NUM1)
+
+#SYNCHINGBASES2
+#xs 400
+Synchronisation de partie... Bases ($NUM0/$NUM1)
+
+#NOTALLREADY
+#xs 400
+#caption Certains joueurs ne sont pas prêts
+Voulez-vous quand même commencer la partie?
+
+Oui
+Non
+
+#SYNCHINGWORLD3
+#xs 400
+Synchronisation de partie... Carte du monde $NUM2 ($NUM0/$NUM1)
+
+#comment ____________________________________________________________________________PassWords
+
+#SERVERLOSTINSETUP
+#xs 300
+#wave 12
+PERTE DU SERVEUR DURANT LA PREPARATION! Partie annulée.
+
+#PASSWORDSNOTVALIDATED
+#xs 440
+#caption Certains mots de passe n'ont pas été validés
+La partie ne pourra être lancée que lorsque tous les
+mots de passe non vierges auront été validés.
+
+#PASSWORDOK
+#xs 340
+#caption Pas de mot de passe requis
+Votre faction pour cette partie a déjà été débloquée.
+
+#ENTERPASSWORDFACTION
+#xs 440
+#caption Mot de passe
+Tapez le mot de passe de la faction $FACTION0
+
+Mot de passe:
+
+#ENTERPASSWORDNEW
+#xs 440
+#caption Mot de passe
+Tapez le nouveau mot de passe (ou laissez le champ vierge). Ceci
+constituera votre mot de passe de faction pour la nouvelle partie.
+
+Mot de passe:
+
+#VERIFYPASSWORD
+#xs 440
+#caption Mot de passe
+Vérifiez le nouveau mot de passe
+
+Mot de passe:
+
+#DIFFERENTPASSWORDS
+#xs 440
+#caption Mot de passe non vérifié
+Le mot de passe n'a pas été vérifié. Réessayez.
+
+#BADPASSWORD
+#xs 440
+#caption Mot de passe
+Mot de passe incorrect.
+
+#LOADCLIENTNOFILE
+#xs 440
+#wave 12
+#caption Erreur de chargement
+^^
+^^ECHEC D'OUVERTURE DE FICHIER SUR ORDINATEUR CLIENT
+^^
+
+#LOADCLIENTBADID
+#xs 440
+#wave 12
+#caption Erreur de chargement
+^^
+^^ID DE SAUVEGARDE INCORRECT SUR ORDINATEUR CLIENT
+^^
+
+#LOADNONE
+#xs 440
+#wave 12
+#caption Erreur de chargement
+^^
+^^OUVERTURE DE FICHIER IMPOSSIBLE
+^^
+^^"$FILE0"
+^^
+
+#LOADNOT
+#xs 440
+#wave 12
+#caption Erreur de chargement
+^^
+^^FICHIER DE SAUVEGARDE INCORRECT
+^^
+^^"$FILE0"
+^^
+
+#LOADOLD
+#xs 440
+#wave 12
+#caption Erreur de chargement
+^^
+^^FICHIER DE SAUVEGARDE OBSOLETE
+^^
+^^"$FILE0"
+^^
+
+#LOADERROR
+#xs 440
+#wave 12 
+#caption Erreur de chargement
+^^
+^^ERREUR DE LECTURE DU FICHIER
+^^
+^^"$FILE0"
+^^
+
+#PEDIAICONS_MISSING_ENTRY
+#xs 440
+#wave 12
+#caption Erreur de chargement
+^^
+^^ERROR DE LECTURE DU FICHIER
+^^
+^^Elément manquant dans "$FILE0" : $KEY1
+^^
+
+#LOADSECURITY
+#xs 440
+#wave 12
+#caption Erreur de chargement
+^^
+^^IMPOSSIBLE DE CHARGER UNE PARTIE MULTIJOUEURS
+^^A MOT DE PASSE EN MODE UN JOUEUR
+^^
+^^"$FILE0"
+^^
+
+#START_LOC_ERROR
+#xs 440
+#wave 12
+#caption ERREUR
+^^
+^^IMPOSSIBLE DE GENERER SUFFISAMMENT DE POINTS
+^^DE DEPART POUR LANCER UNE PARTIE
+^^
+
+#ADDED
+#xs 300
+Joueur "$NAME0" ajouté.
+
+#DROPPED
+#xs 300
+Joueur "$NAME0" supprimé.
+
+#SERVERLOST
+#xs 300
+#wave 12
+PERTE DU SERVEUR! Le contrôle est transféré à un autre joueur.
+
+#comment ___________________________________________________________END MULTIPLAYER
+
+#REPLAY_WIN
+#xs 135
+$String0.
+
+#comment __________________________________________________________Scenario Editor
+
+#EDITORUNIT
+#xs 440
+#caption Sélection du type d'unité à créer
+#listbox
+#button Tous
+#button Joueur
+#button Moral
+
+#LOAD_SCENARIO
+#comment This popup is displayed after a scenario is selected and loaded.
+#comment This popup is only displayed if there is no map in the file.
+#comment The caption will be the scenario title and the scenario description
+#comment will be added to the popup text.
+#popup_center
+
+#LOAD_SCENARIO_MODIFIED
+#comment This popup is displayed after a scenario is selected and loaded.
+#comment This popup is only displayed if there is no map in the file.
+#comment This popup is only displayed if the loaded scenario has modified rules.
+#comment The caption will be the scenario title and the scenario description
+#comment will be added to the popup text.
+#popup_center
+#text
+^[***Les règles du jeu ont été modifiées dans ce scénario.]
+
+#LOAD_SCENARIO_CUSTOMIZE_WORLD
+#comment This popup is displayed after a scenario is selected and loaded.
+#comment This popup is only displayed if there is a map in the file.
+#comment The caption will be the scenario title and the scenario description
+#comment will be added to the popup text.
+#popup_center
+#text
+^^
+^{Voulez-vous personnaliser la carte du monde?}
+#itemlist
+Oui. Présentez-moi l'écran de personnalisation du monde.
+Non. Que la partie commence!
+#active 1
+
+#LOAD_SCENARIO_CUSTOMIZE_WORLD_MODIFIED
+#comment This popup is displayed after a scenario is selected and loaded.
+#comment This popup is only displayed if the loaded scenario has modified rules.
+#comment This popup is only displayed if there is a map in the file.
+#comment The caption will be the scenario title and the scenario description
+#comment will be added to the popup text.
+#popup_center
+#text
+^^
+^[***Les règles du jeu ont été modifiées dans ce scénario.]
+^
+^{Voulez-vous personnaliser la carte du monde?}
+#itemlist
+Oui. Présentez-moi l'écran de personnalisation du monde.
+Non. Que la partie commence!
+#active 1
+
+#LOAD_SCENARIO_ERROR
+#comment This popup is displayed if an attempt to load a scenario failed for any
+#comment reason other than an incompatible version.
+#caption Scénario incorrect!
+#text
+^^
+^Ouverture du fichier de scénario impossible. Le fichier est peut-être corrompu!
+
+#LOAD_SCENARIO_ERROR_VERSION
+#comment This popup is displayed if an attempt to load a scenario failed because
+#comment of an incompatible version.
+#caption Version de scénario incorrecte!
+#text
+^^
+^Version de scénario incorrecte!
+^Les fichiers BIC de la version $VERSION0 sont incompatibles avec cette version de Civilization III.
+
+#LOAD_SCENARIO_ERROR_NO_DEFAULT_RULES
+#comment This popup is displayed if the default rules file does not contain any rules.
+#caption Règles incorrectes!
+#text
+^^
+^Impossible de localiser le jeu de règles par défaut. Veuillez réinstaller Civilization III.
+
+#LOAD_SCENARIO_ERROR_TUTORIAL_MODIFIED_RULES
+#comment This popup is displayed when attempting to use the tutorial with modified game rules.
+#caption Règles modifiées détectées
+#text
+^^
+^Le didacticiel ne peut pas être utilisé avec des règles modifiées.
+
+#BIC_ERROR_DIFF
+#comment This popup is displayed when an incorrect number of difficulty levels is loaded from a BIC file.
+#caption Scénario incorrect !
+#text
+^^
+^^Erreur dans les données BIC !
+^^
+^^Un scénario doit contenir exactement $NUM0 degrés de difficulté.
+^^
+
+#BIC_ERROR_ERAS
+#comment This popup is displayed when an incorrect number of eras is loaded from a BIC file.
+#caption Scénario incorrect !
+#text
+^^
+^^Erreur dans les données BIC !
+^^
+^^Un scénario doit contenir exactement $NUM0 époques.
+^^
+
+#BIC_ERROR_ESPN
+#comment This popup is displayed when an incorrect number of espionage missions is loaded from a BIC file.
+#caption Scénario incorrect !
+#text
+^^
+^^Erreur dans les données BIC !
+^^
+^^Un scénario doit contenir exactement $NUM0 missions d'espionnage.
+^^
+
+#BIC_ERROR_EXPR
+#comment This popup is displayed when an incorrect number of experience levels is loaded from a BIC file.
+#caption Scénario incorrect !
+#text
+^^
+^^Erreur dans les données BIC !
+^^
+^^Un scénario doit contenir exactement $NUM0 degrés d'expérience.
+^^
+
+#BIC_ERROR_TFRM
+#comment This popup is displayed when an incorrect number of worker jobs is loaded from a BIC file.
+#caption Scénario incorrect !
+#text
+^^
+^^Erreur dans les données BIC !
+^^
+^^Un scénario doit contenir exactement $NUM0 tâches de travailleurs.
+^^
+
+#BIC_ERROR_TERR
+#comment This popup is displayed when an incorrect number of terrain types is loaded from a BIC file.
+#caption Scénario incorrect !
+#text
+^^
+^^Erreur dans les données BIC !
+^^
+^^Un scénario doit contenir exactement $NUM0 types de terrain.
+^^
+
+#BIC_ERROR_WSIZ
+#comment This popup is displayed when an incorrect number of world sizes is loaded from a BIC file.
+#caption Scénario incorrect !
+#text
+^^
+^^Erreur dans les données BIC !
+^^
+^^Un scénario doit contenir exactement $NUM0 tailles de monde.
+^^
+
+#PALACE_INSTRUCTIONS
+#caption Instructions d'embellissement
+#text
+^^
+^Déplacez la souris pour mettre en surbrillance les parties du palais que vous pouvez embellir. Cliquez sur une partie pour lancer les travaux.
+
+# ; This line must remain at end of file
+
+

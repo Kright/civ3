@@ -1,0 +1,52 @@
+<!--  build.xml file for use with ant -->
+<project
+    name="txt_parser"
+    default="compile" basedir=".">
+<property
+        name="sampleDir"
+        value="."/>
+<property
+        name="JavaCChome"
+        value="C:/java/javacc-3.2"/>
+<target name="init">
+	<!-- <mkdir dir="${sampleDir}/java"/> 
+	 <mkdir dir="${sampleDir}/classes"/> -->
+</target>
+<target name="compile" depends="init">
+<javacc
+            target="PediaIcons.jj"
+            outputdirectory="."
+            javacchome="${JavaCChome}" >
+     </javacc>
+            
+  <javacc
+            target="Script.jj"
+            outputdirectory="."
+            javacchome="${JavaCChome}" >          
+            
+</javacc>
+	
+	  <javac srcdir="." destdir="." /> 
+	
+	
+</target>
+	
+	
+
+
+	  <target name="clean">
+	     
+	    <delete>
+	   
+	    <fileset dir=".">
+  		<include name="**/*.java"/>
+			<include name="**/*.class"/>
+			</fileset>
+
+	  	</delete>
+	  </target>
+	
+	
+	
+	
+</project>

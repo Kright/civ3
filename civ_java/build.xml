@@ -1,0 +1,85 @@
+<project name="civ_java" default="all" basedir=".">
+
+  <!-- set global properties for this build -->
+  <property name="src.java" value="."/>
+
+  <property name="catalina_home" value="D:\java\jakarta-tomcat-5.0.12"/>
+  <property name="install_dir" value="${catalina_home}\webapps\ROOT\WEB-INF\classes"/>
+
+  <!-- pour les servlet -->
+  <path id="project.class.path">
+    <pathelement location="${catalina_home}/common/lib/servlet-api.jar" />
+	<pathelement location="${catalina_home}/common/lib/jsp-api.jar" />
+ </path>
+
+
+  <!-- made by jey -->
+  <target name="all" depends="compile">  
+  </target>
+  
+    <!-- made by jey -->
+  <target name="install" depends="compile">  
+
+  
+  	<copy todir="${install_dir}">
+	  	<fileset dir="." > 	
+	 	 <include name="*.class"/> 
+		</fileset>
+	</copy>
+
+  </target>
+
+
+  <target name="test" depends="compile">  
+  
+  	<java classname="Civ_Main" 
+  		   fork="true"
+           failonerror="true"
+           maxmemory="128m">    
+         <classpath>
+           <!-- <pathelement location="jogl.jar"/>-->
+           <pathelement path="."/>
+         </classpath>
+       </java>
+       
+  </target>
+
+  <target name="compile" >
+	  <javac srcdir="${src.java}" destdir="." 
+	  includes="**/*.java"
+	  excludes="**/backup/*,dist,**/junit/*" 
+	  debug="on">
+
+     <classpath refid="project.class.path"/>     
+     	
+	<!--	 <compilerarg value="-Xlint:unchecked"/> 
+  		 <compilerarg value="-Xlint:deprecation"/>  -->
+    </javac>
+    
+
+     <jar jarfile="civ_java.jar" basedir="." 
+     		includes="**/*.class,demo.biq" manifest="MANIFEST"/> 
+      
+  </target>
+  
+  
+
+  
+  
+
+   
+
+ 
+
+  <target name="clean">
+     
+    <delete>
+    <fileset dir="." includes="**/*.class"/>
+  	</delete>
+  </target>
+
+
+
+
+
+</project>
